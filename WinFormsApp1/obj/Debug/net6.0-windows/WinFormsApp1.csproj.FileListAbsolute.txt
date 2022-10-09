@@ -18,3 +18,24 @@ C:\Users\boszn\OneDrive\Documents\GitHub\BancoNetCoreTP\WinFormsApp1\obj\Debug\n
 C:\Users\boszn\OneDrive\Documents\GitHub\BancoNetCoreTP\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Login.resources
 C:\Users\boszn\OneDrive\Documents\GitHub\BancoNetCoreTP\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Signup.resources
 C:\Users\boszn\OneDrive\Documents\GitHub\BancoNetCoreTP\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Home.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\bin\Debug\net6.0-windows\WinFormsApp1.exe
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\bin\Debug\net6.0-windows\WinFormsApp1.deps.json
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\bin\Debug\net6.0-windows\WinFormsApp1.runtimeconfig.json
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\bin\Debug\net6.0-windows\WinFormsApp1.dll
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\bin\Debug\net6.0-windows\WinFormsApp1.pdb
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Form1.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Home.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Login.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Properties.Resources.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Signup.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.AssemblyInfo.cs
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.dll
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\refint\WinFormsApp1.dll
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.pdb
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.genruntimeconfig.cache
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\ref\WinFormsApp1.dll
