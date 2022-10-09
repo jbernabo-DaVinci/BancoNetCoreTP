@@ -41,6 +41,13 @@ namespace WinFormsApp1 {
 			}
 		}
 
+		public bool modificarUsuario(Usuario usuarioData) {
+			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioData.id);
+			if (userIndex == -1) return false;
+			this.usuarios[userIndex] = usuarioData;
+			return true;
+		}
+
 		public void eliminarUsuario(int dni) { }
 
 		public bool iniciarSesion(string name, string pass) {
