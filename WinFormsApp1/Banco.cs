@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 namespace WinFormsApp1 {
 	public class Banco {
 		private List<Usuario> usuarios;
+		private List<CajaAhorro> cajasAhorro;
+		private List<PlazoFijo> plazosFijos;
+		private List<TarjetaCredito> tarjetasCredito;
+		private List<Pago> pagos;
+		private List<Movimientos> movimientos;
 
 		public Banco() {
 			this.usuarios = new List<Usuario>();
