@@ -74,6 +74,8 @@
             this.loginButton.BackColor = System.Drawing.Color.Transparent;
             this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.FlatAppearance.BorderSize = 0;
+            this.loginButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.loginButton.ForeColor = System.Drawing.Color.White;
@@ -93,7 +95,7 @@
             this.toSignupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toSignupButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toSignupButton.ForeColor = System.Drawing.Color.White;
-            this.toSignupButton.Location = new System.Drawing.Point(268, 295);
+            this.toSignupButton.Location = new System.Drawing.Point(262, 363);
             this.toSignupButton.Name = "toSignupButton";
             this.toSignupButton.Size = new System.Drawing.Size(240, 36);
             this.toSignupButton.TabIndex = 6;
@@ -115,7 +117,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WinFormsApp1.Properties.Resources.user_add;
-            this.pictureBox2.Location = new System.Drawing.Point(371, 281);
+            this.pictureBox2.Location = new System.Drawing.Point(369, 332);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -40,5 +40,9 @@ namespace WinFormsApp1
                 MessageBox.Show("No se pudo agregar el usuario");
         }
 
+        private void signupPassBoxConfirm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
