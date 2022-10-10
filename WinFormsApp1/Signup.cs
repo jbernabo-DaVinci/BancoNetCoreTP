@@ -49,5 +49,10 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void signupPassBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
