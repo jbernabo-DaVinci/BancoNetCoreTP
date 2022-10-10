@@ -61,30 +61,37 @@
             this.label2.Location = new System.Drawing.Point(237, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Contraseña";
             // 
             // signupUserBox
             // 
+            this.signupUserBox.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.signupUserBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signupUserBox.ForeColor = System.Drawing.Color.White;
             this.signupUserBox.Location = new System.Drawing.Point(307, 107);
             this.signupUserBox.Name = "signupUserBox";
-            this.signupUserBox.Size = new System.Drawing.Size(134, 23);
-            this.signupUserBox.TabIndex = 2;
+            this.signupUserBox.Size = new System.Drawing.Size(134, 16);
+            this.signupUserBox.TabIndex = 1;
+            this.signupUserBox.TextChanged += new System.EventHandler(this.signupUserBox_TextChanged);
             // 
             // signupPassBox
             // 
+            this.signupPassBox.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.signupPassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signupPassBox.ForeColor = System.Drawing.Color.White;
             this.signupPassBox.Location = new System.Drawing.Point(307, 149);
             this.signupPassBox.Name = "signupPassBox";
             this.signupPassBox.PasswordChar = '*';
             this.signupPassBox.PlaceholderText = "12345678";
             this.signupPassBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.signupPassBox.Size = new System.Drawing.Size(134, 23);
-            this.signupPassBox.TabIndex = 3;
+            this.signupPassBox.Size = new System.Drawing.Size(134, 16);
+            this.signupPassBox.TabIndex = 2;
             // 
             // signupButton
             // 
             this.signupButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signupButton.Location = new System.Drawing.Point(307, 240);
+            this.signupButton.Location = new System.Drawing.Point(307, 241);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(134, 49);
             this.signupButton.TabIndex = 4;
@@ -101,7 +108,7 @@
             this.label3.Location = new System.Drawing.Point(296, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 37);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 0;
             this.label3.Text = "BIENVENIDO";
             // 
             // toLoginButton
@@ -114,18 +121,21 @@
             this.toLoginButton.Location = new System.Drawing.Point(250, 390);
             this.toLoginButton.Name = "toLoginButton";
             this.toLoginButton.Size = new System.Drawing.Size(249, 32);
-            this.toLoginButton.TabIndex = 6;
+            this.toLoginButton.TabIndex = 5;
             this.toLoginButton.Text = "Ya tengo un usuario";
             this.toLoginButton.UseVisualStyleBackColor = false;
             // 
             // signupPassBoxConfirm
             // 
+            this.signupPassBoxConfirm.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.signupPassBoxConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signupPassBoxConfirm.ForeColor = System.Drawing.Color.White;
             this.signupPassBoxConfirm.Location = new System.Drawing.Point(307, 190);
             this.signupPassBoxConfirm.Name = "signupPassBoxConfirm";
             this.signupPassBoxConfirm.PasswordChar = '*';
             this.signupPassBoxConfirm.PlaceholderText = "12345678";
-            this.signupPassBoxConfirm.Size = new System.Drawing.Size(134, 23);
-            this.signupPassBoxConfirm.TabIndex = 7;
+            this.signupPassBoxConfirm.Size = new System.Drawing.Size(134, 16);
+            this.signupPassBoxConfirm.TabIndex = 3;
             this.signupPassBoxConfirm.TextChanged += new System.EventHandler(this.signupPassBoxConfirm_TextChanged);
             // 
             // label4
@@ -137,7 +147,7 @@
             this.label4.Location = new System.Drawing.Point(173, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 15);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Confirmar Contraseña";
             // 
             // Signup
