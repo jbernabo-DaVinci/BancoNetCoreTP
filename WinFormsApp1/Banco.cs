@@ -166,6 +166,78 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
+		public List<Movimiento> detalleCajaAhorro(int id) {
+			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == id);
+			if (cajaAhorroIndex == -1) return false;
+
+			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+			if (currentCajaAhorro.borrado) return false;
+
+			return currentCajaAhorro.getDetalle();
+		}
+
+		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {
+			int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
+			if (cajaAhorroIndex == -1) return false;
+
+			int movimientoId = (this.movimientos.Count)+1;
+			Movimiento newMovimiento = new Movimiento(movimientoId, movimiento.detalle, movimiento.monto, movimiento.cajaAhorro);
+			this.movimientos.Add(newMovimiento);
+
+			cajaAhorro.addMovimiento(newMovimiento);
+			this.cajasAhorro[cajaAhorroIndex] = cajaAhorro;
+	
+			int[] titularesIds = cajaAhorro.getTitularesIds();
+
+			foreach(int titularId in titularesIds) {
+				int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
+				Usuario userToUpdate = this.usuarios[currentUserIndex];
+				userToUpdate.updateInfoCajaAhorro(cajaAhorro);
+			}
+
+			return true;
+		}
+
+		public bool depositar(int cajaAhorroId, float monto) {
+			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
+			if (cajaAhorroIndex == -1) return false;
+
+			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+			if (currentCajaAhorro.borrado) return false;
+
+			currentCajaAhorro.depositar(monto);
+
+			Movimiento movimiento = new Movimiento("deposito", monto, currentCajaAhorro);
+
+			if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
+
+			return true;
+		}
+
+		public bool retirar(int cajaAhorroId, float monto) {
+			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
+			if (cajaAhorroIndex == -1) return false;
+
+			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+			if (currentCajaAhorro.borrado) return false;
+
+			if (!currentCajaAhorro.retirar(monto)) return false;
+
+			Movimiento movimiento = new Movimiento("retiro", monto, currentCajaAhorro);
+
+			if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
+
+			return true;
+		}
+
+		public bool transferir(int cajaAhorroOrigenId, int cajaAhorroDestinoId, float monto) {
+			if (!this.retirar(cajaAhorroOrigenId, monto)) return false;
+
+			if (!this.depositar(cajaAhorroDestinoId, monto)) return false;
+
+			return true;
+		}
+
 		public bool cerrarSesion() {
 			this.currentUser = null;
 			return true;

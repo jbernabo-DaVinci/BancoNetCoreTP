@@ -61,8 +61,27 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
+		public void addMovimiento(Movimiento movimiento) {
+			this.movimientos.Add(movimiento);
+		}
+
+		public void depositar(float monto) {
+			this.saldo += monto;
+		}
+
+		public bool retirar(float monto) {
+			if (this.saldo < monto) return false;
+
+			this.saldo -= monto;
+			return true;
+		}
+
+		public List<Movimiento> getDetalle() {
+			return this.movimientos.ToList();
+		}
+
 		public bool borrar() {
-			if(this.saldo != 0) return false;
+			if (this.saldo != 0) return false;
 			this.borrado = true;
 			return true;
 		}

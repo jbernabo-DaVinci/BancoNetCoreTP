@@ -80,6 +80,11 @@ namespace WinFormsApp1 {
 			return cajasAhorroFiltered.ToList();
 		}
 
+		public void updateInfoCajaAhorro(CajaAhorro cajaAhorro) {
+			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
+			this.cajasAhorro[cajaIndex] = cajaAhorro;
+		}
+
 		public string[] toArray() {
 			return new string[] { this.nombre, this.pass };
 		}
