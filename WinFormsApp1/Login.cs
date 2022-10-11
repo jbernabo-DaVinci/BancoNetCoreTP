@@ -23,8 +23,10 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             elBanco = b;
+            
         }
 
+        //showEye_Click.Visible = false;
         private void loginButton_Click(object sender, EventArgs e)
         {
             usuario = loginUserBox.Text;
@@ -39,5 +41,14 @@ namespace WinFormsApp1
 
         public delegate void TransfDelegado(string usuario, string pass);
 
+        private void hideEye_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void showEye_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

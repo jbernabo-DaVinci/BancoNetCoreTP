@@ -54,5 +54,10 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
