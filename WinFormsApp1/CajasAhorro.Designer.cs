@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button modificarCaja;
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.transferir = new System.Windows.Forms.Button();
@@ -42,28 +41,29 @@
             modificarCaja = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // modificarCaja
             // 
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(446, 111);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 27);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Crear caja de ahorro";
-            this.button1.UseVisualStyleBackColor = true;
+            modificarCaja.Enabled = false;
+            modificarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            modificarCaja.FlatAppearance.BorderSize = 2;
+            modificarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            modificarCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            modificarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            modificarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            modificarCaja.ForeColor = System.Drawing.Color.White;
+            modificarCaja.Location = new System.Drawing.Point(173, 292);
+            modificarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            modificarCaja.Name = "modificarCaja";
+            modificarCaja.Size = new System.Drawing.Size(100, 38);
+            modificarCaja.TabIndex = 10;
+            modificarCaja.Text = "Modificar Caja";
+            modificarCaja.UseVisualStyleBackColor = true;
+            modificarCaja.Visible = false;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 111);
+            this.comboBox1.Location = new System.Drawing.Point(271, 158);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(285, 23);
             this.comboBox1.TabIndex = 5;
@@ -73,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(58, 111);
+            this.label1.Location = new System.Drawing.Point(174, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 15);
             this.label1.TabIndex = 6;
@@ -133,25 +133,6 @@
             this.depositar.Text = "Depositar";
             this.depositar.UseVisualStyleBackColor = true;
             this.depositar.Visible = false;
-            // 
-            // modificarCaja
-            // 
-            modificarCaja.Enabled = false;
-            modificarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            modificarCaja.FlatAppearance.BorderSize = 2;
-            modificarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            modificarCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            modificarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            modificarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            modificarCaja.ForeColor = System.Drawing.Color.White;
-            modificarCaja.Location = new System.Drawing.Point(173, 292);
-            modificarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            modificarCaja.Name = "modificarCaja";
-            modificarCaja.Size = new System.Drawing.Size(100, 38);
-            modificarCaja.TabIndex = 10;
-            modificarCaja.Text = "Modificar Caja";
-            modificarCaja.UseVisualStyleBackColor = true;
-            modificarCaja.Visible = false;
             // 
             // eliminarCaja
             // 
@@ -227,7 +208,6 @@
             this.Controls.Add(this.transferir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
             this.Name = "CajasAhorro";
             this.Text = "CajasAhorro";
             this.ResumeLayout(false);
@@ -236,7 +216,6 @@
         }
 
         #endregion
-        private Button button1;
         private ComboBox comboBox1;
         private Label label1;
         private Button transferir;
