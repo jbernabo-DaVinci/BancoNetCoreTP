@@ -57,39 +57,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAFBQAAAEAIAC4BgAAFgAAACgAAAAUAAAAKAAAAAEAIAAAAAAAQAYAAMMOAADDDgAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAJQAAAHAAAADPAAAAzwAAAG8AAAAlAAAABwAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQAAAGcAAADHAAAA1AAA
-        AKUAAAClAAAA1AAAAMYAAABlAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        ABMAAACVAAAA2QAAAJoAAABGAAAACwAAAAsAAABGAAAAmwAAANkAAACTAAAAEgAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAMAAAAjwAAAOEAAABqAAAAFwAAAAEAAAAAAAAAAAAAAAEAAAAYAAAAbAAA
-        AOIAAACNAAAACwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGoAAADrAAAAYAAAAAkAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAJAAAAbgAAAOoAAABnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsAAAAxgAA
-        AJsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAMUAAAAqAAAAAAAA
-        AAAAAAAAAAAABAAAAHAAAADZAAAANgAAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAA1AAAA2AAAAG4AAAADAAAAAAAAAAAAAAAXAAAAogAAAKQAAAAUAAAAAAAAAAAAAAAPAAAAXgAA
-        AGoAAAAHAAAAAAAAAAAAAAAAAAAAAAAAABQAAAClAAAAoAAAABYAAAAAAAAAAAAAADEAAADHAAAAbAAA
-        AAYAAAAAAAAADQAAAG4AAADhAAAA7gAAAHYAAAAHAAAAAAAAAAAAAAAAAAAABgAAAG0AAADGAAAAMAAA
-        AAAAAAAAAAAAQwAAANUAAABNAAAAAAAAAAQAAABYAAAA5AAAAI8AAACQAAAA6gAAAHYAAAAHAAAAAAAA
-        AAAAAAAAAAAATgAAANQAAABBAAAAAAAAAAAAAABRAAAA1gAAAD4AAAAAAAAABAAAAEUAAABoAAAAEQAA
-        AAAAAACEAAAA4wAAAIEAAAARAAAAAAAAAAAAAAA/AAAA1QAAAE8AAAAAAAAAAQAAAFoAAADUAAAAOAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAACDAAAA2QAAAFkAAAAEAAAAAAAAADkAAADUAAAAWAAA
-        AAEAAAADAAAAYAAAANIAAAA3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYAAABlAAAAPwAA
-        AAQAAAAAAAAAOAAAANMAAABeAAAAAgAAAAMAAABiAAAA0QAAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAAAAAAA3AAAA0QAAAGEAAAADAAAAAwAAAGAAAADPAAAANQAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADUAAADPAAAAXwAA
-        AAMAAAACAAAAXQAAAN0AAABiAAAAKgAAAB4AAAAPAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAADAAAADwAA
-        AB4AAAAqAAAAYgAAAN0AAABdAAAAAgAAAAEAAABFAAAA0AAAAN4AAADgAAAAyQAAAJEAAABQAAAAGQAA
-        AAIAAAACAAAAGQAAAFEAAACRAAAAygAAAOAAAADeAAAA0AAAAEUAAAABAAAAAAAAAA8AAAA6AAAATwAA
-        AF8AAACIAAAAuQAAANgAAACgAAAAOwAAADwAAAChAAAA2AAAALkAAACHAAAAXwAAAE8AAAA6AAAADwAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAnAAAAZAAAAMoAAADNAAAAzQAAAMoAAABjAAAAJgAA
-        AAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAALwAA
-        ALYAAAC1AAAALgAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AHwAPAB8ADwAPAA4GBwAOH4
-        cADD/DAAhzwQAIYeEACEDhAAgAYQAAgBAAAPwQAAD+EAAA/zAAAP/wAAAPAAAAAAAACAABAA8AHwAP4H
-        8AA=
-</value>
-  </data>
+  <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Detalle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Detalle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewCheckBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewCheckBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

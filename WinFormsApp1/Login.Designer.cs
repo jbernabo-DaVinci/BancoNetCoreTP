@@ -30,22 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label3 = new System.Windows.Forms.Label();
-            this.loginUserBox = new System.Windows.Forms.TextBox();
             this.loginPassBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.toSignupButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.showEye = new System.Windows.Forms.PictureBox();
+            this.hideEye = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.loginDNIBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showEye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hideEye)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -59,16 +58,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "BIENVENIDO";
             // 
-            // loginUserBox
-            // 
-            this.loginUserBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
-            this.loginUserBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.loginUserBox.ForeColor = System.Drawing.Color.Black;
-            this.loginUserBox.Location = new System.Drawing.Point(332, 134);
-            this.loginUserBox.Name = "loginUserBox";
-            this.loginUserBox.Size = new System.Drawing.Size(134, 16);
-            this.loginUserBox.TabIndex = 3;
-            // 
             // loginPassBox
             // 
             this.loginPassBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
@@ -78,6 +67,7 @@
             this.loginPassBox.Size = new System.Drawing.Size(134, 16);
             this.loginPassBox.TabIndex = 4;
             this.loginPassBox.UseSystemPasswordChar = true;
+           
             // 
             // loginButton
             // 
@@ -113,17 +103,6 @@
             this.toSignupButton.Text = "Crear un nuevo usuario";
             this.toSignupButton.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::WinFormsApp1.Properties.Resources.usuario;
-            this.pictureBox1.Location = new System.Drawing.Point(284, 126);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -154,37 +133,59 @@
             this.label7.Size = new System.Drawing.Size(134, 2);
             this.label7.TabIndex = 9;
             // 
-            // label1
+            // showEye
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(332, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 2);
-            this.label1.TabIndex = 10;
+            this.showEye.BackColor = System.Drawing.Color.Transparent;
+            this.showEye.Image = global::WinFormsApp1.Properties.Resources.ojo__1_;
+            this.showEye.Location = new System.Drawing.Point(472, 174);
+            this.showEye.Name = "showEye";
+            this.showEye.Size = new System.Drawing.Size(20, 20);
+            this.showEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.showEye.TabIndex = 11;
+            this.showEye.TabStop = false;
+            this.showEye.Click += new System.EventHandler(this.showEye_Click);
             // 
-            // pictureBox4
+            // hideEye
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::WinFormsApp1.Properties.Resources.ojo__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(472, 174);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.showEye_Click);
+            this.hideEye.BackColor = System.Drawing.Color.Transparent;
+            this.hideEye.Image = global::WinFormsApp1.Properties.Resources.ojos_cruzados;
+            this.hideEye.Location = new System.Drawing.Point(472, 174);
+            this.hideEye.Name = "hideEye";
+            this.hideEye.Size = new System.Drawing.Size(20, 20);
+            this.hideEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hideEye.TabIndex = 12;
+            this.hideEye.TabStop = false;
+            this.hideEye.Click += new System.EventHandler(this.hideEye_Click);
             // 
-            // pictureBox5
+            // label9
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::WinFormsApp1.Properties.Resources.ojos_cruzados;
-            this.pictureBox5.Location = new System.Drawing.Point(511, 172);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.hideEye_Click);
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(280, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 15);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "DNI";
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(333, 143);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(134, 2);
+            this.label8.TabIndex = 14;
+            // 
+            // loginDNIBox
+            // 
+            this.loginDNIBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
+            this.loginDNIBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.loginDNIBox.ForeColor = System.Drawing.Color.White;
+            this.loginDNIBox.Location = new System.Drawing.Point(332, 128);
+            this.loginDNIBox.Name = "loginDNIBox";
+            this.loginDNIBox.Size = new System.Drawing.Size(134, 16);
+            this.loginDNIBox.TabIndex = 13;
             // 
             // Login
             // 
@@ -192,26 +193,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.loginDNIBox);
+            this.Controls.Add(this.hideEye);
+            this.Controls.Add(this.showEye);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toSignupButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.loginPassBox);
-            this.Controls.Add(this.loginUserBox);
             this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showEye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hideEye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,16 +219,16 @@
 
         #endregion
         private Label label3;
-        private TextBox loginUserBox;
         private TextBox loginPassBox;
         private Button loginButton;
         private Button toSignupButton;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Label label7;
-        private Label label1;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox showEye;
+        private PictureBox hideEye;
+        private Label label9;
+        private Label label8;
+        private TextBox loginDNIBox;
     }
 }

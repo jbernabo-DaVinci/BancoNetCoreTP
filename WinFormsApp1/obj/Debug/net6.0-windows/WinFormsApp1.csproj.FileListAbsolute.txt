@@ -39,3 +39,5 @@ C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Platafo
 C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.pdb
 C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.genruntimeconfig.cache
 C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\ref\WinFormsApp1.dll
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.CajasAhorro.resources
+C:\Users\SRV\Desktop\DaVinci\Cuatrimestre 5\Plataformas de Desarrollo\TP_Plataformas(Banco)\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.PagarPago.resources

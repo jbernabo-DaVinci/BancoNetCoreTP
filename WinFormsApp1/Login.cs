@@ -14,7 +14,7 @@ namespace WinFormsApp1
 {
     public partial class Login : Form
     {
-        public string usuario;
+        public string dni;
         public string pass;
         public Banco elBanco;
 
@@ -26,29 +26,33 @@ namespace WinFormsApp1
             
         }
 
-        //showEye_Click.Visible = false;
+        
         private void loginButton_Click(object sender, EventArgs e)
         {
-            usuario = loginUserBox.Text;
+            dni = loginDNIBox.Text;
             pass = loginPassBox.Text;
-            if (usuario != null && usuario != "")
+            if (dni != null && dni != "")
             {
-                this.TransfEvento(usuario, pass);
+                this.TransfEvento(dni, pass);
             }
             else
-                MessageBox.Show("Debe ingresar un usuario!");
+                MessageBox.Show("Debe ingresar un dni!");
         }
 
-        public delegate void TransfDelegado(string usuario, string pass);
+        public delegate void TransfDelegado(string dni, string pass);
 
         private void hideEye_Click(object sender, EventArgs e)
         {
-            
+            this.hideEye.Visible = false;
+            this.showEye.Visible = true;
         }
 
         private void showEye_Click(object sender, EventArgs e)
         {
-
+            this.showEye.Visible = false;
+            this.hideEye.Visible = true;
         }
+
+        
     }
 }
