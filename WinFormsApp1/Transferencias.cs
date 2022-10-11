@@ -16,5 +16,10 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
+
+        private void Transferencias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
