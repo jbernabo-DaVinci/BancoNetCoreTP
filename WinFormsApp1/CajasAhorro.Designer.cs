@@ -28,27 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button modificarCaja;
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.transferir = new System.Windows.Forms.Button();
             this.retirar = new System.Windows.Forms.Button();
             this.depositar = new System.Windows.Forms.Button();
-            this.modificarCaja = new System.Windows.Forms.Button();
             this.eliminarCaja = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            modificarCaja = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(446, 102);
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(446, 111);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 38);
+            this.button1.Size = new System.Drawing.Size(134, 27);
             this.button1.TabIndex = 3;
             this.button1.Text = "Crear caja de ahorro";
             this.button1.UseVisualStyleBackColor = true;
@@ -75,6 +82,13 @@
             // transferir
             // 
             this.transferir.Enabled = false;
+            this.transferir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.transferir.FlatAppearance.BorderSize = 2;
+            this.transferir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.transferir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.transferir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transferir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.transferir.ForeColor = System.Drawing.Color.White;
             this.transferir.Location = new System.Drawing.Point(473, 292);
             this.transferir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.transferir.Name = "transferir";
@@ -87,6 +101,13 @@
             // retirar
             // 
             this.retirar.Enabled = false;
+            this.retirar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.retirar.FlatAppearance.BorderSize = 2;
+            this.retirar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.retirar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.retirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.retirar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.retirar.ForeColor = System.Drawing.Color.White;
             this.retirar.Location = new System.Drawing.Point(367, 292);
             this.retirar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.retirar.Name = "retirar";
@@ -99,6 +120,11 @@
             // depositar
             // 
             this.depositar.Enabled = false;
+            this.depositar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.depositar.FlatAppearance.BorderSize = 2;
+            this.depositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.depositar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.depositar.ForeColor = System.Drawing.Color.White;
             this.depositar.Location = new System.Drawing.Point(261, 292);
             this.depositar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.depositar.Name = "depositar";
@@ -110,19 +136,33 @@
             // 
             // modificarCaja
             // 
-            this.modificarCaja.Enabled = false;
-            this.modificarCaja.Location = new System.Drawing.Point(155, 292);
-            this.modificarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.modificarCaja.Name = "modificarCaja";
-            this.modificarCaja.Size = new System.Drawing.Size(100, 38);
-            this.modificarCaja.TabIndex = 10;
-            this.modificarCaja.Text = "Modificar Caja";
-            this.modificarCaja.UseVisualStyleBackColor = true;
-            this.modificarCaja.Visible = false;
+            modificarCaja.Enabled = false;
+            modificarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            modificarCaja.FlatAppearance.BorderSize = 2;
+            modificarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            modificarCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            modificarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            modificarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            modificarCaja.ForeColor = System.Drawing.Color.White;
+            modificarCaja.Location = new System.Drawing.Point(155, 292);
+            modificarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            modificarCaja.Name = "modificarCaja";
+            modificarCaja.Size = new System.Drawing.Size(100, 38);
+            modificarCaja.TabIndex = 10;
+            modificarCaja.Text = "Modificar Caja";
+            modificarCaja.UseVisualStyleBackColor = true;
+            modificarCaja.Visible = false;
             // 
             // eliminarCaja
             // 
             this.eliminarCaja.Enabled = false;
+            this.eliminarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.eliminarCaja.FlatAppearance.BorderSize = 2;
+            this.eliminarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eliminarCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eliminarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.eliminarCaja.ForeColor = System.Drawing.Color.White;
             this.eliminarCaja.Location = new System.Drawing.Point(49, 292);
             this.eliminarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eliminarCaja.Name = "eliminarCaja";
@@ -132,20 +172,16 @@
             this.eliminarCaja.UseVisualStyleBackColor = true;
             this.eliminarCaja.Visible = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 244);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 15);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Su caja N°:";
-            // 
             // button2
             // 
             this.button2.Enabled = false;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(579, 292);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
@@ -184,9 +220,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.eliminarCaja);
-            this.Controls.Add(this.modificarCaja);
+            this.Controls.Add(modificarCaja);
             this.Controls.Add(this.depositar);
             this.Controls.Add(this.retirar);
             this.Controls.Add(this.transferir);
@@ -209,7 +244,6 @@
         private Button depositar;
         private Button modificarCaja;
         private Button eliminarCaja;
-        private Label label2;
         private Button button2;
         private Label label3;
         private Label label4;
