@@ -89,7 +89,7 @@
             this.transferir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.transferir.ForeColor = System.Drawing.Color.White;
-            this.transferir.Location = new System.Drawing.Point(473, 292);
+            this.transferir.Location = new System.Drawing.Point(491, 292);
             this.transferir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.transferir.Name = "transferir";
             this.transferir.Size = new System.Drawing.Size(100, 38);
@@ -108,7 +108,7 @@
             this.retirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.retirar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.retirar.ForeColor = System.Drawing.Color.White;
-            this.retirar.Location = new System.Drawing.Point(367, 292);
+            this.retirar.Location = new System.Drawing.Point(385, 292);
             this.retirar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.retirar.Name = "retirar";
             this.retirar.Size = new System.Drawing.Size(100, 38);
@@ -125,7 +125,7 @@
             this.depositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.depositar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.depositar.ForeColor = System.Drawing.Color.White;
-            this.depositar.Location = new System.Drawing.Point(261, 292);
+            this.depositar.Location = new System.Drawing.Point(279, 292);
             this.depositar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.depositar.Name = "depositar";
             this.depositar.Size = new System.Drawing.Size(100, 38);
@@ -144,7 +144,7 @@
             modificarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             modificarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             modificarCaja.ForeColor = System.Drawing.Color.White;
-            modificarCaja.Location = new System.Drawing.Point(155, 292);
+            modificarCaja.Location = new System.Drawing.Point(173, 292);
             modificarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             modificarCaja.Name = "modificarCaja";
             modificarCaja.Size = new System.Drawing.Size(100, 38);
@@ -163,7 +163,7 @@
             this.eliminarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eliminarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.eliminarCaja.ForeColor = System.Drawing.Color.White;
-            this.eliminarCaja.Location = new System.Drawing.Point(49, 292);
+            this.eliminarCaja.Location = new System.Drawing.Point(67, 292);
             this.eliminarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eliminarCaja.Name = "eliminarCaja";
             this.eliminarCaja.Size = new System.Drawing.Size(100, 38);
@@ -182,7 +182,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(579, 292);
+            this.button2.Location = new System.Drawing.Point(597, 292);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 38);
