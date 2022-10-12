@@ -10,7 +10,7 @@ namespace WinFormsApp1 {
 		public string detalle { get; set; }
 		public float monto { get; set; }
 		public DateTime fecha { get; set; }
-		public CajaAhorro cajaAhorro { get; set; };
+		public CajaAhorro cajaAhorro { get; set; }
 
 		public Movimiento() { }
 
