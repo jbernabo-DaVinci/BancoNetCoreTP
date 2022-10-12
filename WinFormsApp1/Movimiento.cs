@@ -32,4 +32,5 @@ namespace WinFormsApp1 {
 		public string[] toArray() {
 			return new string[] { this.detalle, this.monto, this.fecha };
 		}
+	}
 }
