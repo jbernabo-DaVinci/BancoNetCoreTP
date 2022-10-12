@@ -85,6 +85,22 @@ namespace WinFormsApp1 {
 			this.cajasAhorro[cajaIndex] = cajaAhorro;
 		}
 
+		public bool agregarPago(Pago pago) {
+			int pagoIndex = this.pagos.FindIndex(currentPago => currentPago.id == pago.id);
+			if (pagoIndex != -1) return false;
+			this.pagos.Add(pago);
+			return true;
+		}
+
+		public List<Pago> obtenerPagos() {
+			List<Pago> pagosFiltered = new List<Pago>();
+			foreach(Pago currentPago in this.pagos) {
+				if (currentPago.borrado) continue;
+				pagosFiltered.Add(currentPago);
+			}
+			return pagosFiltered.ToList();
+		}
+
 		public string[] toArray() {
 			return new string[] { this.nombre, this.pass };
 		}

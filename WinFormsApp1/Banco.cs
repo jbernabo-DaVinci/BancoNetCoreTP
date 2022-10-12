@@ -85,6 +85,8 @@ namespace WinFormsApp1 {
 			if (userIndex == -1) return false;
 
 			Usuario currentUser = this.usuarios[userIndex];
+			if (currentUser.borrado) return false;
+
 			int cajaAhorroId = (this.cajasAhorro.Count)+1;
 			CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, currentUser);
 			if (!currentUser.agregarCajaAhorro()) return false;
@@ -143,6 +145,7 @@ namespace WinFormsApp1 {
 				}
 			}
 
+			this.cajasAhorro[cajaIndex] = currentCajaAhorro;
 			return true;
 		}
 
@@ -236,6 +239,47 @@ namespace WinFormsApp1 {
 			if (!this.depositar(cajaAhorroDestinoId, monto)) return false;
 
 			return true;
+		}
+
+		public bool altaPago(Pago pago, int usuarioId) {
+			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
+			if (userIndex == -1) return false;
+
+			Usuario currentUser = this.usuarios[userIndex];
+			if (currentUser.borrado) return false;
+
+			int pagoId = (this.pagos.Count)+1;
+			Pago pago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
+			if (!currentUser.agregarPago()) return false;
+
+			this.Pagos.Add(pago);
+			return true;
+		}
+
+		public bool modificarPago(int pagoId, string nombre, float monto, bool pagado) {
+			int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
+			if (pagoIndex == -1) return false;
+
+			Pago currentPago = this.pagos[pagoIndex];
+			if (currentPago.borrado) return false;
+
+			currentPago.updateInfo(nombre, monto, pagado);
+			this.pagos[pagoIndex] = currentPago;
+			return true;
+		}
+
+		public bool bajaPago(int pagoId) {
+			int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
+			if (pagoIndex == -1) return false;
+
+			Pago currentPago = this.pagos[pagoIndex];
+			currentPago.borrar();
+			this.pagos[pagoIndex] = currentPago;
+			return true;
+		}
+
+		public List<Pago> obtenerPagos() {
+			return this.currentUser.obtenerPagos();
 		}
 
 		public bool cerrarSesion() {
