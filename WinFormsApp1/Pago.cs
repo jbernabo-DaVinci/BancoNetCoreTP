@@ -23,7 +23,7 @@ namespace WinFormsApp1 {
 			this.usuario = usuario;
 		}
 
-		public updateInfo(string nombre, float monto, bool pagado) {
+		public void updateInfo(string nombre, float monto, bool pagado) {
 			this.nombre = nombre;
 			this.monto = monto;
 			this.pagado = pagado;

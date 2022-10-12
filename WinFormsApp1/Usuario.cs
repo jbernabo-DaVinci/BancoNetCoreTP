@@ -15,8 +15,8 @@ namespace WinFormsApp1 {
 		public bool bloqueado { get; set; }
 		public bool borrado { get; set; }
 		private List<CajaAhorro> cajasAhorro;
-		private List<PlazoFijo> plazosFijos;
-		private List<TarjetaCredito> tarjetasCredito;
+		//private List<PlazoFijo> plazosFijos;
+		//private List<TarjetaCredito> tarjetasCredito;
 		private List<Pago> pagos;
 
 		public Usuario() { }
@@ -30,8 +30,8 @@ namespace WinFormsApp1 {
 			this.bloqueado = false;
 			this.borrado = false;
 			this.cajasAhorro = new List<CajaAhorro>();
-			this.plazosFijos = new List<PlazoFijo>();
-			this.tarjetasCredito = new List<TarjetaCredito>();
+			//this.plazosFijos = new List<PlazoFijo>();
+			//this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 		}
 
@@ -42,8 +42,8 @@ namespace WinFormsApp1 {
 			this.bloqueado = false;
 			this.borrado = false;
 			this.cajasAhorro = new List<CajaAhorro>();
-			this.plazosFijos = new List<PlazoFijo>();
-			this.tarjetasCredito = new List<TarjetaCredito>();
+			//this.plazosFijos = new List<PlazoFijo>();
+			//this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 		}
 
