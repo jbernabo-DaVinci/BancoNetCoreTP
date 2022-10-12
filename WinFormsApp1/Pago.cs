@@ -36,4 +36,5 @@ namespace WinFormsApp1 {
 		public string[] toArray() {
 			return new string[] { this.nombre, this.monto, this.pagado };
 		}
+	}
 }
