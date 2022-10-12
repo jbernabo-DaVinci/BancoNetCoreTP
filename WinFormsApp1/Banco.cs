@@ -23,7 +23,7 @@ namespace WinFormsApp1 {
 			this.movimientos = new List<Movimiento>();
 		} 
 
-		public bool agregarUsuario(string name, string pass) {
+		public bool agregarUsuario(int id, string name, string pass) {
 			try {
 				if (pass.Length < 8) {
 					return false;
@@ -59,7 +59,7 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
-		public void eliminarUsuario(int usuarioId) {
+		public bool eliminarUsuario(int usuarioId) {
 			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
 			if (userIndex == -1) return false;
 			Usuario currentUser = this.usuarios[userIndex];
@@ -72,7 +72,7 @@ namespace WinFormsApp1 {
 		public bool crearCajaAhorro() {
 			int cajaAhorroId = (this.cajasAhorro.Count)+1;
 			CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, this.currentUser);
-			this.cajasAhorro.Add(cajasAhorro);
+			this.cajasAhorro.Add(cajaAhorro);
 			return true;
 		}
 
@@ -89,7 +89,7 @@ namespace WinFormsApp1 {
 
 			int cajaAhorroId = (this.cajasAhorro.Count)+1;
 			CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, currentUser);
-			if (!currentUser.agregarCajaAhorro()) return false;
+			if (!currentUser.agregarCajaAhorro(cajaAhorro)) return false;
 
 			this.cajasAhorro.Add(cajaAhorro);
 			return true;
@@ -109,7 +109,7 @@ namespace WinFormsApp1 {
 				currentUser.deleteCajaAhorro(currentCajaAhorro.id);
 			}
 
-			this.currentCajaAhorro[cajaIndex] = currentCajaAhorro;
+			this.cajasAhorro[cajaIndex] = currentCajaAhorro;
 			return true;
 		}
 
@@ -149,7 +149,7 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
-		public bool iniciarSesion(string dni, string pass) {
+		public bool iniciarSesion(int dni, string pass) {
 			int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
 			if (userIndex == -1) return false;
 
@@ -171,11 +171,7 @@ namespace WinFormsApp1 {
 
 		public List<Movimiento> detalleCajaAhorro(int id) {
 			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == id);
-			if (cajaAhorroIndex == -1) return false;
-
 			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
-			if (currentCajaAhorro.borrado) return false;
-
 			return currentCajaAhorro.getDetalle();
 		}
 
@@ -249,10 +245,10 @@ namespace WinFormsApp1 {
 			if (currentUser.borrado) return false;
 
 			int pagoId = (this.pagos.Count)+1;
-			Pago pago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
-			if (!currentUser.agregarPago()) return false;
+			Pago newPago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
+			if (!currentUser.agregarPago(newPago)) return false;
 
-			this.Pagos.Add(pago);
+			this.Pagos.Add(newPago);
 			return true;
 		}
 

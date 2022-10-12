@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public float saldo { get; set; }
 		public bool borrado { get; set; }
 		private List<Usuario> titulares;
-		private List<Movimiento> movimiento;
+		private List<Movimiento> movimientos;
 
 		public CajaAhorro() { }
 
@@ -87,7 +87,7 @@ namespace WinFormsApp1 {
 		}
 
 		public string[] toArray() {
-			return new string[] { this.cbu, this.saldo };
+			return new string[] { this.cbu, this.saldo.ToString("C") };
 		}
 	}
 }

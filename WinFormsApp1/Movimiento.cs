@@ -10,7 +10,7 @@ namespace WinFormsApp1 {
 		public string detalle { get; set; }
 		public float monto { get; set; }
 		public DateTime fecha { get; set; }
-		private CajaAhorro cajaAhorro;
+		public CajaAhorro cajaAhorro { get; set; };
 
 		public Movimiento() { }
 
@@ -30,7 +30,7 @@ namespace WinFormsApp1 {
 		}
 
 		public string[] toArray() {
-			return new string[] { this.detalle, this.monto, this.fecha };
+			return new string[] { this.detalle, this.monto.ToString("C"), this.fecha.ToString("G") };
 		}
 	}
 }
