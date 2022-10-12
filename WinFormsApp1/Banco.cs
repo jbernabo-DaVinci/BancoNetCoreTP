@@ -23,14 +23,14 @@ namespace WinFormsApp1 {
 			this.movimientos = new List<Movimiento>();
 		} 
 
-		public bool agregarUsuario(int id, string name, string pass) {
+		public bool agregarUsuario(int dni, string name, string pass) {
 			try {
 				if (pass.Length < 8) {
 					return false;
 				}
 
 				int usuarioId = (this.usuarios.Count)+1;
-				this.usuarios.Add(new Usuario(id, name, pass));
+				this.usuarios.Add(new Usuario(usuarioId, dni, name, pass));
 				return true;
 
 			} catch (Exception ex) {
@@ -50,30 +50,42 @@ namespace WinFormsApp1 {
 		}
 
 		public bool modificarUsuario(int id, string nombre, string pass, string mail) {
-			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == id);
-			if (userIndex == -1) return false;
+			try {
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.id == id);
+				if (userIndex == -1) return false;
 
-			Usuario currentUser = this.usuarios[userIndex];
-			currentUser.updateInfo(nombre, pass, mail);
-			this.usuarios[userIndex] = currentUser;
-			return true;
+				Usuario currentUser = this.usuarios[userIndex];
+				currentUser.updateInfo(nombre, pass, mail);
+				this.usuarios[userIndex] = currentUser;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool eliminarUsuario(int usuarioId) {
-			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
-			if (userIndex == -1) return false;
-			Usuario currentUser = this.usuarios[userIndex];
-			currentUser.borrar();
-			//TODO: We will remove the rest of products of user before remove user.
-			this.usuarios[userIndex] = currentUser;
-			return true;
+			try {
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
+				if (userIndex == -1) return false;
+				Usuario currentUser = this.usuarios[userIndex];
+				currentUser.borrar();
+				//TODO: We will remove the rest of products of user before remove user.
+				this.usuarios[userIndex] = currentUser;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool crearCajaAhorro() {
-			int cajaAhorroId = (this.cajasAhorro.Count)+1;
-			CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, this.currentUser);
-			this.cajasAhorro.Add(cajaAhorro);
-			return true;
+			try {
+				int cajaAhorroId = (this.cajasAhorro.Count)+1;
+				CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, this.currentUser);
+				this.cajasAhorro.Add(cajaAhorro);
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public List<CajaAhorro> obtenerCajasAhorro() {
@@ -81,92 +93,108 @@ namespace WinFormsApp1 {
 		}
 
 		public bool altaCajaAhorro(int usuarioId) {
-			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
-			if (userIndex == -1) return false;
+			try {
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
+				if (userIndex == -1) return false;
 
-			Usuario currentUser = this.usuarios[userIndex];
-			if (currentUser.borrado) return false;
+				Usuario currentUser = this.usuarios[userIndex];
+				if (currentUser.borrado) return false;
 
-			int cajaAhorroId = (this.cajasAhorro.Count)+1;
-			CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, currentUser);
-			if (!currentUser.agregarCajaAhorro(cajaAhorro)) return false;
+				int cajaAhorroId = (this.cajasAhorro.Count)+1;
+				CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, currentUser);
+				if (!currentUser.agregarCajaAhorro(cajaAhorro)) return false;
 
-			this.cajasAhorro.Add(cajaAhorro);
-			return true;
+				this.cajasAhorro.Add(cajaAhorro);
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool bajaCajaAhorro(int id) {
-			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == id);
-			if (cajaIndex == -1) return false;
+			try {
+				int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == id);
+				if (cajaIndex == -1) return false;
 
-			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaIndex];
-			if (!currentCajaAhorro.borrar()) return false;
+				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaIndex];
+				if (!currentCajaAhorro.borrar()) return false;
 
-			int[] titularesIds = currentCajaAhorro.getTitularesIds();
-			foreach(int titularId in titularesIds) {
-				int userIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
-				Usuario currentUser = this.usuarios[userIndex];
-				currentUser.deleteCajaAhorro(currentCajaAhorro.id);
+				int[] titularesIds = currentCajaAhorro.getTitularesIds();
+				foreach(int titularId in titularesIds) {
+					int userIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
+					Usuario currentUser = this.usuarios[userIndex];
+					currentUser.deleteCajaAhorro(currentCajaAhorro.id);
+				}
+
+				this.cajasAhorro[cajaIndex] = currentCajaAhorro;
+				return true;
+			} catch (Exception ex) {
+				return false;
 			}
-
-			this.cajasAhorro[cajaIndex] = currentCajaAhorro;
-			return true;
 		}
 
 		//Accion 1 = Agregar titular; Accion 2 = Eliminar titular.
 		public bool modificarCajaAhorro(int id, int titularDni, int accion) {
-			if (accion != 1 && accion != 2) return false;
+			try {
+				if (accion != 1 && accion != 2) return false;
 
-			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == id);
-			if (cajaIndex == -1) return false;
+				int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == id);
+				if (cajaIndex == -1) return false;
 
-			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaIndex];
-			int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == titularDni);
-			Usuario currentUser = this.usuarios[userIndex];
-			if (currentUser.borrado) return false;
+				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaIndex];
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == titularDni);
+				Usuario currentUser = this.usuarios[userIndex];
+				if (currentUser.borrado) return false;
 
-			int[] titularesIds = currentCajaAhorro.getTitularesIds();
+				int[] titularesIds = currentCajaAhorro.getTitularesIds();
 
-			if (accion == 1) {
-				if (!currentCajaAhorro.addTitular(currentUser)) return false;
+				if (accion == 1) {
+					if (!currentCajaAhorro.addTitular(currentUser)) return false;
 
-				foreach(int titularId in titularesIds) {
-					int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
-					Usuario userToUpdate = this.usuarios[currentUserIndex];
-					userToUpdate.agregarCajaAhorro(currentCajaAhorro);
+					foreach(int titularId in titularesIds) {
+						int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
+						Usuario userToUpdate = this.usuarios[currentUserIndex];
+						userToUpdate.agregarCajaAhorro(currentCajaAhorro);
+					}
+				} else if (accion == 2) {
+					if (!currentCajaAhorro.removeTitular(currentUser)) return false;
+
+					foreach(int titularId in titularesIds) {
+						int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
+						Usuario userToUpdate = this.usuarios[currentUserIndex];
+						userToUpdate.deleteCajaAhorro(currentCajaAhorro.id);
+					}
 				}
-			} else if (accion == 2) {
-				if (!currentCajaAhorro.removeTitular(currentUser)) return false;
 
-				foreach(int titularId in titularesIds) {
-					int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
-					Usuario userToUpdate = this.usuarios[currentUserIndex];
-					userToUpdate.deleteCajaAhorro(currentCajaAhorro.id);
-				}
+				this.cajasAhorro[cajaIndex] = currentCajaAhorro;
+				return true;
+			} catch (Exception ex) {
+				return false;
 			}
-
-			this.cajasAhorro[cajaIndex] = currentCajaAhorro;
-			return true;
 		}
 
 		public bool iniciarSesion(int dni, string pass) {
-			int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
-			if (userIndex == -1) return false;
+			try {
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
+				if (userIndex == -1) return false;
 
-			Usuario currentUser = this.usuarios[userIndex];
-			if (currentUser.borrado || currentUser.bloqueado) return false;
+				Usuario currentUser = this.usuarios[userIndex];
+				if (currentUser.borrado || currentUser.bloqueado) return false;
 
-			if (currentUser.pass != pass) {
-				currentUser.intentosFallidos++;
-				if(currentUser.intentosFallidos >= 3) {
-					currentUser.bloqueado = true;
+				if (currentUser.pass != pass) {
+					currentUser.intentosFallidos++;
+					if(currentUser.intentosFallidos >= 3) {
+						currentUser.bloqueado = true;
+					}
+					this.usuarios[userIndex] = currentUser;
+					return false;
 				}
-				this.usuarios[userIndex] = currentUser;
+
+				this.currentUser = currentUser;
+				return true;
+			} catch (Exception ex) {
 				return false;
 			}
-
-			this.currentUser = currentUser;
-			return true;
 		}
 
 		public List<Movimiento> detalleCajaAhorro(int id) {
@@ -176,102 +204,130 @@ namespace WinFormsApp1 {
 		}
 
 		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {
-			int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
-			if (cajaAhorroIndex == -1) return false;
+			try {
+				int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
+				if (cajaAhorroIndex == -1) return false;
 
-			int movimientoId = (this.movimientos.Count)+1;
-			Movimiento newMovimiento = new Movimiento(movimientoId, movimiento.detalle, movimiento.monto, movimiento.cajaAhorro);
-			this.movimientos.Add(newMovimiento);
+				int movimientoId = (this.movimientos.Count)+1;
+				Movimiento newMovimiento = new Movimiento(movimientoId, movimiento.detalle, movimiento.monto, movimiento.cajaAhorro);
+				this.movimientos.Add(newMovimiento);
 
-			cajaAhorro.addMovimiento(newMovimiento);
-			this.cajasAhorro[cajaAhorroIndex] = cajaAhorro;
-	
-			int[] titularesIds = cajaAhorro.getTitularesIds();
+				cajaAhorro.addMovimiento(newMovimiento);
+				this.cajasAhorro[cajaAhorroIndex] = cajaAhorro;
+		
+				int[] titularesIds = cajaAhorro.getTitularesIds();
 
-			foreach(int titularId in titularesIds) {
-				int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
-				Usuario userToUpdate = this.usuarios[currentUserIndex];
-				userToUpdate.updateInfoCajaAhorro(cajaAhorro);
+				foreach(int titularId in titularesIds) {
+					int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
+					Usuario userToUpdate = this.usuarios[currentUserIndex];
+					userToUpdate.updateInfoCajaAhorro(cajaAhorro);
+				}
+
+				return true;
+			} catch (Exception ex) {
+				return false;
 			}
-
-			return true;
 		}
 
 		public bool depositar(int cajaAhorroId, float monto) {
-			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
-			if (cajaAhorroIndex == -1) return false;
+			try {
+				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
+				if (cajaAhorroIndex == -1) return false;
 
-			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
-			if (currentCajaAhorro.borrado) return false;
+				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+				if (currentCajaAhorro.borrado) return false;
 
-			currentCajaAhorro.depositar(monto);
+				currentCajaAhorro.depositar(monto);
 
-			Movimiento movimiento = new Movimiento("deposito", monto, currentCajaAhorro);
+				Movimiento movimiento = new Movimiento("deposito", monto, currentCajaAhorro);
 
-			if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
+				if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
 
-			return true;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool retirar(int cajaAhorroId, float monto) {
-			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
-			if (cajaAhorroIndex == -1) return false;
+			try {
+				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
+				if (cajaAhorroIndex == -1) return false;
 
-			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
-			if (currentCajaAhorro.borrado) return false;
+				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+				if (currentCajaAhorro.borrado) return false;
 
-			if (!currentCajaAhorro.retirar(monto)) return false;
+				if (!currentCajaAhorro.retirar(monto)) return false;
 
-			Movimiento movimiento = new Movimiento("retiro", monto, currentCajaAhorro);
+				Movimiento movimiento = new Movimiento("retiro", monto, currentCajaAhorro);
 
-			if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
+				if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
 
-			return true;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool transferir(int cajaAhorroOrigenId, int cajaAhorroDestinoId, float monto) {
-			if (!this.retirar(cajaAhorroOrigenId, monto)) return false;
+			try {
+				if (!this.retirar(cajaAhorroOrigenId, monto)) return false;
 
-			if (!this.depositar(cajaAhorroDestinoId, monto)) return false;
+				if (!this.depositar(cajaAhorroDestinoId, monto)) return false;
 
-			return true;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool altaPago(Pago pago, int usuarioId) {
-			int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
-			if (userIndex == -1) return false;
+			try {
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
+				if (userIndex == -1) return false;
 
-			Usuario currentUser = this.usuarios[userIndex];
-			if (currentUser.borrado) return false;
+				Usuario currentUser = this.usuarios[userIndex];
+				if (currentUser.borrado) return false;
 
-			int pagoId = (this.pagos.Count)+1;
-			Pago newPago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
-			if (!currentUser.agregarPago(newPago)) return false;
+				int pagoId = (this.pagos.Count)+1;
+				Pago newPago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
+				if (!currentUser.agregarPago(newPago)) return false;
 
-			this.pagos.Add(newPago);
-			return true;
+				this.pagos.Add(newPago);
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool modificarPago(int pagoId, string nombre, float monto, bool pagado) {
-			int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
-			if (pagoIndex == -1) return false;
+			try {
+				int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
+				if (pagoIndex == -1) return false;
 
-			Pago currentPago = this.pagos[pagoIndex];
-			if (currentPago.borrado) return false;
+				Pago currentPago = this.pagos[pagoIndex];
+				if (currentPago.borrado) return false;
 
-			currentPago.updateInfo(nombre, monto, pagado);
-			this.pagos[pagoIndex] = currentPago;
-			return true;
+				currentPago.updateInfo(nombre, monto, pagado);
+				this.pagos[pagoIndex] = currentPago;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public bool bajaPago(int pagoId) {
-			int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
-			if (pagoIndex == -1) return false;
+			try {
+				int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
+				if (pagoIndex == -1) return false;
 
-			Pago currentPago = this.pagos[pagoIndex];
-			currentPago.borrar();
-			this.pagos[pagoIndex] = currentPago;
-			return true;
+				Pago currentPago = this.pagos[pagoIndex];
+				currentPago.borrar();
+				this.pagos[pagoIndex] = currentPago;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public List<Pago> obtenerPagos() {
@@ -279,8 +335,12 @@ namespace WinFormsApp1 {
 		}
 
 		public bool cerrarSesion() {
-			this.currentUser = null;
+			try {
+				this.currentUser = null;
 			return true;
+			} catch (Exception ex) {
+				return false;
+			}
 		}
 
 		public List<Usuario> obtenerUsuarios() {
