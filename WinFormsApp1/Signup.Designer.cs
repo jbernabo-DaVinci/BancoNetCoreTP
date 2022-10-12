@@ -61,7 +61,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(242, 211);
+            this.label2.Location = new System.Drawing.Point(242, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 0;
@@ -83,7 +83,7 @@
             this.signupPassBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.signupPassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signupPassBox.ForeColor = System.Drawing.Color.White;
-            this.signupPassBox.Location = new System.Drawing.Point(332, 210);
+            this.signupPassBox.Location = new System.Drawing.Point(332, 200);
             this.signupPassBox.Name = "signupPassBox";
             this.signupPassBox.PasswordChar = '*';
             this.signupPassBox.PlaceholderText = "12345678";
@@ -124,6 +124,7 @@
             // toLoginButton
             // 
             this.toLoginButton.BackColor = System.Drawing.Color.Transparent;
+            this.toLoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.toLoginButton.FlatAppearance.BorderSize = 0;
             this.toLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toLoginButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -146,7 +147,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(332, 226);
+            this.label7.Location = new System.Drawing.Point(332, 216);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 2);
             this.label7.TabIndex = 8;

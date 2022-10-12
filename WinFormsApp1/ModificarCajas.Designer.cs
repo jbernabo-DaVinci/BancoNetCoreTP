@@ -28,40 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(148, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Caja de Ahorro";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(67, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 23);
-            this.comboBox1.TabIndex = 9;
             // 
             // dataGridView4
             // 
@@ -105,24 +85,6 @@
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 25;
             this.label2.Text = "Detalles";
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(67, 265);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 27);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Crear Caja";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -194,11 +156,30 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(105, 239);
+            this.label4.Location = new System.Drawing.Point(120, 239);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 15);
             this.label4.TabIndex = 32;
             this.label4.Text = "Cajas";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(67, 62);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(285, 23);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(148, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Caja de Ahorro";
             // 
             // ModificarCajas
             // 
@@ -211,7 +192,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -225,19 +205,17 @@
         }
 
         #endregion
-
-        private Label label1;
-        private ComboBox comboBox1;
         private DataGridView dataGridView4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private Label label2;
-        private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
         private Label label3;
         private Label label4;
+        private ComboBox comboBox1;
+        private Label label1;
     }
 }
