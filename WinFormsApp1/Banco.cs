@@ -248,7 +248,7 @@ namespace WinFormsApp1 {
 			Pago newPago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
 			if (!currentUser.agregarPago(newPago)) return false;
 
-			this.Pagos.Add(newPago);
+			this.pagos.Add(newPago);
 			return true;
 		}
 
