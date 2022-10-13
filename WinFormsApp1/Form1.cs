@@ -7,7 +7,7 @@ namespace WinFormsApp1 {
 		Signup signup;
 		Login login;
 		Home home;
-		string usuario;
+		string name;
 
 		public Form1() {
 			InitializeComponent();
@@ -32,11 +32,12 @@ namespace WinFormsApp1 {
 				return;
 			}
 
-			this.usuario = this.banco.getNombreCurrentUser();
+			this.name = this.banco.getNombreCurrentUser();
 			MessageBox.Show("Log In Correcto!!");
 
 			this.login.Close();
-			this.home = new Home(this.banco);
+			this.home = new Home(new object[] {this.name, this.banco});
+			this.home.name = this.name;
 			this.home.MdiParent = this;
 			this.home.Show();
 		}
