@@ -6,12 +6,13 @@ namespace WinFormsApp1 {
 		private Banco banco;
 		Signup signup;
 		Login login;
+		Home home;
 		string usuario;
 
 		public Form1() {
 			InitializeComponent();
 			this.banco = new Banco();
-			this.signup = new Signup(banco);
+			this.signup = new Signup(this.banco);
 			this.signup.MdiParent = this;
 			this.signup.TransfEvento += this.TransfDelegadoSignup;
 			this.signup.Show();
@@ -19,7 +20,7 @@ namespace WinFormsApp1 {
 
 		public void TransfDelegadoSignup() {
 			this.signup.Close();
-			this.login = new Login(banco);
+			this.login = new Login(this.banco);
 			this.login.MdiParent = this;
 			this.login.TransfEvento += this.TransfDelegadoLogin;
 			this.login.Show();
@@ -33,6 +34,11 @@ namespace WinFormsApp1 {
 
 			this.usuario = this.banco.getNombreCurrentUser();
 			MessageBox.Show("Log In Correcto!!");
+
+			this.login.Close();
+			this.home = new Home(this.banco);
+			this.home.MdiParent = this;
+			this.home.Show();
 		}
 	}
 }
