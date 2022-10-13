@@ -16,16 +16,16 @@ namespace WinFormsApp1 {
 		public Banco banco;
 
 		public Home(string name, Banco banco) {
-			this.banco = banco
+			this.banco = banco;
 			this.name = name;
 		}
 
 		public Home(object[] args) {
 			InitializeComponent();
-			this.datos = new List<List<string>>();
+			this.banco = (Banco)args[1];
 			this.argumentos = args;
 			label2.Text = (string)args[0];
-			this.banco = (Banco)args[1];
+			this.datos = new List<List<string>>();
 		}
 
 		private void button1_Click(object sender, EventArgs e) {
