@@ -11,32 +11,34 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1 {
 	public partial class Signup : Form {
-		public string usuario;
-		public string pass;
-		public Banco elBanco;
+		public Banco banco;
 
 		public TransfDelegado TransfEvento;
 
-		public Signup(Banco b) {
+		public Signup(Banco banco) {
 			InitializeComponent();
-			elBanco = b;
+			this.banco = banco;
 		}
 
-		public delegate void TransfDelegado(string usuario, string pass);
+		public delegate void TransfDelegado();
 
 		private void signupButton_Click(object sender, EventArgs e) {
-			int dni = Int32.Parse(textBox1.Text);
+			int dni;
+			bool isParsable = Int32.TryParse(textBox1.Text, out dni);
 			string name = signupUserBox.Text;
 			string pass = signupPassBox.Text;
-			if (!elBanco.agregarUsuario(dni, name, pass)) {
+			if (!isParsable || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(pass)) {
+				MessageBox.Show("Error en el signUp");
+				return;
+			}
+
+			if (!this.banco.agregarUsuario(dni, name, pass)) {
 				MessageBox.Show("No se pudo agregar el usuario");
 				return;
 			}
 
 			MessageBox.Show("Usuario Agregado con éxito");
-			usuario = signupUserBox.Text;
-			pass = signupPassBox.Text;
-			this.TransfEvento(usuario, pass);
+			this.TransfEvento();
 		}
 	}
 }

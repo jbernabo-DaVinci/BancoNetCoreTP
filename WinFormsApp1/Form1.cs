@@ -7,33 +7,32 @@ namespace WinFormsApp1 {
 		Signup signup;
 		Login login;
 		string usuario;
-		string pass;
 
 		public Form1() {
 			InitializeComponent();
-			banco = new Banco();
-			signup = new Signup(banco);
-			signup.MdiParent = this;
-			signup.TransfEvento += TransfDelegado;
-			signup.Show();
+			this.banco = new Banco();
+			this.signup = new Signup(banco);
+			this.signup.MdiParent = this;
+			this.signup.TransfEvento += this.TransfDelegadoSignup;
+			this.signup.Show();
 		}
 
-		public void TransfDelegado(string usuario, string pass) {
-			signup.Close();
-			login = new Login(banco);
-			login.MdiParent = this;
-			login.TransfEvento += TransfDelegado2;
-			login.Show();
+		public void TransfDelegadoSignup() {
+			this.signup.Close();
+			this.login = new Login(banco);
+			this.login.MdiParent = this;
+			this.login.TransfEvento += this.TransfDelegadoLogin;
+			this.login.Show();
 		}
 
-		public void TransfDelegado2(string usuario, string pass) {
-			this.usuario = usuario;
-			this.pass = pass;
-			if (banco.iniciarSesion(usuario,pass)) {
-				MessageBox.Show("Log In Correcto!!");
-			} else {
+		public void TransfDelegadoLogin(int dni, string pass) {
+			if (!this.banco.iniciarSesion(dni, pass)) {
 				MessageBox.Show("Error en el log In");
+				return;
 			}
+
+			this.usuario = this.banco.getNombreCurrentUser();
+			MessageBox.Show("Log In Correcto!!");
 		}
 	}
 }

@@ -177,6 +177,10 @@ namespace WinFormsApp1 {
 			}
 		}
 
+		public string getNombreCurrentUser() {
+			return this.currentUser.nombre;
+		}
+
 		public List<Movimiento> detalleCajaAhorro(int id) {
 			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == id);
 			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];

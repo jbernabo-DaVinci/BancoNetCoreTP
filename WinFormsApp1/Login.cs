@@ -10,49 +10,37 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static WinFormsApp1.Signup;
 
-namespace WinFormsApp1
-{
-    public partial class Login : Form
-    {
-        public string dni;
-        public string pass;
-        public Banco elBanco;
+namespace WinFormsApp1 {
+	public partial class Login : Form {
+		public Banco banco;
+		public TransfDelegado TransfEvento;
 
-        public TransfDelegado TransfEvento;
-        public Login(Banco b)
-        {
-            InitializeComponent();
-            elBanco = b;
-            
-        }
+		public Login(Banco banco) {
+			InitializeComponent();
+			this.banco = banco;
+		}
 
-        
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            dni = loginDNIBox.Text;
-            pass = loginPassBox.Text;
-            if (dni != null && dni != "")
-            {
-                this.TransfEvento(dni, pass);
-            }
-            else
-                MessageBox.Show("Debe ingresar un dni!");
-        }
+		private void loginButton_Click(object sender, EventArgs e) {
+			int dni;
+			bool isParsable = Int32.TryParse(loginDNIBox.Text, out dni);
+			string pass = loginPassBox.Text;
+			if (!isParsable || string.IsNullOrEmpty(pass)) {
+				MessageBox.Show("Error en el login");
+				return;
+			}
+			this.TransfEvento(dni, pass);
+		}
 
-        public delegate void TransfDelegado(string dni, string pass);
+		public delegate void TransfDelegado(string dni, string pass);
 
-        private void hideEye_Click(object sender, EventArgs e)
-        {
-            this.hideEye.Visible = false;
-            this.showEye.Visible = true;
-        }
+		private void hideEye_Click(object sender, EventArgs e) {
+			this.hideEye.Visible = false;
+			this.showEye.Visible = true;
+		}
 
-        private void showEye_Click(object sender, EventArgs e)
-        {
-            this.showEye.Visible = false;
-            this.hideEye.Visible = true;
-        }
-
-        
-    }
+		private void showEye_Click(object sender, EventArgs e) {
+			this.showEye.Visible = false;
+			this.hideEye.Visible = true;
+		}
+	}
 }
