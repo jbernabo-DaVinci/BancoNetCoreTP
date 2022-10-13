@@ -178,7 +178,7 @@ namespace WinFormsApp1 {
 		}
 
 		public string getNombreCurrentUser() {
-			return this.currentUser.nombre;
+			return this.currentUser.nombre.ToString();
 		}
 
 		public List<Movimiento> detalleCajaAhorro(int id) {
