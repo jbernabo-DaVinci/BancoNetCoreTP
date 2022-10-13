@@ -56,7 +56,6 @@ namespace WinFormsApp1 {
 
 				Usuario currentUser = this.usuarios[userIndex];
 				currentUser.updateInfo(nombre, pass, mail);
-				this.usuarios[userIndex] = currentUser;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -70,7 +69,6 @@ namespace WinFormsApp1 {
 				Usuario currentUser = this.usuarios[userIndex];
 				currentUser.borrar();
 				//TODO: We will remove the rest of products of user before remove user.
-				this.usuarios[userIndex] = currentUser;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -126,7 +124,6 @@ namespace WinFormsApp1 {
 					currentUser.deleteCajaAhorro(currentCajaAhorro.id);
 				}
 
-				this.cajasAhorro[cajaIndex] = currentCajaAhorro;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -150,23 +147,10 @@ namespace WinFormsApp1 {
 
 				if (accion == 1) {
 					if (!currentCajaAhorro.addTitular(currentUser)) return false;
-
-					foreach(int titularId in titularesIds) {
-						int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
-						Usuario userToUpdate = this.usuarios[currentUserIndex];
-						userToUpdate.agregarCajaAhorro(currentCajaAhorro);
-					}
 				} else if (accion == 2) {
 					if (!currentCajaAhorro.removeTitular(currentUser)) return false;
-
-					foreach(int titularId in titularesIds) {
-						int currentUserIndex = this.usuarios.FindIndex(usuario => usuario.id == titularId);
-						Usuario userToUpdate = this.usuarios[currentUserIndex];
-						userToUpdate.deleteCajaAhorro(currentCajaAhorro.id);
-					}
 				}
 
-				this.cajasAhorro[cajaIndex] = currentCajaAhorro;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -182,11 +166,7 @@ namespace WinFormsApp1 {
 				if (currentUser.borrado || currentUser.bloqueado) return false;
 
 				if (currentUser.pass != pass) {
-					currentUser.intentosFallidos++;
-					if(currentUser.intentosFallidos >= 3) {
-						currentUser.bloqueado = true;
-					}
-					this.usuarios[userIndex] = currentUser;
+					currentUser.failLogin();
 					return false;
 				}
 
@@ -229,7 +209,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool depositar(int cajaAhorroId, float monto) {
+		public bool depositar(int cajaAhorroId, float monto, bool isTransferencia = false) {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
 				if (cajaAhorroIndex == -1) return false;
@@ -239,7 +219,9 @@ namespace WinFormsApp1 {
 
 				currentCajaAhorro.depositar(monto);
 
-				Movimiento movimiento = new Movimiento("deposito", monto, currentCajaAhorro);
+				string detalle = isTransferencia? "transferencia" : "deposito";
+
+				Movimiento movimiento = new Movimiento(detalle, monto, currentCajaAhorro);
 
 				if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
 
@@ -249,7 +231,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool retirar(int cajaAhorroId, float monto) {
+		public bool retirar(int cajaAhorroId, float monto, bool isTransferencia = false) {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
 				if (cajaAhorroIndex == -1) return false;
@@ -259,7 +241,9 @@ namespace WinFormsApp1 {
 
 				if (!currentCajaAhorro.retirar(monto)) return false;
 
-				Movimiento movimiento = new Movimiento("retiro", monto, currentCajaAhorro);
+				string detalle = isTransferencia? "transferencia" : "retiro";
+
+				Movimiento movimiento = new Movimiento(detalle, monto, currentCajaAhorro);
 
 				if (!this.altaMovimiento(movimiento, currentCajaAhorro)) return false;
 
@@ -271,9 +255,9 @@ namespace WinFormsApp1 {
 
 		public bool transferir(int cajaAhorroOrigenId, int cajaAhorroDestinoId, float monto) {
 			try {
-				if (!this.retirar(cajaAhorroOrigenId, monto)) return false;
+				if (!this.retirar(cajaAhorroOrigenId, monto, true)) return false;
 
-				if (!this.depositar(cajaAhorroDestinoId, monto)) return false;
+				if (!this.depositar(cajaAhorroDestinoId, monto, true)) return false;
 
 				return true;
 			} catch (Exception ex) {
@@ -309,7 +293,6 @@ namespace WinFormsApp1 {
 				if (currentPago.borrado) return false;
 
 				currentPago.updateInfo(nombre, monto, pagado);
-				this.pagos[pagoIndex] = currentPago;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -323,7 +306,6 @@ namespace WinFormsApp1 {
 
 				Pago currentPago = this.pagos[pagoIndex];
 				currentPago.borrar();
-				this.pagos[pagoIndex] = currentPago;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -337,7 +319,7 @@ namespace WinFormsApp1 {
 		public bool cerrarSesion() {
 			try {
 				this.currentUser = null;
-			return true;
+				return true;
 			} catch (Exception ex) {
 				return false;
 			}
