@@ -31,7 +31,7 @@ namespace WinFormsApp1 {
 			this.TransfEvento(dni, pass);
 		}
 
-		public delegate void TransfDelegado(string dni, string pass);
+		public delegate void TransfDelegado(int dni, string pass);
 
 		private void hideEye_Click(object sender, EventArgs e) {
 			this.hideEye.Visible = false;
