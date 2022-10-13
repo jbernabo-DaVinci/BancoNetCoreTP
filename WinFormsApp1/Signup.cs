@@ -9,55 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace WinFormsApp1
-{
-    public partial class Signup : Form
-    {
-        public string usuario;
-        public string pass;
-        public Banco elBanco;
+namespace WinFormsApp1 {
+	public partial class Signup : Form {
+		public string usuario;
+		public string pass;
+		public Banco elBanco;
 
-        public TransfDelegado TransfEvento;
+		public TransfDelegado TransfEvento;
 
-        public Signup(Banco b)
-        {
-            InitializeComponent();
-            elBanco = b;
-        }
+		public Signup(Banco b) {
+			InitializeComponent();
+			elBanco = b;
+		}
 
-        public delegate void TransfDelegado(string usuario, string pass);
+		public delegate void TransfDelegado(string usuario, string pass);
 
-        private void signupButton_Click(object sender, EventArgs e)
-        {
-            if (elBanco.agregarUsuario(signupUserBox.Text, signupPassBox.Text))
-            {
-                MessageBox.Show("Usuario Agregado con éxito");
-                usuario = signupUserBox.Text;
-                pass = signupPassBox.Text;
-                this.TransfEvento(usuario, pass);
-            }
-            else
-                MessageBox.Show("No se pudo agregar el usuario");
-        }
+		private void signupButton_Click(object sender, EventArgs e) {
+			int dni = Int32.Parse(textBox1.Text);
+			string name = signupUserBox.Text;
+			string pass = signupPassBox.Text;
+			if (!elBanco.agregarUsuario(dni, name, pass)) {
+				MessageBox.Show("No se pudo agregar el usuario");
+				return;
+			}
 
-        private void signupPassBoxConfirm_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signupUserBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signupPassBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Signup_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
+			MessageBox.Show("Usuario Agregado con éxito");
+			usuario = signupUserBox.Text;
+			pass = signupPassBox.Text;
+			this.TransfEvento(usuario, pass);
+		}
+	}
 }

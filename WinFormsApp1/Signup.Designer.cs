@@ -76,7 +76,6 @@
             this.signupUserBox.Name = "signupUserBox";
             this.signupUserBox.Size = new System.Drawing.Size(134, 16);
             this.signupUserBox.TabIndex = 1;
-            this.signupUserBox.TextChanged += new System.EventHandler(this.signupUserBox_TextChanged);
             // 
             // signupPassBox
             // 
@@ -90,7 +89,6 @@
             this.signupPassBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.signupPassBox.Size = new System.Drawing.Size(134, 16);
             this.signupPassBox.TabIndex = 2;
-            this.signupPassBox.TextChanged += new System.EventHandler(this.signupPassBox_TextChanged);
             // 
             // signupButton
             // 
@@ -203,7 +201,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Signup";
             this.Text = "Signup";
-            this.Load += new System.EventHandler(this.Signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
