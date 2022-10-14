@@ -133,10 +133,10 @@ namespace WinFormsApp1 {
 
 				if (accion == 1) {
 					if (!currentCajaAhorro.addTitular(currentUser)) return false;
-					if (!currentUser.agregarCajaAhorro(cajaAhorro)) return false;
+					if (!currentUser.agregarCajaAhorro(currentCajaAhorro)) return false;
 				} else if (accion == 2) {
 					if (!currentCajaAhorro.removeTitular(currentUser)) return false;
-					if (!currentUser.removerCajaAhorro(cajaAhorro)) return false;
+					if (!currentUser.removerCajaAhorro(currentCajaAhorro)) return false;
 				}
 
 				return true;
@@ -152,8 +152,7 @@ namespace WinFormsApp1 {
 
 				int movimientoId = (this.movimientos.Count)+1;
 				Movimiento newMovimiento = new Movimiento(movimientoId, movimiento.detalle, movimiento.monto, movimiento.cajaAhorro);
-				if(!cajaAhorro.addMovimiento(newMovimiento)) return false;
-
+				cajaAhorro.addMovimiento(newMovimiento);
 				this.movimientos.Add(newMovimiento);
 				return true;
 			} catch (Exception ex) {

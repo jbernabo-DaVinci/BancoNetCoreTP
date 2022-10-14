@@ -67,7 +67,7 @@ namespace WinFormsApp1 {
 		public bool removerCajaAhorro(CajaAhorro cajaAhorro) {
 			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
 			if (cajaIndex == -1) return false;
-			this.cajasAhorro.RemoveAt(cajaAhorro);
+			this.cajasAhorro.RemoveAt(cajaIndex);
 			return true;
 		}
 
