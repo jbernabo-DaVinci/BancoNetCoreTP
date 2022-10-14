@@ -31,19 +31,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.closeSesionButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -87,6 +85,22 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pagos";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(527, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 57);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Ver Detalles";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -123,13 +137,45 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Caja de Ahorro";
             // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(522, 140);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(64, 61);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Crear Caja de Ahorro";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.onCreateNewCajaAhorro);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button4.FlatAppearance.BorderSize = 2;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(522, 16);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(64, 57);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "Ver Detalles";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select,
             this.Column1,
-            this.Column3,
             this.Column2});
             this.dataGridView1.Location = new System.Drawing.Point(6, 16);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -166,83 +212,21 @@
             this.closeSesionButton.Text = "Cerrar Sesión";
             this.closeSesionButton.UseVisualStyleBackColor = false;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(522, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(64, 57);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Ver Detalles";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(527, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 57);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Ver Detalles";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Select
-            // 
-            this.Select.HeaderText = "Select";
-            this.Select.Name = "Select";
-            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // Column1
             // 
-            this.Column1.HeaderText = "Fecha";
+            this.Column1.HeaderText = "CBU";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Detalle";
-            this.Column3.Name = "Column3";
-            // 
             // Column2
             // 
-            this.Column2.HeaderText = "Monto";
+            this.Column2.HeaderText = "Saldo";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(522, 140);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 61);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Crear Caja de Ahorro";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.onCreateNewCajaAhorro);
             // 
             // Home
             // 
@@ -283,10 +267,8 @@
         private Button closeSesionButton;
         private Button button4;
         private Button button1;
-        private DataGridViewCheckBoxColumn Select;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column2;
         private Button button2;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
     }
 }
