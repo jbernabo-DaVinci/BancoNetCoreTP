@@ -45,5 +45,13 @@ namespace WinFormsApp1 {
 				dataGridView1.Rows.Add(cajaAhorro.toArray());
 			}
 		}
+
+		public void onDetalleCajaAhorro(object sender, EventArgs e)
+		{
+            MessageBox.Show("hola");
+            MessageBox.Show(this.dataGridView1.SelectedRows.Count.ToString());
+			
+		}
+
 	}
 }

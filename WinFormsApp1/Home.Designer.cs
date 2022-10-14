@@ -170,6 +170,8 @@
             this.button4.TabIndex = 34;
             this.button4.Text = "Ver Detalles";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.onDetalleCajaAhorro);
+
             // 
             // dataGridView1
             // 
