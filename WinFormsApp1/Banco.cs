@@ -81,6 +81,7 @@ namespace WinFormsApp1 {
 				CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId);
 				cajaAhorro.addTitular(this.currentUser);
 				this.cajasAhorro.Add(cajaAhorro);
+				this.currentUser.agregarCajaAhorro(cajaAhorro);
 				return true;
 			} catch (Exception ex) {
 				return false;
