@@ -26,18 +26,19 @@ namespace WinFormsApp1 {
 			this.argumentos = args;
 			label2.Text = (string)args[0];
 			this.datos = new List<List<string>>();
+			this.refreshDataCajasAhorro();
 		}
 
 		private void button1_Click(object sender, EventArgs e) {
-			this.refreshData();
+			this.refreshDataCajasAhorro();
 		}
 
-		private void refreshData() {
-			//borro los datos
+		private void refreshDataCajasAhorro() {
 			dataGridView1.Rows.Clear();
-			//agrego lo nuevo
-			foreach (Usuario user in this.banco.obtenerUsuarios())
-				dataGridView1.Rows.Add(user.toArray());
+
+			foreach (CajaAhorro cajaAhorro in this.banco.obtenerCajasAhorro()) {
+				dataGridView1.Rows.Add(cajaAhorro.toArray());
+			}
 		}
 	}
 }
