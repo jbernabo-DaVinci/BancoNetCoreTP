@@ -92,6 +92,13 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
+		public void failLogin() {
+			this.intentosFallidos++;
+			if(this.intentosFallidos >= 3) {
+				this.bloqueado = true;
+			}
+		}
+
 		public List<Pago> obtenerPagos() {
 			List<Pago> pagosFiltered = new List<Pago>();
 			foreach(Pago currentPago in this.pagos) {

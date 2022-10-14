@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\boszn\\.nuget\\packages\\": {}
+    "C:\\Users\\SRV\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\boszn\\OneDrive\\Documents\\GitHub\\BancoNetCoreTP\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 5\\Plataformas de Desarrollo\\TP_Plataformas(Banco)\\WinFormsApp1\\WinFormsApp1.csproj",
       "projectName": "WinFormsApp1",
-      "projectPath": "C:\\Users\\boszn\\OneDrive\\Documents\\GitHub\\BancoNetCoreTP\\WinFormsApp1\\WinFormsApp1.csproj",
-      "packagesPath": "C:\\Users\\boszn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\boszn\\OneDrive\\Documents\\GitHub\\BancoNetCoreTP\\WinFormsApp1\\obj\\",
+      "projectPath": "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 5\\Plataformas de Desarrollo\\TP_Plataformas(Banco)\\WinFormsApp1\\WinFormsApp1.csproj",
+      "packagesPath": "C:\\Users\\SRV\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 5\\Plataformas de Desarrollo\\TP_Plataformas(Banco)\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\boszn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SRV\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
