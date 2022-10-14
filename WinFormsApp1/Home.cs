@@ -29,7 +29,12 @@ namespace WinFormsApp1 {
 			this.refreshDataCajasAhorro();
 		}
 
-		private void button1_Click(object sender, EventArgs e) {
+		private void onCreateNewCajaAhorro(object sender, EventArgs e) {
+			if(!this.banco.crearCajaAhorro()) {
+				MessageBox.Show("Error al crear nueva caja de ahorro");
+				return;
+			}
+
 			this.refreshDataCajasAhorro();
 		}
 

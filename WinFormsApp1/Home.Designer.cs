@@ -243,7 +243,7 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "Crear Caja de Ahorro";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.onCreateNewCajaAhorro);
             // 
             // Home
             // 
