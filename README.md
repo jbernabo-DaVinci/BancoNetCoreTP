@@ -10,12 +10,13 @@ También podrán agregar nuevas cajas de ahorro, eliminarlas y/o modificarlas, g
 Todo esto mediante una interfáz gráfica minimalista y sencilla pero que internamente se sostiene por un código complejo que se rige por los conceptos de la Programación Orientada a Objetos.
 
 Este proyecto es un trabajo de colaboración de sus 4 integrantes:
-- Juan E Bernabo
+- Juan E Bernabó
 - Nicolas E Bösz
-- Paul G Mac Allister
 - Francisco G Rivas
+- Paul G Mac Allister
 
-## El estado del proyecto:
+
+## El estado del proyecto
 Actualmente este proyecto cuenta con una clase denominada Form que es la interfaz gráfica WindowsForm. Esta se encarga de recibir los datos ingresados por el usuario y pasarlos al objeto Banco.
 
 Por su parte, la clase Banco es la principal y más importante clase, ya que en esta están contenidas todas las listas de Usuarios registrados, las listas de Cajas de Ahorro, el listado de Tarjetas y el listado de Plazo Fijo.
@@ -29,3 +30,6 @@ Para la 2da entrega, se añadirán las interfaces de Tarjeta y Plazo Fijo y la a
 
 
 ## Previews
+![Signup](https://user-images.githubusercontent.com/85254638/195956440-a9d789a0-1244-45cb-ac4c-3d82113fd878.png)
+![Login](https://user-images.githubusercontent.com/85254638/195956454-242e9888-b45e-4ab0-8e4d-ef01bd754eb1.png)
+![Home](https://user-images.githubusercontent.com/85254638/195956465-9a5471a2-8f2b-4cc1-b853-58331decfe9a.png)
