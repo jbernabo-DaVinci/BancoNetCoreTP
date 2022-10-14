@@ -15,11 +15,12 @@ namespace WinFormsApp1 {
 
 		public CajaAhorro() { }
 
-		public CajaAhorro(int id, Usuario titular) {
+		public CajaAhorro(int id) {
 			this.id = id;
 			this.cbu = this.createCBU();
 			this.saldo = 0;
-			this.titulares.Add(titular);
+			this.titulares = new List<Usuario>();
+			this.movimientos = new List<Movimiento>();
 		}
 
 		private string createCBU() {

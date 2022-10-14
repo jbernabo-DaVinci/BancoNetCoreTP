@@ -78,7 +78,8 @@ namespace WinFormsApp1 {
 		public bool crearCajaAhorro() {
 			try {
 				int cajaAhorroId = (this.cajasAhorro.Count)+1;
-				CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId, this.currentUser);
+				CajaAhorro cajaAhorro = new CajaAhorro(cajaAhorroId);
+				cajasAhorro.addTitular(this.currentUser);
 				this.cajasAhorro.Add(cajaAhorro);
 				return true;
 			} catch (Exception ex) {
