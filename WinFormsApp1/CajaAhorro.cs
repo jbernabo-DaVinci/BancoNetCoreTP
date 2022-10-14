@@ -35,15 +35,6 @@ namespace WinFormsApp1 {
 			return cbu;
 		}
 
-		public int[] getTitularesIds() {
-			int cantTitulares = this.titulares.Count;
-			int[] titularesIds = new int[cantTitulares];
-			for(int i = 0; i < cantTitulares; i++) {
-				titularesIds[i] = this.titulares[i].id;
-			}
-			return titularesIds;
-		}
-
 		public bool addTitular(Usuario usuario) {
 			int userIndex = this.titulares.FindIndex(titular => titular.dni == usuario.dni);
 			if(userIndex != -1) return false;

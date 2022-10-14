@@ -57,17 +57,17 @@ namespace WinFormsApp1 {
 			this.borrado = true;
 		}
 
-		public void deleteCajaAhorro(int cajaAhorroId) {
-			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorroId);
-			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaIndex];
-			currentCajaAhorro.borrar();
-			this.cajasAhorro[cajaIndex] = currentCajaAhorro;
-		}
-
 		public bool agregarCajaAhorro(CajaAhorro cajaAhorro) {
 			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
 			if (cajaIndex != -1) return false;
 			this.cajasAhorro.Add(cajaAhorro);
+			return true;
+		}
+
+		public bool removerCajaAhorro(CajaAhorro cajaAhorro) {
+			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
+			if (cajaIndex == -1) return false;
+			this.cajasAhorro.RemoveAt(cajaAhorro);
 			return true;
 		}
 
@@ -78,11 +78,6 @@ namespace WinFormsApp1 {
 				cajasAhorroFiltered.Add(currentCajaAhorro);
 			}
 			return cajasAhorroFiltered.ToList();
-		}
-
-		public void updateInfoCajaAhorro(CajaAhorro cajaAhorro) {
-			int cajaIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
-			this.cajasAhorro[cajaIndex] = cajaAhorro;
 		}
 
 		public bool agregarPago(Pago pago) {
