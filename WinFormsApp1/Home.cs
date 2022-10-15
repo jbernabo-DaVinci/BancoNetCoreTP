@@ -30,7 +30,7 @@ namespace WinFormsApp1 {
 		}
 
 		private void onCreateNewCajaAhorro(object sender, EventArgs e) {
-			if(!this.banco.crearCajaAhorro()) {
+			if (!this.banco.crearCajaAhorro()) {
 				MessageBox.Show("Error al crear nueva caja de ahorro");
 				return;
 			}
@@ -46,11 +46,21 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public void onDetalleCajaAhorro(object sender, EventArgs e)
-		{
-            MessageBox.Show("hola");
-            MessageBox.Show(this.dataGridView1.SelectedRows.Count.ToString());
-			
+		public void onDetalleCajaAhorro(object sender, EventArgs e) {
+			if (this.dataGridView1.SelectedRows.Count != 1) {
+				MessageBox.Show("Error al mostrar detalles");
+			}
+
+			int id = Int.Parse(dataGridView1[0, e.RowIndex].Value);
+			this.handleDetallesViewRedirect(id);
+		}
+
+		public void handleDetallesViewRedirect(int id) {
+			this.home.Close();
+			this.detalle = new Detalles(new object[] {this.name, this.banco, this.id});
+			this.detalle.name = this.name;
+			this.detalle.MdiParent = this;
+			this.detalle.Show();
 		}
 
 	}
