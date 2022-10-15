@@ -51,19 +51,19 @@ namespace WinFormsApp1 {
 			this.refreshDataMovimiento();
 		}
 
-		public void onClickDepositar() {
+		public void onClickDepositar(object sender, EventArgs e) {
 			float monto = float.Parse(this.textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.depositar(this.id, monto);
 			this.refreshData();
 		}
 
-		public void onClickRetirar() {
+		public void onClickRetirar(object sender, EventArgs e) {
 			float monto = float.Parse(this.textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.retirar(this.id, monto);
 			this.refreshData();
 		}
 
-		public void onClickTransferir() {
+		public void onClickTransferir(object sender, EventArgs e) {
 			float monto = float.Parse(this.textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.transferir(this.id, textBox2.Text, monto);
 			this.refreshData();

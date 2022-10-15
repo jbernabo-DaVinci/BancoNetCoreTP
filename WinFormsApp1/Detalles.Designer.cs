@@ -184,6 +184,7 @@
             this.retirar.TabIndex = 34;
             this.retirar.Text = "Retirar";
             this.retirar.UseVisualStyleBackColor = true;
+            this.retirar.Click += new System.EventHandler(this.onClickRetirar);
             // 
             // transferir
             // 
@@ -201,6 +202,7 @@
             this.transferir.TabIndex = 33;
             this.transferir.Text = "Transferir";
             this.transferir.UseVisualStyleBackColor = true;
+            this.transferir.Click += new System.EventHandler(this.onClickTransferir);
             // 
             // button1
             // 
