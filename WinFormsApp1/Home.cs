@@ -46,22 +46,15 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public void onDetalleCajaAhorro(object sender, EventArgs e) {
+		public void onDetalleCajaAhorro(object sender, DataGridViewCellEventArgs e) {
 			if (this.dataGridView1.SelectedRows.Count != 1) {
 				MessageBox.Show("Error al mostrar detalles");
 			}
 
-			int id = Int.Parse(dataGridView1[0, e.RowIndex].Value);
+			int id = Int32.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
 			this.handleDetallesViewRedirect(id);
 		}
 
-		public void handleDetallesViewRedirect(int id) {
-			this.home.Close();
-			this.detalle = new Detalles(new object[] {this.name, this.banco, this.id});
-			this.detalle.name = this.name;
-			this.detalle.MdiParent = this;
-			this.detalle.Show();
-		}
-
+		public delegate void TransfDelegado(int id);
 	}
 }

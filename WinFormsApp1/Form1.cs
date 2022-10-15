@@ -7,6 +7,7 @@ namespace WinFormsApp1 {
 		Signup signup;
 		Login login;
 		Home home;
+		Detalles detalle;
 		string name;
 
 		public Form1() {
@@ -39,7 +40,16 @@ namespace WinFormsApp1 {
 			this.home = new Home(new object[] {this.name, this.banco});
 			this.home.name = this.name;
 			this.home.MdiParent = this;
+			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.Show();
+		}
+
+		public void TransfDelegadoHomeToDetallesCajaAhorro(int id) {
+			this.home.Close();
+			this.detalle = new Detalles(new object[] {this.name, this.banco, id});
+			this.detalle.name = this.name;
+			this.detalle.MdiParent = this;
+			this.detalle.Show();
 		}
 	}
 }
