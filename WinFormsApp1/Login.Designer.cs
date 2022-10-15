@@ -67,7 +67,6 @@
             this.loginPassBox.Size = new System.Drawing.Size(134, 16);
             this.loginPassBox.TabIndex = 4;
             this.loginPassBox.UseSystemPasswordChar = true;
-           
             // 
             // loginButton
             // 
@@ -208,6 +207,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showEye)).EndInit();

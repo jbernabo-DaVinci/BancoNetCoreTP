@@ -36,10 +36,10 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.closeSesionButton = new System.Windows.Forms.Button();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3.SuspendLayout();
@@ -127,7 +127,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -155,27 +154,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.onCreateNewCajaAhorro);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(522, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(64, 57);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Ver Detalles";
-            this.button4.UseVisualStyleBackColor = false;
-
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
             this.Column1,
             this.Column2});
             this.dataGridView1.Location = new System.Drawing.Point(6, 16);
@@ -213,6 +196,11 @@
             this.closeSesionButton.TabIndex = 20;
             this.closeSesionButton.Text = "Cerrar Sesión";
             this.closeSesionButton.UseVisualStyleBackColor = false;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ID";
+            this.Column3.Name = "Column3";
             // 
             // Column1
             // 
@@ -267,9 +255,9 @@
         private DataGridView dataGridView1;
         private TabControl tabControl1;
         private Button closeSesionButton;
-        private Button button4;
         private Button button1;
         private Button button2;
+        private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
     }
