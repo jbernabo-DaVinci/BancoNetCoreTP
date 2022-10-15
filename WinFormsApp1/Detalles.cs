@@ -35,6 +35,39 @@ namespace WinFormsApp1 {
 			label1.Text = (string)args[4]; //cbu
 			this.id = (int)args[2]; //id
 			this.datos = new List<List<string>>();
+			this.refreshDataMovimiento();
 		}
+
+		private void refreshDataMovimiento() {
+			dataGridView1.Rows.Clear();
+
+			foreach (Movimiento movimiento in this.banco.onDetalleCajaAhorro(this.id)) {
+				dataGridView1.Rows.Add(movimiento.toArray());
+			}
+		}
+
+		private void refreshData() {
+			this.label7 = this.banco.getCajaAhorroSaldo();
+			this.refreshDataMovimiento();
+		}
+
+		public void onClickDepositar() {
+			int monto = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
+			this.banco.depositar(this.id, monto);
+			this.refreshData();
+		}
+
+		public void onClickRetirar() {
+			int monto = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
+			this.banco.retirar(this.id, monto);
+			this.refreshData();
+		}
+
+		public void onClickTransferir() {
+			int monto = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
+			this.banco.transferir(this.id, textBox2, monto);
+			this.refreshData();
+		}
+
 	}
 }

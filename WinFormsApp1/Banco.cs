@@ -149,6 +149,11 @@ namespace WinFormsApp1 {
 			return this.cajasAhorro[(id-1)].toArray(); // this its workign while we dont remove element in the cajasAhorro array
 		}
 
+		public string getCajaAhorroSaldo(int id) {
+			string[] dataCurrentCajaAhorro = this.getCajaAhorro();
+			return dataCurrentCajaAhorro[2];
+		}
+
 		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
@@ -208,8 +213,13 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool transferir(int cajaAhorroOrigenId, int cajaAhorroDestinoId, float monto) {
+		public bool transferir(int cajaAhorroOrigenId, string cajaAhorroDestinoCbu, float monto) {
 			try {
+				int cajaAhorroDestinoIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.cbu == cajaAhorroDestinoCbu);
+				if (cajaAhorroIndex == -1) return false;
+
+				int cajaAhorroDestinoId = this.cajasAhorro[cajaAhorroDestinoIndex].id;
+
 				if (!this.retirar(cajaAhorroOrigenId, monto, true)) return false;
 
 				if (!this.depositar(cajaAhorroDestinoId, monto, true)) return false;
