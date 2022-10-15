@@ -56,7 +56,6 @@
             // 
             // modificarCaja
             // 
-            modificarCaja.Enabled = true;
             modificarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             modificarCaja.FlatAppearance.BorderSize = 2;
             modificarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -69,7 +68,7 @@
             modificarCaja.Name = "modificarCaja";
             modificarCaja.Size = new System.Drawing.Size(106, 26);
             modificarCaja.TabIndex = 36;
-            modificarCaja.Text = "Modificar Caja";
+            modificarCaja.Text = "Editar titulares";
             modificarCaja.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -139,7 +138,6 @@
             // 
             // eliminarCaja
             // 
-            this.eliminarCaja.Enabled = true;
             this.eliminarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.eliminarCaja.FlatAppearance.BorderSize = 2;
             this.eliminarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -157,7 +155,6 @@
             // 
             // depositar
             // 
-            this.depositar.Enabled = true;
             this.depositar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.depositar.FlatAppearance.BorderSize = 2;
             this.depositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +170,6 @@
             // 
             // retirar
             // 
-            this.retirar.Enabled = true;
             this.retirar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.retirar.FlatAppearance.BorderSize = 2;
             this.retirar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -191,7 +187,6 @@
             // 
             // transferir
             // 
-            this.transferir.Enabled = true;
             this.transferir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.transferir.FlatAppearance.BorderSize = 2;
             this.transferir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -241,9 +236,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(459, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 15);
+            this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 38;
-            this.label3.Text = "CBU:";
+            this.label3.Text = "Saldo:";
             // 
             // label6
             // 
@@ -268,22 +263,22 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(321, 21);
+            this.label7.Location = new System.Drawing.Point(279, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 15);
+            this.label7.Size = new System.Drawing.Size(117, 15);
             this.label7.TabIndex = 54;
-            this.label7.Text = "__________________";
+            this.label7.Text = "______________________";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(260, 21);
+            this.label8.Location = new System.Drawing.Point(218, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 15);
+            this.label8.Size = new System.Drawing.Size(34, 15);
             this.label8.TabIndex = 53;
-            this.label8.Text = "Saldo:";
+            this.label8.Text = "CBU:";
             // 
             // label9
             // 
