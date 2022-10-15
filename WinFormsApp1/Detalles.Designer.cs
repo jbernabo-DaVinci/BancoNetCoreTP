@@ -56,7 +56,7 @@
             // 
             // modificarCaja
             // 
-            modificarCaja.Enabled = false;
+            modificarCaja.Enabled = true;
             modificarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             modificarCaja.FlatAppearance.BorderSize = 2;
             modificarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -71,7 +71,6 @@
             modificarCaja.TabIndex = 36;
             modificarCaja.Text = "Modificar Caja";
             modificarCaja.UseVisualStyleBackColor = true;
-            modificarCaja.Visible = false;
             // 
             // dataGridView1
             // 
@@ -140,7 +139,7 @@
             // 
             // eliminarCaja
             // 
-            this.eliminarCaja.Enabled = false;
+            this.eliminarCaja.Enabled = true;
             this.eliminarCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.eliminarCaja.FlatAppearance.BorderSize = 2;
             this.eliminarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -155,11 +154,10 @@
             this.eliminarCaja.TabIndex = 37;
             this.eliminarCaja.Text = "Eliminar Caja";
             this.eliminarCaja.UseVisualStyleBackColor = true;
-            this.eliminarCaja.Visible = false;
             // 
             // depositar
             // 
-            this.depositar.Enabled = false;
+            this.depositar.Enabled = true;
             this.depositar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.depositar.FlatAppearance.BorderSize = 2;
             this.depositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,11 +170,10 @@
             this.depositar.TabIndex = 35;
             this.depositar.Text = "Depositar";
             this.depositar.UseVisualStyleBackColor = true;
-            this.depositar.Visible = false;
             // 
             // retirar
             // 
-            this.retirar.Enabled = false;
+            this.retirar.Enabled = true;
             this.retirar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.retirar.FlatAppearance.BorderSize = 2;
             this.retirar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -191,11 +188,10 @@
             this.retirar.TabIndex = 34;
             this.retirar.Text = "Retirar";
             this.retirar.UseVisualStyleBackColor = true;
-            this.retirar.Visible = false;
             // 
             // transferir
             // 
-            this.transferir.Enabled = false;
+            this.transferir.Enabled = true;
             this.transferir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.transferir.FlatAppearance.BorderSize = 2;
             this.transferir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -210,7 +206,6 @@
             this.transferir.TabIndex = 33;
             this.transferir.Text = "Transferir";
             this.transferir.UseVisualStyleBackColor = true;
-            this.transferir.Visible = false;
             // 
             // button1
             // 

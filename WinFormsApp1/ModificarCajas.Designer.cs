@@ -74,7 +74,7 @@
             // 
             // button3
             // 
-            this.button3.Enabled = false;
+            this.button3.Enabled = true;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button3.FlatAppearance.BorderSize = 2;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -92,7 +92,7 @@
             // 
             // button4
             // 
-            this.button4.Enabled = false;
+            this.button4.Enabled = true;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button4.FlatAppearance.BorderSize = 2;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
