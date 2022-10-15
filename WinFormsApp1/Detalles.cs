@@ -41,31 +41,31 @@ namespace WinFormsApp1 {
 		private void refreshDataMovimiento() {
 			dataGridView1.Rows.Clear();
 
-			foreach (Movimiento movimiento in this.banco.onDetalleCajaAhorro(this.id)) {
+			foreach (Movimiento movimiento in this.banco.detalleCajaAhorro(this.id)) {
 				dataGridView1.Rows.Add(movimiento.toArray());
 			}
 		}
 
 		private void refreshData() {
-			this.label7 = this.banco.getCajaAhorroSaldo();
+			this.label7 = this.banco.getCajaAhorroSaldo(this.id);
 			this.refreshDataMovimiento();
 		}
 
 		public void onClickDepositar() {
-			int monto = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
+			float monto = (float)textBox1.Text;
 			this.banco.depositar(this.id, monto);
 			this.refreshData();
 		}
 
 		public void onClickRetirar() {
-			int monto = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
+			float monto = (float)textBox1.Text;
 			this.banco.retirar(this.id, monto);
 			this.refreshData();
 		}
 
 		public void onClickTransferir() {
-			int monto = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
-			this.banco.transferir(this.id, textBox2, monto);
+			float monto = (float)textBox1.Text;
+			this.banco.transferir(this.id, textBox2.Text.ToString, monto);
 			this.refreshData();
 		}
 
