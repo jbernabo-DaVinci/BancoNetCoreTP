@@ -14,6 +14,7 @@ namespace WinFormsApp1 {
 		List<List<string>> datos;
 		public string name;
 		public Banco banco;
+		public TransfDelegado TransfEvento;
 
 		public Home(string name, Banco banco) {
 			this.banco = banco;
@@ -52,7 +53,7 @@ namespace WinFormsApp1 {
 			}
 
 			int id = Int32.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
-			this.handleDetallesViewRedirect(id);
+			this.TransfEvento(id);
 		}
 
 		public delegate void TransfDelegado(int id);
