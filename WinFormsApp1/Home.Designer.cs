@@ -170,7 +170,6 @@
             this.button4.TabIndex = 34;
             this.button4.Text = "Ver Detalles";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.Windows.Forms.DataGridViewCellEventHandler(this.onDetalleCajaAhorro);
 
             // 
             // dataGridView1
@@ -186,6 +185,7 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(510, 194);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Click += new System.Windows.Forms.DataGridViewCellEventHandler(this.onDetalleCajaAhorro);
             // 
             // tabControl1
             // 
