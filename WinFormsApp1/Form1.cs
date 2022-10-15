@@ -46,7 +46,8 @@ namespace WinFormsApp1 {
 
 		public void TransfDelegadoHomeToDetallesCajaAhorro(int id) {
 			this.home.Close();
-			this.detalle = new Detalles(new object[] {this.name, this.banco, id});
+			CajaAhorro currentCajaAhorro = this.banco.getCajaAhorro(id);
+			this.detalle = new Detalles(new object[] {this.name, this.banco, id, currentCajaAhorro[1], currentCajaAhorro[2]});
 			this.detalle.name = this.name;
 			this.detalle.MdiParent = this;
 			this.detalle.Show();

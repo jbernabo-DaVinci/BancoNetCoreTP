@@ -145,6 +145,10 @@ namespace WinFormsApp1 {
 			}
 		}
 
+		public  getCajaAhorro(int id) {
+			return this.cajasAhorro[(id-1)].toArray(); // this its workign while we dont remove element in the cajasAhorro array
+		}
+
 		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
