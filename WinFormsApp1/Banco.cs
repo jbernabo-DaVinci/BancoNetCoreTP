@@ -150,7 +150,7 @@ namespace WinFormsApp1 {
 		}
 
 		public string getCajaAhorroSaldo(int id) {
-			string[] dataCurrentCajaAhorro = this.getCajaAhorro();
+			string[] dataCurrentCajaAhorro = this.getCajaAhorro(id);
 			return dataCurrentCajaAhorro[2];
 		}
 
@@ -216,7 +216,7 @@ namespace WinFormsApp1 {
 		public bool transferir(int cajaAhorroOrigenId, string cajaAhorroDestinoCbu, float monto) {
 			try {
 				int cajaAhorroDestinoIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.cbu == cajaAhorroDestinoCbu);
-				if (cajaAhorroIndex == -1) return false;
+				if (cajaAhorroDestinoIndex == -1) return false;
 
 				int cajaAhorroDestinoId = this.cajasAhorro[cajaAhorroDestinoIndex].id;
 

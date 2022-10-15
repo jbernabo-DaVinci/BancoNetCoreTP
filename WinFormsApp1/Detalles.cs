@@ -47,25 +47,25 @@ namespace WinFormsApp1 {
 		}
 
 		private void refreshData() {
-			this.label7 = this.banco.getCajaAhorroSaldo(this.id);
+			this.label7.Text = this.banco.getCajaAhorroSaldo(this.id);
 			this.refreshDataMovimiento();
 		}
 
 		public void onClickDepositar() {
-			float monto = (float)textBox1.Text;
+			float monto = float.Parse(this.textBox1.text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.depositar(this.id, monto);
 			this.refreshData();
 		}
 
 		public void onClickRetirar() {
-			float monto = (float)textBox1.Text;
+			float monto = float.Parse(this.textBox1.text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.retirar(this.id, monto);
 			this.refreshData();
 		}
 
 		public void onClickTransferir() {
-			float monto = (float)textBox1.Text;
-			this.banco.transferir(this.id, textBox2.Text.ToString, monto);
+			float monto = float.Parse(this.textBox1.text, System.Globalization.CultureInfo.InvariantCulture);
+			this.banco.transferir(this.id, textBox2.Text, monto);
 			this.refreshData();
 		}
 
