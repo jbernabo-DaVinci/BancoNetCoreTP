@@ -145,7 +145,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public  getCajaAhorro(int id) {
+		public string[] getCajaAhorro(int id) {
 			return this.cajasAhorro[(id-1)].toArray(); // this its workign while we dont remove element in the cajasAhorro array
 		}
 
