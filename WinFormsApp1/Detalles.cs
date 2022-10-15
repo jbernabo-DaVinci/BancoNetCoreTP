@@ -52,19 +52,19 @@ namespace WinFormsApp1 {
 		}
 
 		public void onClickDepositar() {
-			float monto = float.Parse(this.textBox1.text, System.Globalization.CultureInfo.InvariantCulture);
+			float monto = float.Parse(this.textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.depositar(this.id, monto);
 			this.refreshData();
 		}
 
 		public void onClickRetirar() {
-			float monto = float.Parse(this.textBox1.text, System.Globalization.CultureInfo.InvariantCulture);
+			float monto = float.Parse(this.textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.retirar(this.id, monto);
 			this.refreshData();
 		}
 
 		public void onClickTransferir() {
-			float monto = float.Parse(this.textBox1.text, System.Globalization.CultureInfo.InvariantCulture);
+			float monto = float.Parse(this.textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
 			this.banco.transferir(this.id, textBox2.Text, monto);
 			this.refreshData();
 		}
