@@ -31,8 +31,8 @@ namespace WinFormsApp1 {
 			this.banco = (Banco)args[1];
 			this.argumentos = args;
 			label5.Text = (string)args[0]; //name
-			label1.Text = (string)args[3]; //saldo
-			label7.Text = (string)args[4]; //cbu
+			label1.Text = (string)args[4]; //saldo
+			label7.Text = (string)args[3]; //cbu
 			this.id = (int)args[2]; //id
 			this.datos = new List<List<string>>();
 			this.refreshDataMovimiento();

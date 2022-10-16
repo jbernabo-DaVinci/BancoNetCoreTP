@@ -208,7 +208,7 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
+            this.Column1.Width = 250;
             // 
             // Column2
             // 
@@ -216,7 +216,7 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
+            this.Column2.Width = 105;
             // 
             // Home
             // 
