@@ -135,6 +135,7 @@ namespace WinFormsApp1 {
 					if (!currentCajaAhorro.addTitular(currentUser)) return false;
 					if (!currentUser.agregarCajaAhorro(currentCajaAhorro)) return false;
 				} else if (accion == 2) {
+					if (this.currentUser.id == currentUser.id) return false;
 					if (!currentCajaAhorro.removeTitular(currentUser)) return false;
 					if (!currentUser.removerCajaAhorro(currentCajaAhorro)) return false;
 				}
