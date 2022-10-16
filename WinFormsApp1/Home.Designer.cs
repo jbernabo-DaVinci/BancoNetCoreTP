@@ -217,6 +217,7 @@
             this.closeSesionButton.TabIndex = 20;
             this.closeSesionButton.Text = "Cerrar Sesión";
             this.closeSesionButton.UseVisualStyleBackColor = false;
+            this.closeSesionButton.Click += new System.EventHandler(this.onClickLoggout);
             // 
             // Home
             // 

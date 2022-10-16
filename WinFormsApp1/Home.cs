@@ -58,7 +58,7 @@ namespace WinFormsApp1 {
 			this.TransfEvento(id);
 		}
 
-		public void onClickLoggout(object sender, DataGridViewCellEventArgs e) {
+		public void onClickLoggout(object sender, EventArgs e) {
 			this.banco.cerrarSesion();
 			this.TransfEventoLoggout(0); //@TODO: improve this later
 		}
