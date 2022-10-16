@@ -133,6 +133,7 @@
             this.toLoginButton.TabIndex = 5;
             this.toLoginButton.Text = "Ya tengo un usuario";
             this.toLoginButton.UseVisualStyleBackColor = false;
+            this.toLoginButton.Click += new System.EventHandler(this.goToLogin);
             // 
             // label5
             // 

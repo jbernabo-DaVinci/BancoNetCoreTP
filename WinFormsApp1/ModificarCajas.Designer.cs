@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,9 +42,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,24 @@
             this.dataGridView4.RowTemplate.Height = 29;
             this.dataGridView4.Size = new System.Drawing.Size(603, 136);
             this.dataGridView4.TabIndex = 26;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellUser);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "DNI";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nombre";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
             // 
             // label2
             // 
@@ -88,6 +106,7 @@
             this.button3.TabIndex = 29;
             this.button3.Text = "Agregar Titular";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.onClickAgregarTitular);
             // 
             // button4
             // 
@@ -105,6 +124,7 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "Eliminar Titular";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.onClickRemoverTitular);
             // 
             // label1
             // 
@@ -165,6 +185,7 @@
             this.button1.TabIndex = 44;
             this.button1.Text = "Volver a Home";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.onClickBack);
             // 
             // textBox1
             // 
@@ -183,23 +204,6 @@
             this.label3.Size = new System.Drawing.Size(29, 15);
             this.label3.TabIndex = 46;
             this.label3.Text = "DNI";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DNI";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Nombre";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
             // 
             // ModificarCajas
             // 

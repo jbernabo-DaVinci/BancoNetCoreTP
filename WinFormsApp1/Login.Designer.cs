@@ -101,6 +101,7 @@
             this.toSignupButton.TabIndex = 6;
             this.toSignupButton.Text = "Crear un nuevo usuario";
             this.toSignupButton.UseVisualStyleBackColor = false;
+            this.toSignupButton.Click += new System.EventHandler(this.goToSignUp);
             // 
             // pictureBox2
             // 
@@ -112,6 +113,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.goToSignUp);
             // 
             // pictureBox3
             // 
