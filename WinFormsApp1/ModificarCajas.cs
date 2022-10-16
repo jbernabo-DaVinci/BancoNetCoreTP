@@ -45,12 +45,12 @@ namespace WinFormsApp1 {
 		}
 
 		public void onCellUser(object sender, DataGridViewCellEventArgs e) {
-			if (this.dataGridView1.SelectedRows.Count != 1) {
+			if (this.dataGridView4.SelectedRows.Count != 1) {
 				MessageBox.Show("Error al seleccionar");
 				return;
 			}
 
-			this.textBox1.Text = dataGridView1[1, e.RowIndex].Value.ToString();
+			this.textBox1.Text = dataGridView4[1, e.RowIndex].Value.ToString();
 		}
 
 		public void onClickAgregarTitular(object sender, EventArgs e) {

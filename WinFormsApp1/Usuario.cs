@@ -104,7 +104,7 @@ namespace WinFormsApp1 {
 		}
 
 		public string[] toArray() {
-			return new string[] { Int32.Parse(this.id), Int32.Parse(this.dni), this.nombre };
+			return new string[] { this.id.ToString(), this.dni.ToString(), this.nombre };
 		}
 	}
 }
