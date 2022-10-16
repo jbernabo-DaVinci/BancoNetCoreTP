@@ -219,7 +219,7 @@
             this.Controls.Add(this.label2);
             this.Name = "ModificarCajas";
             this.Text = "ModificarCajas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
