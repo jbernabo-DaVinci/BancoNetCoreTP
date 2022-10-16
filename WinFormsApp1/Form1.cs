@@ -51,8 +51,8 @@ namespace WinFormsApp1 {
 			this.detalle = new Detalles(new object[] {this.name, this.banco, id, currentCajaAhorroData [1], currentCajaAhorroData[2]});
 			this.detalle.name = this.name;
 			this.detalle.MdiParent = this;
-			this.home.TransfEventoBack += this.TransfDelegadoDetallesCajaAhorroToHome;
-			this.home.TransfEventoEdit += this.TransfDelegadoDetallesCajaAhorroToModificar;
+			this.detalle.TransfEventoBack += this.TransfDelegadoDetallesCajaAhorroToHome;
+			this.detalle.TransfEventoEdit += this.TransfDelegadoDetallesCajaAhorroToModificar;
 			this.detalle.Show();
 		}
 
@@ -67,7 +67,7 @@ namespace WinFormsApp1 {
 
 		public void TransfDelegadoDetallesCajaAhorroToModificar() {
 			this.detalle.Close();
-			this.modificarCajas = new modificarCajas();
+			this.modificarCajas = new ModificarCajas();
 			this.modificarCajas.MdiParent = this;
 			this.modificarCajas.Show();
 		}
