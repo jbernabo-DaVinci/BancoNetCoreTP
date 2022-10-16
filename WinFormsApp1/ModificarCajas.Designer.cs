@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -36,9 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,6 +61,22 @@
             this.dataGridView4.Size = new System.Drawing.Size(609, 57);
             this.dataGridView4.TabIndex = 26;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "DNI";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nombre";
+            this.Column3.Name = "Column3";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -74,7 +90,6 @@
             // 
             // button3
             // 
-            this.button3.Enabled = true;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button3.FlatAppearance.BorderSize = 2;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -92,7 +107,6 @@
             // 
             // button4
             // 
-            this.button4.Enabled = true;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button4.FlatAppearance.BorderSize = 2;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -152,22 +166,6 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "Usuario: ";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "DNI";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Nombre";
-            this.Column3.Name = "Column3";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -221,6 +219,7 @@
             this.Controls.Add(this.label2);
             this.Name = "ModificarCajas";
             this.Text = "ModificarCajas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
