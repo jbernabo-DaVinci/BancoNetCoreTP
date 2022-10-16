@@ -154,6 +154,12 @@ namespace WinFormsApp1 {
 			return dataCurrentCajaAhorro[2];
 		}
 
+		public List<Usuario> getCajaAhorroTitulares(int id) {
+			int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == id);
+			CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+			return currentCajaAhorro.getTitulares();
+		}
+
 		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);

@@ -50,6 +50,7 @@ namespace WinFormsApp1 {
 		public void onDetalleCajaAhorro(object sender, DataGridViewCellEventArgs e) {
 			if (this.dataGridView1.SelectedRows.Count != 1) {
 				MessageBox.Show("Error al mostrar detalles");
+				return;
 			}
 
 			int id = Int32.Parse(dataGridView1[0, e.RowIndex].Value.ToString());

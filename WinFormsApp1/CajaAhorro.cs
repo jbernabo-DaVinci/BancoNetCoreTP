@@ -68,6 +68,10 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
+		public List<Usuario> getTitulares() {
+			return this.titulares.ToList();
+		}
+
 		public List<Movimiento> getDetalle() {
 			return this.movimientos.ToList();
 		}
