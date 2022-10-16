@@ -15,28 +15,32 @@ namespace WinFormsApp1 {
 		public Banco banco;
 		public string name;
 		public string cbu;
+		public int currentCajaAhorroId;
 		public TransfDelegado TransfEventoBack;
 
-		public ModificarCajas(string name, Banco banco, string cbu) {
+		public ModificarCajas(string name, Banco banco, string cbu, int id) {
 			this.banco = banco;
 			this.name = name;
+			this.cbu = cbu;
+			this.currentCajaAhorroId = id;
 		}
 
-		public Detalles(object[] args) {
+		public ModificarCajas(object[] args) {
 			InitializeComponent();
 			this.banco = (Banco)args[1];
 			this.argumentos = args;
 			label6.Text = (string)args[0]; //name
 			label1.Text = (string)args[2]; //cbu
+			this.currentCajaAhorroId = (int)args[3];
 			this.datos = new List<List<string>>();
 			this.refreshDataTitulares();
 		}
 
 		private void refreshDataTitulares() {
-			dataGridView1.Rows.Clear();
+			dataGridView4.Rows.Clear();
 
-			foreach (Usuario usuario in this.banco.getCajaAhorroTitulares(this.id)) {
-				dataGridView1.Rows.Add(usuario.toArray());
+			foreach (Usuario usuario in this.banco.getCajaAhorroTitulares(this.currentCajaAhorroId)) {
+				dataGridView4.Rows.Add(usuario.toArray());
 			}
 		}
 
@@ -51,7 +55,7 @@ namespace WinFormsApp1 {
 
 		public void onClickAgregarTitular(object sender, EventArgs e) {
 			int dni = Int32.Parse(this.textBox1.Text);
-			if (!this.banco.modificarCajaAhorro(this.id, dni, 1)){
+			if (!this.banco.modificarCajaAhorro(this.currentCajaAhorroId, dni, 1)){
 				MessageBox.Show("Error al agregar titular");
 				return;
 			}
@@ -60,7 +64,7 @@ namespace WinFormsApp1 {
 
 		public void onClickRemoverTitular(object sender, EventArgs e) {
 			int dni = Int32.Parse(this.textBox1.Text);
-			if (!this.banco.modificarCajaAhorro(this.id, dni, 2)){
+			if (!this.banco.modificarCajaAhorro(this.currentCajaAhorroId, dni, 2)){
 				MessageBox.Show("Error al remover titular");
 				return;
 			}

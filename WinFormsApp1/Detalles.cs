@@ -95,12 +95,10 @@ namespace WinFormsApp1 {
 		}
 
 		public void onClickEditarTitulares(object sender, EventArgs e) {
-			this.TransfEventoEdit(this.id);
+			this.TransfEventoEdit();
 		}
 
 		public delegate void TransfDelegado();
-
-		public delegate void TransfDelegado(int id);
 
 	}
 }
