@@ -26,7 +26,7 @@ namespace WinFormsApp1 {
 			this.login = new Login(this.banco);
 			this.login.MdiParent = this;
 			this.login.TransfEvento += this.TransfDelegadoLogin;
-			this.login.TransfEventoToSingUp += this.TransfDelegadoToSingUp;
+			this.login.TransfEventoToSingUp += this.TransfDelegadoSignup;
 			this.login.Show();
 		}
 
@@ -72,7 +72,7 @@ namespace WinFormsApp1 {
 			this.login = new Login(this.banco);
 			this.login.MdiParent = this;
 			this.login.TransfEvento += this.TransfDelegadoLogin;
-			this.login.TransfEventoToSingUp += this.TransfDelegadoToSingUp;
+			this.login.TransfEventoToSingUp += this.TransfDelegadoSignup;
 			this.login.Show();
 		}
 
