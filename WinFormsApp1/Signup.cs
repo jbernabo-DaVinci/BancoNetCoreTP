@@ -40,5 +40,9 @@ namespace WinFormsApp1 {
 			MessageBox.Show("Usuario Agregado con éxito");
 			this.TransfEvento();
 		}
+
+		private void goToLogin(object sender, EventArgs e) {
+			this.TransfEvento();
+		}
 	}
 }

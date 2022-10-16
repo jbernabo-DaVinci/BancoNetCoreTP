@@ -59,6 +59,7 @@ namespace WinFormsApp1 {
 				MessageBox.Show("Error al agregar titular");
 				return;
 			}
+			this.textBox1.Text = "";
 			this.refreshDataTitulares();
 		}
 
@@ -68,6 +69,7 @@ namespace WinFormsApp1 {
 				MessageBox.Show("Error al remover titular");
 				return;
 			}
+			this.textBox1.Text = "";
 			this.refreshDataTitulares();
 		}
 

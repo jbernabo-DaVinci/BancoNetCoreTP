@@ -15,6 +15,7 @@ namespace WinFormsApp1 {
 		public string name;
 		public Banco banco;
 		public TransfDelegado TransfEvento;
+		public TransfDelegado TransfEventoLoggout;
 
 		public Home(string name, Banco banco) {
 			this.banco = banco;
@@ -55,6 +56,11 @@ namespace WinFormsApp1 {
 
 			int id = Int32.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
 			this.TransfEvento(id);
+		}
+
+		public void onClickLoggout(object sender, DataGridViewCellEventArgs e) {
+			this.banco.cerrarSesion();
+			this.TransfEventoLoggout(0); //@TODO: improve this later
 		}
 
 		public delegate void TransfDelegado(int id);

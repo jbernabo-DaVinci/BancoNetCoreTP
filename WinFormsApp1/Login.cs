@@ -14,6 +14,7 @@ namespace WinFormsApp1 {
 	public partial class Login : Form {
 		public Banco banco;
 		public TransfDelegado TransfEvento;
+		public TransfDelegado TransfEventoToSingUp;
 
 		public Login(Banco banco) {
 			InitializeComponent();
@@ -29,6 +30,10 @@ namespace WinFormsApp1 {
 				return;
 			}
 			this.TransfEvento(dni, pass);
+		}
+
+		private void goToSignUp(object sender, EventArgs e) {
+			this.TransfEventoToSingUp(0, ""); //@TODO: improve this later
 		}
 
 		public delegate void TransfDelegado(int dni, string pass);
