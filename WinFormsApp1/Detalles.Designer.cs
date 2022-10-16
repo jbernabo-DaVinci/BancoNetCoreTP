@@ -70,6 +70,7 @@
             modificarCaja.TabIndex = 36;
             modificarCaja.Text = "Editar titulares";
             modificarCaja.UseVisualStyleBackColor = true;
+            modificarCaja.Click += new System.EventHandler(this.onClickEditarTitulares);
             // 
             // dataGridView1
             // 
@@ -153,6 +154,7 @@
             this.eliminarCaja.TabIndex = 37;
             this.eliminarCaja.Text = "Eliminar Caja";
             this.eliminarCaja.UseVisualStyleBackColor = true;
+            this.eliminarCaja.Click += new System.EventHandler(this.onClickDeleteCajaAhorro);
             // 
             // depositar
             // 
@@ -221,6 +223,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "Volver a Home";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.onClickBack);
             // 
             // label1
             // 

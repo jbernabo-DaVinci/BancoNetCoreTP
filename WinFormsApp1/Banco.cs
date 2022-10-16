@@ -220,6 +220,8 @@ namespace WinFormsApp1 {
 
 				int cajaAhorroDestinoId = this.cajasAhorro[cajaAhorroDestinoIndex].id;
 
+				if (cajaAhorroOrigenId == cajaAhorroDestinoId) return false;
+
 				if (!this.retirar(cajaAhorroOrigenId, monto, true)) return false;
 
 				if (!this.depositar(cajaAhorroDestinoId, monto, true)) return false;
