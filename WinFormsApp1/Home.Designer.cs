@@ -158,6 +158,7 @@
             this.button4.TabIndex = 38;
             this.button4.Text = "Eliminar pago";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.onClickEliminarPago);
             // 
             // label4
             // 
@@ -196,6 +197,7 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "Pagar pago";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.onClickPagarPago);
             // 
             // button3
             // 
@@ -212,6 +214,7 @@
             this.button3.TabIndex = 37;
             this.button3.Text = "Crear pago";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.onClickAgregarPago);
             // 
             // dataGridView4
             // 
@@ -227,6 +230,7 @@
             this.dataGridView4.RowTemplate.Height = 29;
             this.dataGridView4.Size = new System.Drawing.Size(330, 141);
             this.dataGridView4.TabIndex = 1;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellClickPagosPagados);
             // 
             // Column7
             // 
@@ -257,6 +261,7 @@
             this.dataGridView3.RowTemplate.Height = 29;
             this.dataGridView3.Size = new System.Drawing.Size(330, 141);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellClickPagosNoPagados);
             // 
             // Column4
             // 
@@ -282,7 +287,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(683, 277);
+            this.tabPage1.Size = new System.Drawing.Size(683, 283);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Caja de Ahorro";
             // 
