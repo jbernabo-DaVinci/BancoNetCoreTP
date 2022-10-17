@@ -54,7 +54,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
-			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
+			this.home.TransfEventoPagarPago += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 
@@ -94,7 +94,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
-			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
+			this.home.TransfEventoPagarPago += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 
@@ -105,7 +105,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
-			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
+			this.home.TransfEventoPagarPago += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 
