@@ -81,9 +81,21 @@ namespace WinFormsApp1 {
 
 		public void TransfDelegadoPagarPago(int id) {
 			this.home.Close();
-			this.pagarPago = new PagarPago(this.banco);
+			this.pagarPago = new PagarPago(new object[] {this.name, this.banco, id});
 			this.pagarPago.MdiParent = this;
+			this.detalle.TransfEventoBack += this.TransfDelegadoPagarPagoToHome;
 			this.pagarPago.Show();
+		}
+
+		public void TransfDelegadoPagarPagoToHome() {
+			this.pagarPago.Close();
+			this.home = new Home(new object[] {this.name, this.banco});
+			this.home.name = this.name;
+			this.home.MdiParent = this;
+			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
+			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
+			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
+			this.home.Show();
 		}
 
 		public void TransfDelegadoDetallesCajaAhorroToHome() {
@@ -104,7 +116,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
-			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
+			this.home.TransfEventoPagarPago += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 

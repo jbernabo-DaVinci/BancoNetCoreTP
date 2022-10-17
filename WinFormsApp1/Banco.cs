@@ -177,7 +177,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool depositar(int cajaAhorroId, float monto, bool isTransferencia = false) {
+		public bool depositar(int cajaAhorroId, float monto, string detalle = "deposito") {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
 				if (cajaAhorroIndex == -1) return false;
@@ -186,8 +186,6 @@ namespace WinFormsApp1 {
 				if (currentCajaAhorro.borrado) return false;
 
 				currentCajaAhorro.depositar(monto);
-
-				string detalle = isTransferencia? "transferencia" : "deposito";
 
 				Movimiento movimiento = new Movimiento(detalle, monto, currentCajaAhorro);
 
@@ -199,7 +197,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool retirar(int cajaAhorroId, float monto, bool isTransferencia = false) {
+		public bool retirar(int cajaAhorroId, float monto, string detalle = "retiro") {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
 				if (cajaAhorroIndex == -1) return false;
@@ -208,8 +206,6 @@ namespace WinFormsApp1 {
 				if (currentCajaAhorro.borrado) return false;
 
 				if (!currentCajaAhorro.retirar(monto)) return false;
-
-				string detalle = isTransferencia? "transferencia" : "retiro";
 
 				Movimiento movimiento = new Movimiento(detalle, monto, currentCajaAhorro);
 
@@ -230,11 +226,33 @@ namespace WinFormsApp1 {
 
 				if (cajaAhorroOrigenId == cajaAhorroDestinoId) return false;
 
-				if (!this.retirar(cajaAhorroOrigenId, monto, true)) return false;
+				if (!this.retirar(cajaAhorroOrigenId, monto, "transferencia")) return false;
 
-				if (!this.depositar(cajaAhorroDestinoId, monto, true)) return false;
+				if (!this.depositar(cajaAhorroDestinoId, monto, "transferencia")) return false;
 
 				return true;
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
+		public bool pagarPago(int cajaAhorroId, int pagoId) {
+			try {
+				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
+				if (cajaAhorroIndex == -1) return false;
+
+				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
+				if (currentCajaAhorro.borrado) return false;
+
+				int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
+				if (pagoIndex == -1) return false;
+
+				Pago currentPago = this.pagos[pagoIndex];
+				if (currentPago.borrado || currentPago.pagado) return false;
+
+				if(!this.retirar(currentCajaAhorro.id, currentPago.monto, "Pago: "+currentPago.nombre));
+				return true;
+
 			} catch (Exception ex) {
 				return false;
 			}
@@ -293,6 +311,14 @@ namespace WinFormsApp1 {
 			} catch (Exception ex) {
 				return false;
 			}
+		}
+
+		public string obtenerPagoNombre(int pagoId) {
+			return this.pagos[pagoId-1].nombre;
+		}
+
+		public string obtenerPagoMonto(int pagoId) {
+			return this.pagos[pagoId-1].monto.ToString("C");
 		}
 
 		public string getNombreCurrentUser() {
