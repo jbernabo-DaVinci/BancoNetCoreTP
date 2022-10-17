@@ -69,7 +69,7 @@ namespace WinFormsApp1 {
 		private void refreshDataPagosNoPagados() {
 			this.dataGridView3.Rows.Clear();
 
-			foreach (Pago pago in this.banco.obtenerPagosPagados()) {
+			foreach (Pago pago in this.banco.obtenerPagosNoPagados()) {
 				this.dataGridView3.Rows.Add(pago.toArray());
 			}
 		}
@@ -77,7 +77,7 @@ namespace WinFormsApp1 {
 		private void refreshDataPagosPagados() {
 			this.dataGridView4.Rows.Clear();
 
-			foreach (Pago pago in this.banco.obtenerPagosNoPagados()) {
+			foreach (Pago pago in this.banco.obtenerPagosPagados()) {
 				this.dataGridView4.Rows.Add(pago.toArray());
 			}
 		}

@@ -39,7 +39,7 @@ namespace WinFormsApp1 {
 		}
 
 		public string[] toArray() {
-			return new string[] { this.nombre, this.monto.ToString("C"), this.pagado.ToString() };
+			return new string[] { this.id, this.nombre, this.monto.ToString("C") };
 		}
 	}
 }
