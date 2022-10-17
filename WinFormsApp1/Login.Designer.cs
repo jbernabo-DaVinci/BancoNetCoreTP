@@ -137,6 +137,7 @@
             // showEye
             // 
             this.showEye.BackColor = System.Drawing.Color.Transparent;
+            this.showEye.Enabled = false;
             this.showEye.Image = global::WinFormsApp1.Properties.Resources.ojo__1_;
             this.showEye.Location = new System.Drawing.Point(472, 174);
             this.showEye.Name = "showEye";
@@ -144,18 +145,21 @@
             this.showEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.showEye.TabIndex = 11;
             this.showEye.TabStop = false;
+            this.showEye.Visible = false;
             this.showEye.Click += new System.EventHandler(this.showEye_Click);
             // 
             // hideEye
             // 
             this.hideEye.BackColor = System.Drawing.Color.Transparent;
+            this.hideEye.Enabled = false;
             this.hideEye.Image = global::WinFormsApp1.Properties.Resources.ojos_cruzados;
-            this.hideEye.Location = new System.Drawing.Point(472, 174);
+            this.hideEye.Location = new System.Drawing.Point(472, 176);
             this.hideEye.Name = "hideEye";
             this.hideEye.Size = new System.Drawing.Size(20, 20);
             this.hideEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hideEye.TabIndex = 12;
             this.hideEye.TabStop = false;
+            this.hideEye.Visible = false;
             this.hideEye.Click += new System.EventHandler(this.hideEye_Click);
             // 
             // label9
