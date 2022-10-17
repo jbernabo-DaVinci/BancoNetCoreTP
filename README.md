@@ -11,7 +11,7 @@ Todo esto mediante una interfáz gráfica minimalista y sencilla pero que intern
 
 Este proyecto es un trabajo de colaboración de sus 4 integrantes:
 - Juan E Bernabó
-- Nicolas E Bösz
+- Nicolás E Bösz
 - Francisco G Rivas
 - Paul G Mac Allister
 
@@ -21,7 +21,7 @@ Actualmente este proyecto cuenta con una clase denominada Form que es la interfa
 
 Por su parte, la clase Banco es la principal y más importante clase, ya que en esta están contenidas todas las listas de Usuarios registrados, las listas de Cajas de Ahorro, el listado de Tarjetas y el listado de Plazo Fijo.
 
-A estas instancias, el proyecto cuenta también con los Forms completos de: Cajas de Ahorro, Detalles, Home, Login, Modificar Cajas, Movimientos, Pagos, Retiros, Signup, Transferencias y Usuario, cada uno con sus respectivos archivos .cs y Designer.cs
+A estas instancias, el proyecto cuenta también con los Forms completos de: Form1, ModificarCajas(Titulares), Detalles, SignUp, Home, Login, PagarPago, cada uno con sus respectivos archivos .cs y Designer.cs
 
 
 ## Próximos pasos
