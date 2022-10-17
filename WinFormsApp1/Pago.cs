@@ -15,6 +15,11 @@ namespace WinFormsApp1 {
 
 		public Pago() { }
 
+		public Pago(string nombre, float monto) {
+			this.nombre = nombre;
+			this.monto = monto;
+		}
+
 		public Pago(int id, string nombre, float monto, Usuario usuario) {
 			this.id = id;
 			this.nombre = nombre;
@@ -23,14 +28,14 @@ namespace WinFormsApp1 {
 			this.usuario = usuario;
 		}
 
-		public void updateInfo(string nombre, float monto, bool pagado) {
-			this.nombre = nombre;
-			this.monto = monto;
-			this.pagado = pagado;
+		public void pagarPago() {
+			this.pagado = true;
 		}
 
-		public void borrar() {
+		public bool borrar() {
+			if (!this.pagado) return false;
 			this.borrado = true;
+			return true;
 		}
 
 		public string[] toArray() {

@@ -8,13 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
-{
-    public partial class PagarPago : Form
-    {
-        public PagarPago()
-        {
-            InitializeComponent();
-        }
-    }
+namespace WinFormsApp1 {
+	public partial class PagarPago : Form {
+		public PagarPago() {
+			InitializeComponent();
+		}
+	}
 }

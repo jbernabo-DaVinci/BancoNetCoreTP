@@ -94,10 +94,19 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public List<Pago> obtenerPagos() {
+		public List<Pago> obtenerPagosPagados() {
+			return this.obtenerPagos(true);
+		}
+
+		public List<Pago> obtenerPagosNoPagados() {
+			return this.obtenerPagos(false);
+		}
+
+		public List<Pago> obtenerPagos(pagadoCondition) {
 			List<Pago> pagosFiltered = new List<Pago>();
 			foreach(Pago currentPago in this.pagos) {
 				if (currentPago.borrado) continue;
+				if (currentPago.pagado != pagadoCondition) continue;
 				pagosFiltered.Add(currentPago);
 			}
 			return pagosFiltered.ToList();

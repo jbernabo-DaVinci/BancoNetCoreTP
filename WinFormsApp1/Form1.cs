@@ -9,6 +9,7 @@ namespace WinFormsApp1 {
 		Home home;
 		Detalles detalle;
 		ModificarCajas modificarCajas;
+		PagarPagos pagarPagos;
 		string name;
 		int currentCajaAhorroId; //@TODO: improve this later
 
@@ -53,6 +54,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
+			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 
@@ -77,6 +79,13 @@ namespace WinFormsApp1 {
 			this.login.Show();
 		}
 
+		public void TransfDelegadoPagarPago(int id) {
+			this.home.Close();
+			this.pagarPagos = new PagarPagos(this.banco);
+			this.pagarPagos.MdiParent = this;
+			this.pagarPagos.Show();
+		}
+
 		public void TransfDelegadoDetallesCajaAhorroToHome() {
 			this.detalle.Close();
 			this.home = new Home(new object[] {this.name, this.banco});
@@ -84,6 +93,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
+			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 
@@ -94,6 +104,7 @@ namespace WinFormsApp1 {
 			this.home.MdiParent = this;
 			this.home.TransfEvento += this.TransfDelegadoHomeToDetallesCajaAhorro;
 			this.home.TransfEventoLoggout += this.TransfDelegadoLoggout;
+			this.home.TransfEventoLoggout += this.TransfDelegadoPagarPago;
 			this.home.Show();
 		}
 

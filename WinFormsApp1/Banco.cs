@@ -25,6 +25,7 @@ namespace WinFormsApp1 {
 
 		public bool agregarUsuario(int dni, string name, string pass) {
 			try {
+				//@TODO: add validation of dni
 				if (pass.Length < 8) {
 					return false;
 				}
@@ -239,6 +240,14 @@ namespace WinFormsApp1 {
 			}
 		}
 
+		public bool crearPago(string nombrePago, float monto) {
+			try {
+				return this.altaPago(new Pago(nombrePago, monto), this.currentUser.id);
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
 		public bool altaPago(Pago pago, int usuarioId) {
 			try {
 				int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
@@ -258,7 +267,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool modificarPago(int pagoId, string nombre, float monto, bool pagado) {
+		public bool modificarPago(int pagoId) {
 			try {
 				int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
 				if (pagoIndex == -1) return false;
@@ -266,7 +275,7 @@ namespace WinFormsApp1 {
 				Pago currentPago = this.pagos[pagoIndex];
 				if (currentPago.borrado) return false;
 
-				currentPago.updateInfo(nombre, monto, pagado);
+				currentPago.pagarPago();
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -279,7 +288,7 @@ namespace WinFormsApp1 {
 				if (pagoIndex == -1) return false;
 
 				Pago currentPago = this.pagos[pagoIndex];
-				currentPago.borrar();
+				if (!currentPago.borrar()) return false;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -319,8 +328,12 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public List<Pago> obtenerPagos() {
-			return this.currentUser.obtenerPagos();
+		public List<Pago> obtenerPagosPagados() {
+			return this.currentUser.obtenerPagosPagados();
+		}
+
+		public List<Pago> obtenerPagosNoPagados() {
+			return this.currentUser.obtenerPagosNoPagados();
 		}
 
 		public List<Usuario> obtenerUsuarios() {
