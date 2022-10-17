@@ -83,7 +83,7 @@ namespace WinFormsApp1 {
 			this.home.Close();
 			this.pagarPago = new PagarPago(new object[] {this.name, this.banco, id});
 			this.pagarPago.MdiParent = this;
-			this.detalle.TransfEventoBack += this.TransfDelegadoPagarPagoToHome;
+			this.pagarPago.TransfEventoBack += this.TransfDelegadoPagarPagoToHome;
 			this.pagarPago.Show();
 		}
 
