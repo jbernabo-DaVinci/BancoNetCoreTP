@@ -102,7 +102,7 @@ namespace WinFormsApp1 {
 			return this.obtenerPagos(false);
 		}
 
-		public List<Pago> obtenerPagos(pagadoCondition) {
+		public List<Pago> obtenerPagos(bool pagadoCondition) {
 			List<Pago> pagosFiltered = new List<Pago>();
 			foreach(Pago currentPago in this.pagos) {
 				if (currentPago.borrado) continue;
