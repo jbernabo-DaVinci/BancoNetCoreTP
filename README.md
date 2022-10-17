@@ -33,3 +33,8 @@ Para la 2da entrega, se añadirán las interfaces de Tarjeta y Plazo Fijo y la a
 ![Signup](https://user-images.githubusercontent.com/85254638/195956440-a9d789a0-1244-45cb-ac4c-3d82113fd878.png)
 ![Login](https://user-images.githubusercontent.com/85254638/195956454-242e9888-b45e-4ab0-8e4d-ef01bd754eb1.png)
 ![Home](https://user-images.githubusercontent.com/85254638/195956465-9a5471a2-8f2b-4cc1-b853-58331decfe9a.png)
+![detalles](https://user-images.githubusercontent.com/111402142/196080198-5c6e4f22-3dfe-450e-8f8f-80992606a7cc.png)
+![modificarcajas(titulares)](https://user-images.githubusercontent.com/111402142/196080359-dd486b7e-a9b5-402f-b82b-373d16217793.png)
+![pagos(home)](https://user-images.githubusercontent.com/111402142/196080355-000d7ee3-2f2a-4a9b-93ae-5433245ac879.png)
+![pagarpagos](https://user-images.githubusercontent.com/111402142/196080362-ec4bb5ed-ba20-4d8b-83df-4345494dca77.png)
+![pagos(home)2](https://user-images.githubusercontent.com/111402142/196080361-621e44a1-4236-4776-a361-aadac0939282.png)
