@@ -9,7 +9,7 @@ namespace WinFormsApp1 {
 		Home home;
 		Detalles detalle;
 		ModificarCajas modificarCajas;
-		PagarPagos pagarPagos;
+		PagarPago pagarPago;
 		string name;
 		int currentCajaAhorroId; //@TODO: improve this later
 
@@ -81,9 +81,9 @@ namespace WinFormsApp1 {
 
 		public void TransfDelegadoPagarPago(int id) {
 			this.home.Close();
-			this.pagarPagos = new PagarPagos(this.banco);
-			this.pagarPagos.MdiParent = this;
-			this.pagarPagos.Show();
+			this.pagarPago = new PagarPagos(this.banco);
+			this.pagarPago.MdiParent = this;
+			this.pagarPago.Show();
 		}
 
 		public void TransfDelegadoDetallesCajaAhorroToHome() {
