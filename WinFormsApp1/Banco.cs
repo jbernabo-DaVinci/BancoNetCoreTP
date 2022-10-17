@@ -25,7 +25,9 @@ namespace WinFormsApp1 {
 
 		public bool agregarUsuario(int dni, string name, string pass) {
 			try {
-				//@TODO: add validation of dni
+				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
+				if (userIndex != -1) return false;
+
 				if (pass.Length < 8) {
 					return false;
 				}
@@ -185,7 +187,7 @@ namespace WinFormsApp1 {
 				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
 				if (currentCajaAhorro.borrado) return false;
 
-				currentCajaAhorro.depositar(monto);
+				if (!currentCajaAhorro.depositar(monto)) return false;
 
 				Movimiento movimiento = new Movimiento(detalle, monto, currentCajaAhorro);
 

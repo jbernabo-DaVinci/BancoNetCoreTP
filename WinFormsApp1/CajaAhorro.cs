@@ -57,11 +57,14 @@ namespace WinFormsApp1 {
 			this.movimientos.Add(movimiento);
 		}
 
-		public void depositar(float monto) {
+		public bool depositar(float monto) {
+			if (monto <= 0) return false;
 			this.saldo += monto;
+			return true;
 		}
 
 		public bool retirar(float monto) {
+			if (monto <= 0) return false;
 			if (this.saldo < monto) return false;
 
 			this.saldo -= monto;

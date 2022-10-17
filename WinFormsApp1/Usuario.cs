@@ -21,7 +21,6 @@ namespace WinFormsApp1 {
 
 		public Usuario() { }
 
-		//TODO: for sing up, use this constructor.
 		public Usuario(int id, int dni, string nombre, string pass) {
 			this.id = id;
 			this.dni = dni;
