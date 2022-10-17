@@ -250,7 +250,10 @@ namespace WinFormsApp1 {
 				Pago currentPago = this.pagos[pagoIndex];
 				if (currentPago.borrado || currentPago.pagado) return false;
 
-				if(!this.retirar(currentCajaAhorro.id, currentPago.monto, "Pago: "+currentPago.nombre));
+				if (!this.retirar(currentCajaAhorro.id, currentPago.monto, "Pago: "+currentPago.nombre)) return false;
+
+				if (!this.modificarPago(currentPago.id)) return false;
+
 				return true;
 
 			} catch (Exception ex) {
