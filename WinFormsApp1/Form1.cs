@@ -81,7 +81,7 @@ namespace WinFormsApp1 {
 
 		public void TransfDelegadoPagarPago(int id) {
 			this.home.Close();
-			this.pagarPago = new PagarPagos(this.banco);
+			this.pagarPago = new PagarPago(this.banco);
 			this.pagarPago.MdiParent = this;
 			this.pagarPago.Show();
 		}
