@@ -94,7 +94,6 @@
             this.button3.TabIndex = 35;
             this.button3.Text = "Pagar Pago";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.onClickPagarPago);
             // 
             // label6
@@ -177,7 +176,6 @@
             this.button1.TabIndex = 48;
             this.button1.Text = "Volver a Home";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.onClickBack);
             // 
             // PagarPago
@@ -198,6 +196,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PagarPago";
             this.Text = "Pagar Pagos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
