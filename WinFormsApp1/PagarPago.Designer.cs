@@ -59,6 +59,7 @@
             this.dataGridView2.RowTemplate.Height = 29;
             this.dataGridView2.Size = new System.Drawing.Size(595, 218);
             this.dataGridView2.TabIndex = 31;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellClickSelectCajaAhorro);
             // 
             // Column1
             // 
@@ -94,6 +95,7 @@
             this.button3.Text = "Pagar Pago";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.onClickPagarPago);
             // 
             // label6
             // 
@@ -176,6 +178,7 @@
             this.button1.Text = "Volver a Home";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.onClickBack);
             // 
             // PagarPago
             // 
