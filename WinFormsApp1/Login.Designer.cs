@@ -95,7 +95,7 @@
             this.toSignupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toSignupButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toSignupButton.ForeColor = System.Drawing.Color.White;
-            this.toSignupButton.Location = new System.Drawing.Point(272, 363);
+            this.toSignupButton.Location = new System.Drawing.Point(284, 361);
             this.toSignupButton.Name = "toSignupButton";
             this.toSignupButton.Size = new System.Drawing.Size(240, 36);
             this.toSignupButton.TabIndex = 6;
@@ -107,9 +107,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WinFormsApp1.Properties.Resources.user_add;
-            this.pictureBox2.Location = new System.Drawing.Point(386, 332);
+            this.pictureBox2.Location = new System.Drawing.Point(299, 364);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;

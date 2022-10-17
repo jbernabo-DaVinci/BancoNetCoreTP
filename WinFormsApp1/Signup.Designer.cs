@@ -41,6 +41,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +101,7 @@
             this.signupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.signupButton.ForeColor = System.Drawing.Color.White;
-            this.signupButton.Location = new System.Drawing.Point(332, 328);
+            this.signupButton.Location = new System.Drawing.Point(332, 257);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(134, 27);
             this.signupButton.TabIndex = 4;
@@ -127,7 +129,7 @@
             this.toLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toLoginButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toLoginButton.ForeColor = System.Drawing.Color.White;
-            this.toLoginButton.Location = new System.Drawing.Point(275, 391);
+            this.toLoginButton.Location = new System.Drawing.Point(275, 350);
             this.toLoginButton.Name = "toLoginButton";
             this.toLoginButton.Size = new System.Drawing.Size(249, 32);
             this.toLoginButton.TabIndex = 5;
@@ -181,12 +183,24 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "DNI";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinFormsApp1.Properties.Resources.usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(308, 353);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.goToLogin);
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
@@ -203,6 +217,7 @@
             this.Name = "Signup";
             this.Text = "Signup";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +237,6 @@
         private TextBox textBox1;
         private Label label8;
         private Label label9;
+        private PictureBox pictureBox1;
     }
 }
