@@ -31,6 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,10 +56,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.closeSesionButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 15);
+            this.label1.Location = new System.Drawing.Point(44, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 15);
             this.label1.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(173, 15);
+            this.label2.Location = new System.Drawing.Point(194, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 15);
             this.label2.TabIndex = 2;
@@ -103,9 +103,45 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(683, 290);
+            this.tabPage3.Size = new System.Drawing.Size(683, 283);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pagos";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(53, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 15);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Nombre:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(300, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 15);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Monto:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(353, 34);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(157, 23);
+            this.textBox2.TabIndex = 40;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(119, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 23);
+            this.textBox1.TabIndex = 39;
             // 
             // button4
             // 
@@ -246,7 +282,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(683, 290);
+            this.tabPage1.Size = new System.Drawing.Size(683, 277);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Caja de Ahorro";
             // 
@@ -259,7 +295,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(613, 202);
+            this.button2.Location = new System.Drawing.Point(616, 202);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 61);
@@ -275,7 +311,7 @@
             this.Column3,
             this.Column1,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 16);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 16);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -310,11 +346,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(5, 51);
+            this.tabControl1.Location = new System.Drawing.Point(26, 64);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(691, 318);
+            this.tabControl1.Size = new System.Drawing.Size(691, 311);
             this.tabControl1.TabIndex = 4;
             // 
             // closeSesionButton
@@ -326,7 +362,7 @@
             this.closeSesionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.closeSesionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeSesionButton.ForeColor = System.Drawing.Color.White;
-            this.closeSesionButton.Location = new System.Drawing.Point(554, 374);
+            this.closeSesionButton.Location = new System.Drawing.Point(575, 380);
             this.closeSesionButton.Name = "closeSesionButton";
             this.closeSesionButton.Size = new System.Drawing.Size(134, 27);
             this.closeSesionButton.TabIndex = 20;
@@ -334,48 +370,12 @@
             this.closeSesionButton.UseVisualStyleBackColor = false;
             this.closeSesionButton.Click += new System.EventHandler(this.onClickLoggout);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(119, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 23);
-            this.textBox1.TabIndex = 39;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(353, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 23);
-            this.textBox2.TabIndex = 40;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(53, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 15);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Nombre:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(300, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 15);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Monto:";
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(700, 414);
+            this.ClientSize = new System.Drawing.Size(766, 414);
             this.Controls.Add(this.closeSesionButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
