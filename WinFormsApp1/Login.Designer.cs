@@ -52,9 +52,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(318, 22);
+            this.label3.Location = new System.Drawing.Point(582, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 37);
+            this.label3.Size = new System.Drawing.Size(1401, 710);
             this.label3.TabIndex = 2;
             this.label3.Text = "BIENVENIDO";
             // 
@@ -62,7 +62,7 @@
             // 
             this.loginPassBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.loginPassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.loginPassBox.Location = new System.Drawing.Point(332, 176);
+            this.loginPassBox.Location = new System.Drawing.Point(596, 263);
             this.loginPassBox.Name = "loginPassBox";
             this.loginPassBox.Size = new System.Drawing.Size(134, 16);
             this.loginPassBox.TabIndex = 4;
@@ -79,7 +79,7 @@
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(332, 260);
+            this.loginButton.Location = new System.Drawing.Point(596, 347);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(134, 27);
             this.loginButton.TabIndex = 5;
@@ -95,7 +95,7 @@
             this.toSignupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toSignupButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toSignupButton.ForeColor = System.Drawing.Color.White;
-            this.toSignupButton.Location = new System.Drawing.Point(284, 361);
+            this.toSignupButton.Location = new System.Drawing.Point(548, 448);
             this.toSignupButton.Name = "toSignupButton";
             this.toSignupButton.Size = new System.Drawing.Size(240, 36);
             this.toSignupButton.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WinFormsApp1.Properties.Resources.user_add;
-            this.pictureBox2.Location = new System.Drawing.Point(299, 364);
+            this.pictureBox2.Location = new System.Drawing.Point(563, 451);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +119,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::WinFormsApp1.Properties.Resources.llave;
-            this.pictureBox3.Location = new System.Drawing.Point(284, 169);
+            this.pictureBox3.Location = new System.Drawing.Point(548, 256);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,7 +129,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(332, 192);
+            this.label7.Location = new System.Drawing.Point(596, 279);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 2);
             this.label7.TabIndex = 9;
@@ -139,7 +139,7 @@
             this.showEye.BackColor = System.Drawing.Color.Transparent;
             this.showEye.Enabled = false;
             this.showEye.Image = global::WinFormsApp1.Properties.Resources.ojo__1_;
-            this.showEye.Location = new System.Drawing.Point(472, 174);
+            this.showEye.Location = new System.Drawing.Point(736, 261);
             this.showEye.Name = "showEye";
             this.showEye.Size = new System.Drawing.Size(20, 20);
             this.showEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -153,7 +153,7 @@
             this.hideEye.BackColor = System.Drawing.Color.Transparent;
             this.hideEye.Enabled = false;
             this.hideEye.Image = global::WinFormsApp1.Properties.Resources.ojos_cruzados;
-            this.hideEye.Location = new System.Drawing.Point(472, 176);
+            this.hideEye.Location = new System.Drawing.Point(736, 263);
             this.hideEye.Name = "hideEye";
             this.hideEye.Size = new System.Drawing.Size(20, 20);
             this.hideEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +168,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(280, 128);
+            this.label9.Location = new System.Drawing.Point(544, 215);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 15);
             this.label9.TabIndex = 15;
@@ -177,7 +177,7 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(333, 143);
+            this.label8.Location = new System.Drawing.Point(597, 230);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 2);
             this.label8.TabIndex = 14;
@@ -187,7 +187,7 @@
             this.loginDNIBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.loginDNIBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.loginDNIBox.ForeColor = System.Drawing.Color.White;
-            this.loginDNIBox.Location = new System.Drawing.Point(332, 128);
+            this.loginDNIBox.Location = new System.Drawing.Point(596, 215);
             this.loginDNIBox.Name = "loginDNIBox";
             this.loginDNIBox.Size = new System.Drawing.Size(134, 16);
             this.loginDNIBox.TabIndex = 13;
@@ -197,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1390, 670);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.loginDNIBox);
