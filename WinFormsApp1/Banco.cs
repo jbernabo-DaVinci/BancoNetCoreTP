@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace WinFormsApp1 {
 	public class Banco {
@@ -13,17 +15,30 @@ namespace WinFormsApp1 {
 		private List<Pago> pagos;
 		private List<Movimiento> movimientos;
 		private Usuario currentUser;
+		private DAL DB; //DAL = Data Acces Layer y la varalble DB es la encargada de comunicarse con la Base de Datos
 
-		public Banco() {
+		public Banco() { //cuando inicializa el banco, inicializa las listas en vacío pero ahora...
+			//al crear la BD ahora las listas las pobalremos con los datos existentes en la BD
 			this.usuarios = new List<Usuario>();
 			this.cajasAhorro = new List<CajaAhorro>();
 			//this.plazosFijos = new List<PlazoFijo>();
 			//this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
-		} 
+			DB = new DAL();
+            inicializarAtributos();
+        } 
 
-		public bool agregarUsuario(int dni, string name, string pass) {
+		private void inicializarAtributos()
+		{
+			usuarios = DB.inicializarAtributos(); //acá encontraremos un SELECT * FROM Usuarios por ejem
+			cajasAhorro = DB.inicializarAtributos();
+			pagos = DB.inicializarAtributos();
+			movimientos = DB.inicializarAtributos();
+        }
+
+
+        public bool agregarUsuario(int dni, string name, string pass) {
 			try {
 				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
 				if (userIndex != -1) return false;
