@@ -15,7 +15,7 @@ namespace WinFormsApp1 {
 		private List<Pago> pagos;
 		private List<Movimiento> movimientos;
 		private Usuario currentUser;
-		private DAL DB; //DAL = Data Acces Layer y la varalble DB es la encargada de comunicarse con la Base de Datos
+		private AccesoBD DB; //DAL = Data Acces Layer y la varalble DB es la encargada de comunicarse con la Base de Datos
 
 		public Banco() { //cuando inicializa el banco, inicializa las listas en vacío pero ahora...
 			//al crear la BD ahora las listas las pobalremos con los datos existentes en la BD
@@ -25,16 +25,16 @@ namespace WinFormsApp1 {
 			//this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
-			DB = new DAL();
-            inicializarAtributos();
+			this.DB = new AccesoBD();
+            this.inicializarAtributos();
         } 
 
 		private void inicializarAtributos()
 		{
-			usuarios = DB.inicializarAtributos(); //acá encontraremos un SELECT * FROM Usuarios por ejem
-			cajasAhorro = DB.inicializarAtributos();
-			pagos = DB.inicializarAtributos();
-			movimientos = DB.inicializarAtributos();
+			this.usuarios = DB.inicializarAtributos(); //acá encontraremos un SELECT * FROM Usuarios por ejem y se lo guardamos en la lsita usuarios
+			this.cajasAhorro = DB.inicializarAtributos();
+			this.pagos = DB.inicializarAtributos();
+			this.movimientos = DB.inicializarAtributos();
         }
 
 
