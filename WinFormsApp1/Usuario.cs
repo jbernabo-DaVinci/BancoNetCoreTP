@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public string nombre { get; set; }
 		public string pass { get; set; }
 		public string mail { get; set; }
-		public int intentosFallidos { get; set; }
+		public int intentosFallidos { get; set; } //Francisco: no sé si este dato deba ir en la BD como autoincremental o no ir del todo
 		public bool bloqueado { get; set; }
 		public bool borrado { get; set; }
 		private List<CajaAhorro> cajasAhorro;
