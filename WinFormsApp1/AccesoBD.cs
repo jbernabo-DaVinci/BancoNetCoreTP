@@ -106,7 +106,7 @@ namespace WinFormsApp1
             List<Movimiento> movimiento = new List<Movimiento>();
 
             String queryString = "SELECT * from dbo.Movimiento";
-            SqlConnection connection = new SqlConnection(connectionString);
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
 
@@ -169,7 +169,7 @@ namespace WinFormsApp1
         //<<<<<<<<<<<<<<<<<< PLAZO FIJO >>>>>>>>>>>>>>>>>>>>>
         public List<PlazoFijo> inicializarPlazoFijo()
         {
-            List<PlazoFijo> plazoFijo = new List<PlazoFijo>;
+            List<PlazoFijo> plazoFijo = new List<PlazoFijo>();
 
             string queryString = "SELECT * from debo.PlazoFijo";
 
