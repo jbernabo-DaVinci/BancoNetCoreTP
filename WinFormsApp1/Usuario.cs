@@ -115,8 +115,8 @@ namespace WinFormsApp1 {
 		}
 
 		public bool agregarTarjetaCredito(TarjetaCreditoManager tarjetaCredito) {
-			int Index = this.tarjetasCredito.FindIndex(currentTarjetaCredito => currentTarjetaCredito.id == pago.id);
-			if (Index != -1) return false;
+			int tarjetaCreditoIndex = this.tarjetasCredito.FindIndex(currentTarjetaCredito => currentTarjetaCredito.id == tarjetaCredito.id);
+			if (tarjetaCreditoIndex != -1) return false;
 			this.tarjetasCredito.Add(tarjetaCredito);
 			return true;
 		}
@@ -158,7 +158,7 @@ namespace WinFormsApp1 {
 		public List<TarjetaCreditoManager> obtenerTarjetasCredito() {
 			List<TarjetaCreditoManager> tarjetasCreditoFiltered = new List<TarjetaCreditoManager>();
 			foreach(TarjetaCreditoManager currentTarjetaCredito in this.tarjetasCredito) {
-				if (currentTarjetaCredito.Pago) continue;
+				if (currentTarjetaCredito.borrado) continue;
 				tarjetasCreditoFiltered.Add(currentTarjetaCredito);
 			}
 			return tarjetasCreditoFiltered.ToList();
