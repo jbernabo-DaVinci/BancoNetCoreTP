@@ -19,7 +19,19 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PlazoFijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PlazoFijoManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TarjetaCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TarjetaCreditoManager.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

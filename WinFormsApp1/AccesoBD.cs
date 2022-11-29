@@ -11,7 +11,7 @@ using System.Linq.Expressions;
 
 namespace WinFormsApp1
 {
-    class AccesoBD
+    public class AccesoBD
     {
         private string connectionString;
 
