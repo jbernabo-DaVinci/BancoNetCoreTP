@@ -133,5 +133,7 @@ namespace WinFormsApp1 {
 		}
 
 		public delegate void TransfDelegado(int id);
+
+
 	}
 }

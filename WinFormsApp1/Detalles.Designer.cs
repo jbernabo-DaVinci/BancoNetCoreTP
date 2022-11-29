@@ -63,7 +63,7 @@
             modificarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             modificarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             modificarCaja.ForeColor = System.Drawing.Color.White;
-            modificarCaja.Location = new System.Drawing.Point(652, 15);
+            modificarCaja.Location = new System.Drawing.Point(922, 105);
             modificarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             modificarCaja.Name = "modificarCaja";
             modificarCaja.Size = new System.Drawing.Size(106, 26);
@@ -80,7 +80,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dataGridView1.Location = new System.Drawing.Point(43, 223);
+            this.dataGridView1.Location = new System.Drawing.Point(313, 313);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -110,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(43, 206);
+            this.label2.Location = new System.Drawing.Point(313, 296);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 15);
             this.label2.TabIndex = 25;
@@ -121,7 +121,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 21);
+            this.label4.Location = new System.Drawing.Point(305, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 29;
@@ -132,7 +132,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(96, 21);
+            this.label5.Location = new System.Drawing.Point(366, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 15);
             this.label5.TabIndex = 30;
@@ -147,7 +147,7 @@
             this.eliminarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eliminarCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.eliminarCaja.ForeColor = System.Drawing.Color.White;
-            this.eliminarCaja.Location = new System.Drawing.Point(664, 377);
+            this.eliminarCaja.Location = new System.Drawing.Point(934, 467);
             this.eliminarCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eliminarCaja.Name = "eliminarCaja";
             this.eliminarCaja.Size = new System.Drawing.Size(100, 38);
@@ -163,7 +163,7 @@
             this.depositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.depositar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.depositar.ForeColor = System.Drawing.Color.White;
-            this.depositar.Location = new System.Drawing.Point(310, 69);
+            this.depositar.Location = new System.Drawing.Point(580, 159);
             this.depositar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.depositar.Name = "depositar";
             this.depositar.Size = new System.Drawing.Size(100, 38);
@@ -181,7 +181,7 @@
             this.retirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.retirar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.retirar.ForeColor = System.Drawing.Color.White;
-            this.retirar.Location = new System.Drawing.Point(426, 69);
+            this.retirar.Location = new System.Drawing.Point(696, 159);
             this.retirar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.retirar.Name = "retirar";
             this.retirar.Size = new System.Drawing.Size(100, 38);
@@ -199,7 +199,7 @@
             this.transferir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.transferir.ForeColor = System.Drawing.Color.White;
-            this.transferir.Location = new System.Drawing.Point(310, 138);
+            this.transferir.Location = new System.Drawing.Point(580, 228);
             this.transferir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.transferir.Name = "transferir";
             this.transferir.Size = new System.Drawing.Size(100, 38);
@@ -217,7 +217,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(35, 388);
+            this.button1.Location = new System.Drawing.Point(305, 478);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 27);
             this.button1.TabIndex = 20;
@@ -230,7 +230,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(508, 21);
+            this.label1.Location = new System.Drawing.Point(778, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 15);
             this.label1.TabIndex = 39;
@@ -241,7 +241,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(459, 21);
+            this.label3.Location = new System.Drawing.Point(729, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 38;
@@ -252,7 +252,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(40, 86);
+            this.label6.Location = new System.Drawing.Point(310, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 52;
@@ -260,7 +260,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 83);
+            this.textBox1.Location = new System.Drawing.Point(380, 173);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(166, 23);
             this.textBox1.TabIndex = 51;
@@ -270,7 +270,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(279, 21);
+            this.label7.Location = new System.Drawing.Point(549, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 15);
             this.label7.TabIndex = 54;
@@ -281,7 +281,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(218, 21);
+            this.label8.Location = new System.Drawing.Point(488, 111);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 15);
             this.label8.TabIndex = 53;
@@ -292,7 +292,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(12, 150);
+            this.label9.Location = new System.Drawing.Point(282, 240);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 15);
             this.label9.TabIndex = 56;
@@ -300,7 +300,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 147);
+            this.textBox2.Location = new System.Drawing.Point(380, 237);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(166, 23);
             this.textBox2.TabIndex = 55;
@@ -310,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1385, 671);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label7);
