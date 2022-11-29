@@ -71,9 +71,8 @@ namespace WinFormsApp1
 	public int agregarUsuario(int dni, string nombre, string mail, string pass, int intentosFallidos, bool bloqueado, bool borrado, bool isAdmin) {
 		int queryResult;
 		int idNewUser = -1;
-		string conecctionString = Properties.Resources.ConnectionStr;
 		string query = "INSERT INTO [dbo].[Usuario] ([dni], [nombre], [mail], [pass], [intentosFallidos], [bloqueado], [borrado], [isAdmin]) VALUES (@dni, @nombre, @mail, @pass, @intentosFallidos, @bloqueado, @borrado, @isAdmin);";
-		using(SqlConnection connection = new SqlConnection(conecctionString)) {
+		using(SqlConnection connection = new SqlConnection(connectionString)) {
 			SqlCommand command = new SqlCommand(query, connection);
 			command.Parameters.Add(new SqlParameter("@dni",SqlDbType.Int));
 			command.Parameters.Add(new SqlParameter("@nombre",SqlDbType.NVarChar));
