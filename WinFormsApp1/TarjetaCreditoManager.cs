@@ -26,7 +26,7 @@ namespace WinFormsApp1 {
 			this.titularId = titularId;
 		}
 
-		public TarjetaCreditoManager(int id, int numero, int codigoV, float limite, float consumo, bool borrado, int titularId) {
+		public TarjetaCreditoManager(int id, string numero, int codigoV, float limite, float consumo, bool borrado, int titularId) {
 			this.id = id;
 			this.numero = numero;
 			this.codigoV = codigoV;
