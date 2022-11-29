@@ -14,6 +14,7 @@ namespace WinFormsApp1 {
 		public int intentosFallidos { get; set; } //Francisco: no sé si este dato deba ir en la BD como autoincremental o no ir del todo
 		public bool bloqueado { get; set; }
 		public bool borrado { get; set; }
+		public bool isAdmin { get; set; }
 		public List<CajaAhorro> cajasAhorro;
 		public List<PlazoFijo> plazosFijos;
 		public List<TarjetaCredito> tarjetasCredito;
@@ -28,6 +29,7 @@ namespace WinFormsApp1 {
 			this.pass = pass;
 			this.bloqueado = false;
 			this.borrado = false;
+			this.isAdmin = false;
 			this.cajasAhorro = new List<CajaAhorro>();
 			this.plazosFijos = new List<PlazoFijo>();
 			this.tarjetasCredito = new List<TarjetaCredito>();
@@ -40,6 +42,7 @@ namespace WinFormsApp1 {
 			this.pass = pass;
 			this.bloqueado = false;
 			this.borrado = false;
+			this.isAdmin = false;
 			this.cajasAhorro = new List<CajaAhorro>();
 			this.plazosFijos = new List<PlazoFijo>();
 			this.tarjetasCredito = new List<TarjetaCredito>();
@@ -47,21 +50,20 @@ namespace WinFormsApp1 {
 		}
 		
 		//este es el constructor que usaremos para la conexión a la BD
-        public Usuario(int id, int dni, string nombre, string pass, string mail, int intentosFallidos, Boolean bloqueado, Boolean borrado)
-        {
-            this.id = id;
+		public Usuario(int id, int dni, string nombre, string pass, string mail, int intentosFallidos, bool bloqueado, bool borrado, bool isAdmin) {
+			this.id = id;
 			this.dni = dni;
-            this.nombre = nombre;
-            this.pass = pass;
+			this.nombre = nombre;
+			this.pass = pass;
 			this.mail = mail;
 			this.intentosFallidos = intentosFallidos;
-            this.bloqueado = false;
-            this.borrado = false;
-
-            //this.cajasAhorro = new List<CajaAhorro>();
-            //this.plazosFijos = new List<PlazoFijo>();
-            //this.tarjetasCredito = new List<TarjetaCredito>();
-            //this.pagos = new List<Pago>();
+			this.bloqueado = bloqueado;
+			this.borrado = borrado;
+			this.isAdmin = isAdmin;
+			this.cajasAhorro = new List<CajaAhorro>();
+			this.plazosFijos = new List<PlazoFijo>();
+			this.tarjetasCredito = new List<TarjetaCredito>();
+			this.pagos = new List<Pago>();
         }
 
         public void updateInfo(string nombre, string pass, string mail) {
