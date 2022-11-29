@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WinFormsApp1 {
-	public class TarjetaCredito
+	public class TarjetaCreditoManager
 	{
 		public int id { get; set; }
 		public int codigoV { get; set; }
@@ -18,9 +18,9 @@ namespace WinFormsApp1 {
 		public Usuario titular;
 
 
-		public TarjetaCredito() { }
+		public TarjetaCreditoManager() { }
 
-		public TarjetaCredito(int id, float limite, Usuario titular)
+		public TarjetaCreditoManager(int id, float limite, Usuario titular)
 		{
 			this.id = id;
 			Random rd = new Random();
@@ -32,7 +32,7 @@ namespace WinFormsApp1 {
 		}
 
         //Constructor para la conexión con BD
-        public TarjetaCredito(int id, int codigoV, int numero, float limite, float consumo, Boolean borrado, int idUsuario)
+        public TarjetaCreditoManager(int id, int codigoV, int numero, float limite, float consumo, Boolean borrado, int idUsuario)
         {
             this.id = id;
             Random rd = new Random();

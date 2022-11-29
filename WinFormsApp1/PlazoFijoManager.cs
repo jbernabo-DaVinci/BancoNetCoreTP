@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WinFormsApp1 {
-	public class PlazoFijo {
+	public class PlazoFijoManager {
 		public int id { get; set; }
 		public float tasa { get; set; }
 		public float monto { get; set; }
@@ -16,9 +16,9 @@ namespace WinFormsApp1 {
 		public Usuario titular;
 
 
-		public PlazoFijo() { }
+		public PlazoFijoManager() { }
 
-		public PlazoFijo(int id, float monto, Usuario titular) {
+		public PlazoFijoManager(int id, float monto, Usuario titular) {
 			this.id = id;
 			this.tasa = 0.2;
 			this.monto = monto;
