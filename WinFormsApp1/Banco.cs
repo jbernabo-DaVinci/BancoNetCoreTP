@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public List<Usuario> usuarios;
 		public List<CajaAhorro> cajasAhorro;
 		public List<PlazoFijoManager> plazosFijos;
-		public List<TarjetaCredito> tarjetasCredito;
+		public List<TarjetaCreditoManager> tarjetasCredito;
 		public List<Pago> pagos;
 		public List<Movimiento> movimientos;
 		public Usuario currentUser;
@@ -258,7 +258,7 @@ namespace WinFormsApp1 {
 				Pago currentPago = this.pagos[pagoIndex];
 				if (currentPago.borrado || currentPago.pagado) return false;
 
-				if (!this.retirar(currentCajaAhorro.id, currentPago.monto, "Pago: "+currentPago.nombre)) return false;
+				if (!this.retirar(cajaAhorroId, currentPago.monto, "Pago: "+currentPago.nombre)) return false;
 
 				if (!this.modificarPago(currentPago.id)) return false;
 
@@ -336,7 +336,7 @@ namespace WinFormsApp1 {
 			return this.currentUser.nombre.ToString();
 		}
 
-		public bool altaPlazoFijo(float monto, int usuarioId) {
+		public bool altaPlazoFijo(float monto, int usuarioId, int cajaAhorroId) {
 			try {
 				if (monto < 1000) return false;
 
@@ -351,7 +351,7 @@ namespace WinFormsApp1 {
 				if (currentUser.borrado) return false;
 
 				int plazoFijoId = (this.plazosFijos.Count)+1;
-				Plazofijo newPlazoFijo = new PlazoFijoManager(plazoFijoId, monto, usuarioId);
+				PlazoFijoManager newPlazoFijo = new PlazoFijoManager(plazoFijoId, monto, usuarioId);
 				if (!currentUser.agregarPlazoFijo(newPlazoFijo)) return false;
 
 				if (!this.retirar(cajaAhorroId, monto, "Creaste Plazo Fijo")) return false;
@@ -393,9 +393,9 @@ namespace WinFormsApp1 {
 
 				int tarjetaCreditoId = (this.tarjetasCredito.Count)+1;
 				TarjetaCreditoManager newTarjetaCredito = new TarjetaCreditoManager(tarjetaCreditoId, limite, usuarioId);
-				if (!currentUser.agregarTarjetaCredito(newTarjetaCreditoManager)) return false;
+				if (!currentUser.agregarTarjetaCredito(newTarjetaCredito)) return false;
 
-				this.tarjetasCredito.Add(newTarjetaCreditoManager);
+				this.tarjetasCredito.Add(newTarjetaCredito);
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -407,7 +407,7 @@ namespace WinFormsApp1 {
 				int tarjetaCreditoIndex = this.tarjetasCredito.FindIndex(tarjeta => tarjeta.id == id);
 				if (tarjetaCreditoIndex == -1) return false;
 
-				TarjetaCredito tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
+				TarjetaCreditoManager tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
 				if (tarjetasCredito.consumo != 0) return false;
 
 				tarjetasCredito.borrado = true;
@@ -417,12 +417,12 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool modificarTarjetaCredito(int Id, float limite) {
+		public bool modificarTarjetaCredito(int id, float limite) {
 			try {
 				int tarjetaCreditoIndex = this.tarjetasCredito.FindIndex(tarjeta => tarjeta.id == id);
 				if (tarjetaCreditoIndex == -1) return false;
 
-				TarjetaCredito tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
+				TarjetaCreditoManager tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
 				if (tarjetasCredito.borrado) return false;
 
 				tarjetaCredito.limite = limite;
