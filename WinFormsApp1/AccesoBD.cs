@@ -21,7 +21,7 @@ namespace WinFormsApp1
         }
 
         //<<<<<<<<<<<<<<<<<< USUARIO >>>>>>>>>>>>>>>>>>>>>
-        public List<Usuario> inicializarAtributos()
+        public List<Usuario> inicializarUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
 
@@ -67,7 +67,7 @@ namespace WinFormsApp1
         }
 
         //<<<<<<<<<<<<<<<<<< CAJA AHORRO >>>>>>>>>>>>>>>>>>>>>
-        public List<CajaAhorro> inicializarAtributos()
+        public List<CajaAhorro> inicializarCajaAhorro()
         {
             List<CajaAhorro> cajaAhorro = new List<CajaAhorro>();
 
@@ -85,8 +85,7 @@ namespace WinFormsApp1
                     while (reader.Read())
                     {
                         aux = new CajaAhorro(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3));
-                    
-                    CajaAhorro.Add(aux);
+                        cajaAhorro.Add(aux);
                     }
 
                 }
@@ -100,7 +99,7 @@ namespace WinFormsApp1
 
 
         //<<<<<<<<<<<<<<<<<< MOVIMIENTO >>>>>>>>>>>>>>>>>>>>>
-        public List<Movimiento> inicializarAtributos()
+        public List<Movimiento> inicializarMovimientos()
         {
             List<Movimiento> movimiento = new List<Movimiento>();
 
@@ -119,23 +118,25 @@ namespace WinFormsApp1
                     while (reader.Read())
                     {
                         aux = new Movimiento(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetDateTime(3), reader.GetInt32(4));
+                        movimiento.Add(aux);
                     }
 
                 }
-
-                
-                    
-                catch
+                catch(Exception ex)
                 {
-
+                    Console.WriteLine(ex.Message);
                 }
-            }
+
+            }return movimiento;
 
         }
 
 
         //<<<<<<<<<<<<<<<<<< PAGO >>>>>>>>>>>>>>>>>>>>>
-
+        public List<Pago> inicializarPagos()
+        {
+            List<Pago> pago = new List<Pago>();
+        }
 
         //<<<<<<<<<<<<<<<<<< PLAZO FIJO >>>>>>>>>>>>>>>>>>>>>
 

@@ -31,10 +31,10 @@ namespace WinFormsApp1 {
 
 		private void inicializarAtributos()
 		{
-			this.usuarios = DB.inicializarAtributos(); //acá encontraremos un SELECT * FROM Usuarios por ejem y se lo guardamos en la lsita usuarios
-			this.cajasAhorro = DB.inicializarAtributos();
-			this.pagos = DB.inicializarAtributos();
-			this.movimientos = DB.inicializarAtributos();
+			usuarios = DB.inicializarUsuarios(); //acá encontraremos un SELECT * FROM Usuarios por ejem y se lo guardamos en la lsita usuarios
+			cajasAhorro = DB.inicializarCajaAhorro();
+			pagos = DB.inicializarPagos();
+			movimientos = DB.inicializarMovimientos();
         }
 
 
