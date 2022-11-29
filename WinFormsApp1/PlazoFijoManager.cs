@@ -13,20 +13,39 @@ namespace WinFormsApp1 {
 		public bool borrado { get; set; }
 		public DateTime fechaInicio { get; set; }
 		public DateTime fechaFin { get; set; }
-		public Usuario titular;
+		public int titularId { get; set; }
 
 
 		public PlazoFijoManager() { }
 
-		public PlazoFijoManager(int id, float monto, Usuario titular) {
+		public PlazoFijoManager(int id, float monto, int titularId) {
 			this.id = id;
 			this.tasa = 0.2;
 			this.monto = monto;
-			this.titular = titular;
+			this.titularId = titularId;
 			this.fechaInicio = DateTime.Now;
 			this.fechaInicio = DateTime.Now.AddMonths(1);
 			this.pagado = false;
 			this.borrado = false;
+		}
+
+		public PlazoFijoManager(
+				int id,
+				float tasa,
+				float monto,
+				bool pagado,
+				bool borrado,
+				DateTime fechaInicio,
+				DateTime fechaFin,
+				int titularId) {
+			this.id = id;
+			this.tasa = tasa;
+			this.monto = monto;
+			this.titularId = titularId;
+			this.fechaInicio = fechaInicio;
+			this.fechaInicio = fechaFin;
+			this.pagado = pagado;
+			this.borrado = borrado;
 		}
 
 		public string[] toArray() {

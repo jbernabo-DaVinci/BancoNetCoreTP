@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public float monto { get; set; }
 		public bool pagado { get; set; }
 		public bool borrado { get; set; }
-		public Usuario usuario;
+		public int usuarioId { get; set; }
 
 		public Pago() { }
 
@@ -20,15 +20,25 @@ namespace WinFormsApp1 {
 			this.monto = monto;
 		}
 
-		public Pago(int id, string nombre, float monto, Usuario usuario) {
+		public Pago(int id, string nombre, float monto, int usuarioId) {
 			this.id = id;
 			this.nombre = nombre;
 			this.monto = monto;
 			this.pagado = false;
-			this.usuario = usuario;
+			this.borrado = false;
+			this.usuarioId = usuarioId;
 		}
 
-        public void pagarPago() {
+		public Pago(int id, string nombre, float monto, bool pagado, bool borrado, int usuarioId) {
+			this.id = id;
+			this.nombre = nombre;
+			this.monto = monto;
+			this.pagado = pagado;
+			this.borrado = borrado;
+			this.usuarioId = usuarioId;
+		}
+
+		public void pagarPago() {
 			this.pagado = true;
 		}
 

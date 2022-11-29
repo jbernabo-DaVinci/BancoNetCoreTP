@@ -25,22 +25,20 @@ namespace WinFormsApp1 {
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
 			this.DB = new AccesoBD();
-            this.inicializarAtributos();
-        } 
+			this.inicializarAtributos();
+		} 
 
-		private void inicializarAtributos()
-		{
-			usuarios = DB.inicializarUsuarios(); //acá encontraremos un SELECT * FROM Usuarios por ejem y se lo guardamos en la lsita usuarios
-			cajasAhorro = DB.inicializarCajaAhorro();
-			pagos = DB.inicializarPagos();
-			movimientos = DB.inicializarMovimientos();
-			plazosFijos = DB.inicializarPlazoFijo();
-			tarjetasCredito = DB.inicializarTarjetaCredito();
-
-        }
+		private void inicializarAtributos() {
+			this.usuarios = DB.inicializarUsuarios(); //acá encontraremos un SELECT * FROM Usuarios por ejem y se lo guardamos en la lsita usuarios
+			this.cajasAhorro = DB.inicializarCajaAhorro();
+			this.pagos = DB.inicializarPagos();
+			this.movimientos = DB.inicializarMovimientos();
+			this.plazosFijos = DB.inicializarPlazoFijo();
+			this.tarjetasCredito = DB.inicializarTarjetaCredito();
+		}
 
 
-        public bool agregarUsuario(int dni, string name, string pass) {
+		public bool agregarUsuario(int dni, string name, string pass) {
 			try {
 				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
 				if (userIndex != -1) return false;
@@ -288,7 +286,7 @@ namespace WinFormsApp1 {
 				if (currentUser.borrado) return false;
 
 				int pagoId = (this.pagos.Count)+1;
-				Pago newPago = new Pago(pagoId, pago.nombre, pago.monto, currentUser);
+				Pago newPago = new Pago(pagoId, pago.nombre, pago.monto, usuarioId);
 				if (!currentUser.agregarPago(newPago)) return false;
 
 				this.pagos.Add(newPago);
@@ -353,7 +351,7 @@ namespace WinFormsApp1 {
 				if (currentUser.borrado) return false;
 
 				int plazoFijoId = (this.plazosFijos.Count)+1;
-				Plazofijo newPlazoFijo = new PlazoFijo(plazoFijoId, monto, currentUser);
+				Plazofijo newPlazoFijo = new PlazoFijoManager(plazoFijoId, monto, usuarioId);
 				if (!currentUser.agregarPlazoFijo(newPlazoFijo)) return false;
 
 				if (!this.retirar(cajaAhorroId, monto, "Creaste Plazo Fijo")) return false;
@@ -394,7 +392,7 @@ namespace WinFormsApp1 {
 				if (currentUser.borrado) return false;
 
 				int tarjetaCreditoId = (this.tarjetasCredito.Count)+1;
-				TarjetaCredito newTarjetaCredito = new TarjetaCredito(tarjetaCreditoId, limite, currentUser);
+				TarjetaCredito newTarjetaCredito = new TarjetaCreditoManager(tarjetaCreditoId, limite, usuarioId);
 				if (!currentUser.agregarTarjetaCredito(newTarjetaCredito)) return false;
 
 				this.plazosFijos.Add(newTarjetaCredito);
