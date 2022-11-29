@@ -23,7 +23,17 @@ namespace WinFormsApp1 {
 			this.movimientos = new List<Movimiento>();
 		}
 
-		private string createCBU() {
+        //este es el constructor que usaremos para la conexión a la BD
+        public CajaAhorro(int id, String cbu, float saldo, Boolean borrado)
+        {
+            this.id = id;
+            this.cbu = this.createCBU();
+            this.saldo = 0;
+			this.borrado = false;
+            this.titulares = new List<Usuario>();
+            this.movimientos = new List<Movimiento>();
+        }
+        private string createCBU() {
 			string cbu = "0";
 			Random rd = new Random();
 			for(int i = 0; i < 5; i++) {

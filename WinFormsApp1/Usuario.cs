@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public string nombre { get; set; }
 		public string pass { get; set; }
 		public string mail { get; set; }
-		public int intentosFallidos { get; set; }
+		public int intentosFallidos { get; set; } //Francisco: no sé si este dato deba ir en la BD como autoincremental o no ir del todo
 		public bool bloqueado { get; set; }
 		public bool borrado { get; set; }
 		public List<CajaAhorro> cajasAhorro;
@@ -45,8 +45,25 @@ namespace WinFormsApp1 {
 			this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 		}
+		
+		//este es el constructor que usaremos para la conexión a la BD
+        public Usuario(int id, int dni, string nombre, string pass, string mail, int intentosFallidos, Boolean bloqueado, Boolean borrado)
+        {
+            this.id = id;
+			this.dni = dni;
+            this.nombre = nombre;
+            this.pass = pass;
+			this.mail = mail;
+			this.intentosFallidos = intentosFallidos;
+            this.bloqueado = false;
+            this.borrado = false;
+            //this.cajasAhorro = new List<CajaAhorro>();
+            //this.plazosFijos = new List<PlazoFijo>();
+            //this.tarjetasCredito = new List<TarjetaCredito>();
+            //this.pagos = new List<Pago>();
+        }
 
-		public void updateInfo(string nombre, string pass, string mail) {
+        public void updateInfo(string nombre, string pass, string mail) {
 			this.nombre = nombre;
 			this.pass = pass;
 			this.mail = mail;

@@ -81,6 +81,15 @@ namespace WinFormsApp1.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Data Source=DESKTOP-3GG6OR4\SQLEXPRESS;Initial Catalog=Banco;Integrated Security=True.
+        /// </summary>
+        internal static string ConnectionStr {
+            get {
+                return ResourceManager.GetString("ConnectionStr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap llave {

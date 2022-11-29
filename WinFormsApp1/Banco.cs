@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace WinFormsApp1 {
 	public class Banco {
@@ -21,9 +23,23 @@ namespace WinFormsApp1 {
 			this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
-		} 
+			this.DB = new AccesoBD();
+            this.inicializarAtributos();
+        } 
 
-		public bool agregarUsuario(int dni, string name, string pass) {
+		private void inicializarAtributos()
+		{
+			usuarios = DB.inicializarUsuarios(); //acá encontraremos un SELECT * FROM Usuarios por ejem y se lo guardamos en la lsita usuarios
+			cajasAhorro = DB.inicializarCajaAhorro();
+			pagos = DB.inicializarPagos();
+			movimientos = DB.inicializarMovimientos();
+			plazosFijos = DB.inicializarPlazoFijo();
+			tarjetasCredito = DB.inicializarTarjetaCredito();
+
+        }
+
+
+        public bool agregarUsuario(int dni, string name, string pass) {
 			try {
 				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
 				if (userIndex != -1) return false;
