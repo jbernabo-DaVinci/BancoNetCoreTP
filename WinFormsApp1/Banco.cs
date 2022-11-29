@@ -423,7 +423,7 @@ namespace WinFormsApp1 {
 				if (tarjetaCreditoIndex == -1) return false;
 
 				TarjetaCreditoManager tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
-				if (tarjetasCredito.borrado) return false;
+				if (tarjetaCredito.borrado) return false;
 
 				tarjetaCredito.limite = limite;
 				return true;
