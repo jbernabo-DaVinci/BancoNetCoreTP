@@ -153,7 +153,7 @@ namespace WinFormsApp1
 
                     while (reader.Read())
                     {
-                        aux = new Pago(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3), reader.GetBoolean(4), reader.GetBoolean(5));
+                        aux = new Pago(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3), reader.GetBoolean(4), reader.GetInt32(5));
                         pago.Add(aux);
                     }
                     reader.Close();
@@ -167,26 +167,26 @@ namespace WinFormsApp1
         }
 
         //<<<<<<<<<<<<<<<<<< PLAZO FIJO >>>>>>>>>>>>>>>>>>>>>
-        public List<PlazoFijo> inicializarPlazoFijo()
+        public List<PlazoFijoManager> inicializarPlazoFijo()
         {
-            List<PlazoFijo> plazoFijo = new List<PlazoFijo>();
+            List<PlazoFijoManager> plazoFijo = new List<PlazoFijoManager>();
 
-            string queryString = "SELECT * from debo.PlazoFijo";
+            string queryString = "SELECT * from dbo.PlazoFijo";
 
-            using(SqlCommand connection = new SqlConnection(connectionString))
+            using(SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
                 try
                 {
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
-                    PlazoFijo aux;
+                    PlazoFijoManager aux;
 
                     while (reader.Read())
                     {
-                        aux = new PlazoFijo(reader.GetInt32(0), reader.GetFloat(1), reader.GetDateTime(2), reader.GetDateTime(3),
-                                        reader.GetFloat(4), reader.GetBoolean(5), reader.GetInt32(6));
-                        pagos.Add(aux);
+                        aux = new PlazoFijoManager(reader.GetInt32(0), reader.GetFloat(4), reader.GetFloat(1), reader.GetBoolean(5), reader.GetBoolean(6),
+                                        reader.GetDateTime(3), reader.GetDateTime(4), reader.GetInt32(7));
+                        plazoFijo.Add(aux);
                     }
                     reader.Close();
                 }
@@ -201,9 +201,9 @@ namespace WinFormsApp1
         }
 
         //<<<<<<<<<<<<<<<<<< TARJETA CREDITO >>>>>>>>>>>>>>>>>>>>>
-        public List<TarjetaCredito> inicializarTarjetaCredito()
+        public List<TarjetaCreditoManager> inicializarTarjetaCredito()
         {
-            List<TarjetaCredito> tarjetaCredito = new List<TarjetaCredito>();
+            List<TarjetaCreditoManager> tarjetaCredito = new List<TarjetaCreditoManager>();
 
             string queryString = "SELECT * from dbo.TarjetaCredito";
 
@@ -215,11 +215,11 @@ namespace WinFormsApp1
                 {
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
-                    TarjetaCredito aux;
+                    TarjetaCreditoManager aux;
 
                     while (reader.Read())
                     {
-                        aux = new TarjetaCredito(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2),
+                        aux = new TarjetaCreditoManager(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2),
                                                  reader.GetFloat(3), reader.GetFloat(4), reader.GetBoolean(5), reader.GetInt32(6));
 
                         tarjetaCredito.Add(aux);

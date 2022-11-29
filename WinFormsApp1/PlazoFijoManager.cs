@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WinFormsApp1 {
-	public class PlazoFijoManager {
+	public class PlazoFijoManager
+	{
 		public int id { get; set; }
 		public float tasa { get; set; }
 		public float monto { get; set; }
@@ -18,9 +19,10 @@ namespace WinFormsApp1 {
 
 		public PlazoFijoManager() { }
 
-		public PlazoFijoManager(int id, float monto, int titularId) {
+		public PlazoFijoManager(int id, float monto, int titularId)
+		{
 			this.id = id;
-			this.tasa = 0.2;
+			this.tasa = 0.2f;
 			this.monto = monto;
 			this.titularId = titularId;
 			this.fechaInicio = DateTime.Now;
@@ -37,7 +39,8 @@ namespace WinFormsApp1 {
 				bool borrado,
 				DateTime fechaInicio,
 				DateTime fechaFin,
-				int titularId) {
+				int titularId)
+		{
 			this.id = id;
 			this.tasa = tasa;
 			this.monto = monto;
@@ -48,7 +51,8 @@ namespace WinFormsApp1 {
 			this.borrado = borrado;
 		}
 
-		public string[] toArray() {
+		public string[] toArray()
+		{
 			return new string[] {
 				this.tasa.ToString("C"),
 				this.monto.ToString("C"),
@@ -56,4 +60,6 @@ namespace WinFormsApp1 {
 				this.fechaFin.ToString("G")
 			};
 		}
+
+	}
 }

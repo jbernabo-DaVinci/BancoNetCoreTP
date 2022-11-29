@@ -10,7 +10,7 @@ namespace WinFormsApp1 {
 	public class Banco {
 		public List<Usuario> usuarios;
 		public List<CajaAhorro> cajasAhorro;
-		public List<PlazoFijo> plazosFijos;
+		public List<PlazoFijoManager> plazosFijos;
 		public List<TarjetaCredito> tarjetasCredito;
 		public List<Pago> pagos;
 		public List<Movimiento> movimientos;
@@ -20,8 +20,8 @@ namespace WinFormsApp1 {
 		public Banco() {
 			this.usuarios = new List<Usuario>();
 			this.cajasAhorro = new List<CajaAhorro>();
-			this.plazosFijos = new List<PlazoFijo>();
-			this.tarjetasCredito = new List<TarjetaCredito>();
+			this.plazosFijos = new List<PlazoFijoManager>();
+			this.tarjetasCredito = new List<TarjetaCreditoManager>();
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
 			this.DB = new AccesoBD();
@@ -368,8 +368,8 @@ namespace WinFormsApp1 {
 				int plazoFijoIndex = this.plazosFijos.FindIndex(plazo => plazo.id == id);
 				if (plazoFijoIndex == -1) return false;
 
-				PlazoFijo plazoFijo = this.plazosFijos[plazoFijoIndex];
-				if (!plazoFijo.pagado && DateTime.now.AddMonths(-1) < plazoFijo.fechaFin) return false;
+				PlazoFijoManager plazoFijo = this.plazosFijos[plazoFijoIndex];
+				if (!plazoFijo.pagado && DateTime.Now.AddMonths(-1) < plazoFijo.fechaFin) return false;
 
 				plazoFijo.borrado = true;
 				return true;
@@ -392,10 +392,10 @@ namespace WinFormsApp1 {
 				if (currentUser.borrado) return false;
 
 				int tarjetaCreditoId = (this.tarjetasCredito.Count)+1;
-				TarjetaCredito newTarjetaCredito = new TarjetaCreditoManager(tarjetaCreditoId, limite, usuarioId);
-				if (!currentUser.agregarTarjetaCredito(newTarjetaCredito)) return false;
+				TarjetaCreditoManager newTarjetaCredito = new TarjetaCreditoManager(tarjetaCreditoId, limite, usuarioId);
+				if (!currentUser.agregarTarjetaCredito(newTarjetaCreditoManager)) return false;
 
-				this.plazosFijos.Add(newTarjetaCredito);
+				this.tarjetasCredito.Add(newTarjetaCreditoManager);
 				return true;
 			} catch (Exception ex) {
 				return false;
