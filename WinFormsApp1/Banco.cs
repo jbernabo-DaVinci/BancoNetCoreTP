@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1 {
 	public class Banco {
-		private List<Usuario> usuarios;
-		private List<CajaAhorro> cajasAhorro;
-		//private List<PlazoFijo> plazosFijos;
-		//private List<TarjetaCredito> tarjetasCredito;
-		private List<Pago> pagos;
-		private List<Movimiento> movimientos;
-		private Usuario currentUser;
+		public List<Usuario> usuarios;
+		public List<CajaAhorro> cajasAhorro;
+		public List<PlazoFijo> plazosFijos;
+		public List<TarjetaCredito> tarjetasCredito;
+		public List<Pago> pagos;
+		public List<Movimiento> movimientos;
+		public Usuario currentUser;
 
 		public Banco() {
 			this.usuarios = new List<Usuario>();
 			this.cajasAhorro = new List<CajaAhorro>();
-			//this.plazosFijos = new List<PlazoFijo>();
-			//this.tarjetasCredito = new List<TarjetaCredito>();
+			this.plazosFijos = new List<PlazoFijo>();
+			this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
 		} 
@@ -164,11 +164,8 @@ namespace WinFormsApp1 {
 			return currentCajaAhorro.getTitulares();
 		}
 
-		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {
+		public bool altaMovimiento(Movimiento movimiento, CajaAhorro cajaAhorro) {//@TODO With the implementation of tp2 this function will become unnecessary
 			try {
-				int cajaAhorroIndex = this.cajasAhorro.FindIndex(caja => caja.id == cajaAhorro.id);
-				if (cajaAhorroIndex == -1) return false;
-
 				int movimientoId = (this.movimientos.Count)+1;
 				Movimiento newMovimiento = new Movimiento(movimientoId, movimiento.detalle, movimiento.monto, movimiento.cajaAhorro);
 				cajaAhorro.addMovimiento(newMovimiento);
@@ -179,7 +176,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool depositar(int cajaAhorroId, float monto, string detalle = "deposito") {
+		public bool depositar(int cajaAhorroId, float monto, string detalle = "Deposito") {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
 				if (cajaAhorroIndex == -1) return false;
@@ -199,7 +196,7 @@ namespace WinFormsApp1 {
 			}
 		}
 
-		public bool retirar(int cajaAhorroId, float monto, string detalle = "retiro") {
+		public bool retirar(int cajaAhorroId, float monto, string detalle = "Retiro") {
 			try {
 				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
 				if (cajaAhorroIndex == -1) return false;
@@ -228,9 +225,9 @@ namespace WinFormsApp1 {
 
 				if (cajaAhorroOrigenId == cajaAhorroDestinoId) return false;
 
-				if (!this.retirar(cajaAhorroOrigenId, monto, "transferencia")) return false;
+				if (!this.retirar(cajaAhorroOrigenId, monto, "Enviaste una Transferencia")) return false;
 
-				if (!this.depositar(cajaAhorroDestinoId, monto, "transferencia")) return false;
+				if (!this.depositar(cajaAhorroDestinoId, monto, "Recibiste Transferencia")) return false;
 
 				return true;
 			} catch (Exception ex) {
@@ -240,12 +237,6 @@ namespace WinFormsApp1 {
 
 		public bool pagarPago(int cajaAhorroId, int pagoId) {
 			try {
-				int cajaAhorroIndex = this.cajasAhorro.FindIndex(cajaAhorro => cajaAhorro.id == cajaAhorroId);
-				if (cajaAhorroIndex == -1) return false;
-
-				CajaAhorro currentCajaAhorro = this.cajasAhorro[cajaAhorroIndex];
-				if (currentCajaAhorro.borrado) return false;
-
 				int pagoIndex = this.pagos.FindIndex(pago => pago.id == pagoId);
 				if (pagoIndex == -1) return false;
 
@@ -330,6 +321,102 @@ namespace WinFormsApp1 {
 			return this.currentUser.nombre.ToString();
 		}
 
+		public bool altaPlazoFijo(float monto, int usuarioId) {
+			try {
+				if (monto < 1000) return false;
+
+				if (usuarioId != this.currentUser.id) {
+					int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
+					if (userIndex == -1) return false;
+					Usuario currentUser = this.usuarios[userIndex];
+				} else {
+					Usuario currentUser = this.currentUser;
+				}
+
+				if (currentUser.borrado) return false;
+
+				int plazoFijoId = (this.plazosFijos.Count)+1;
+				Plazofijo newPlazoFijo = new PlazoFijo(plazoFijoId, monto, currentUser);
+				if (!currentUser.agregarPlazoFijo(newPlazoFijo)) return false;
+
+				if (!this.retirar(cajaAhorroId, monto, "Creaste Plazo Fijo")) return false;
+
+				this.plazosFijos.Add(newPlazoFijo);
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
+		public bool bajaPlazoFijo(int id) {
+			try {
+				int plazoFijoIndex = this.plazosFijos.FindIndex(plazo => plazo.id == id);
+				if (plazoFijoIndex == -1) return false;
+
+				PlazoFijo plazoFijo = this.plazosFijos[plazoFijoIndex];
+				if (!plazoFijo.pagado && DateTime.now.AddMonths(-1) < plazoFijo.fechaFin) return false;
+
+				plazoFijo.borrado = true;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
+		public bool altaTarjetaCredito(float limite , int usuarioId) {
+			try {
+				if (usuarioId != this.currentUser.id) {
+					int userIndex = this.usuarios.FindIndex(usuario => usuario.id == usuarioId);
+					if (userIndex == -1) return false;
+
+					Usuario currentUser = this.usuarios[userIndex];
+				} else {
+					Usuario currentUser = this.currentUser;
+				}
+
+				if (currentUser.borrado) return false;
+
+				int tarjetaCreditoId = (this.tarjetasCredito.Count)+1;
+				TarjetaCredito newTarjetaCredito = new TarjetaCredito(tarjetaCreditoId, limite, currentUser);
+				if (!currentUser.agregarTarjetaCredito(newTarjetaCredito)) return false;
+
+				this.plazosFijos.Add(newTarjetaCredito);
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
+		public bool bajaTarjetaCredito(int id) {
+			try {
+				int tarjetaCreditoIndex = this.tarjetasCredito.FindIndex(tarjeta => tarjeta.id == id);
+				if (tarjetaCreditoIndex == -1) return false;
+
+				TarjetaCredito tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
+				if (tarjetasCredito.consumo != 0) return false;
+
+				tarjetasCredito.borrado = true;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
+		public bool modificarTarjetaCredito(int Id, float limite) {
+			try {
+				int tarjetaCreditoIndex = this.tarjetasCredito.FindIndex(tarjeta => tarjeta.id == id);
+				if (tarjetaCreditoIndex == -1) return false;
+
+				TarjetaCredito tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
+				if (tarjetasCredito.borrado) return false;
+
+				tarjetaCredito.limite = limite;
+				return true;
+			} catch (Exception ex) {
+				return false;
+			}
+		}
+
 		public bool iniciarSesion(int dni, string pass) {
 			try {
 				int userIndex = this.usuarios.FindIndex(usuario => usuario.dni == dni);
@@ -373,6 +460,14 @@ namespace WinFormsApp1 {
 
 		public List<CajaAhorro> obtenerCajasAhorro() {
 			return this.currentUser.obtenerCajasAhorro();
+		}
+
+		public List<PlazoFijo> obtenerPlazosFijos() {
+			return this.currentUser.obtenerPlazosFijos();
+		}
+
+		public List<TarjetaCredito> obtenerTarjetasCredito() {
+			return this.currentUser.obtenerTarjetasCredito();
 		}
 
 		public List<Movimiento> detalleCajaAhorro(int id) {

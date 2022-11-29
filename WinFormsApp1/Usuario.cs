@@ -14,10 +14,10 @@ namespace WinFormsApp1 {
 		public int intentosFallidos { get; set; }
 		public bool bloqueado { get; set; }
 		public bool borrado { get; set; }
-		private List<CajaAhorro> cajasAhorro;
-		//private List<PlazoFijo> plazosFijos;
-		//private List<TarjetaCredito> tarjetasCredito;
-		private List<Pago> pagos;
+		public List<CajaAhorro> cajasAhorro;
+		public List<PlazoFijo> plazosFijos;
+		public List<TarjetaCredito> tarjetasCredito;
+		public List<Pago> pagos;
 
 		public Usuario() { }
 
@@ -29,8 +29,8 @@ namespace WinFormsApp1 {
 			this.bloqueado = false;
 			this.borrado = false;
 			this.cajasAhorro = new List<CajaAhorro>();
-			//this.plazosFijos = new List<PlazoFijo>();
-			//this.tarjetasCredito = new List<TarjetaCredito>();
+			this.plazosFijos = new List<PlazoFijo>();
+			this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 		}
 
@@ -41,8 +41,8 @@ namespace WinFormsApp1 {
 			this.bloqueado = false;
 			this.borrado = false;
 			this.cajasAhorro = new List<CajaAhorro>();
-			//this.plazosFijos = new List<PlazoFijo>();
-			//this.tarjetasCredito = new List<TarjetaCredito>();
+			this.plazosFijos = new List<PlazoFijo>();
+			this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 		}
 
@@ -86,6 +86,20 @@ namespace WinFormsApp1 {
 			return true;
 		}
 
+		public bool agregarPlazoFijo(PlazoFijo plazoFijo) {
+			int Index = this.plazosFijos.Index(currentPlazoFijo => currentPlazoFijo.id == pago.id);
+			if (Index != -1) return false;
+			this.plazosFijos.Add(plazoFijo);
+			return true;
+		}
+
+		public bool agregarTarjetaCredito(TarjetaCredito tarjetaCredito) {
+			int Index = this.tarjetasCredito.Index(currentTarjetaCredito => currentTarjetaCredito.id == pago.id);
+			if (Index != -1) return false;
+			this.tarjetasCredito.Add(tarjetaCredito);
+			return true;
+		}
+
 		public void failLogin() {
 			this.intentosFallidos++;
 			if(this.intentosFallidos >= 3) {
@@ -109,6 +123,24 @@ namespace WinFormsApp1 {
 				pagosFiltered.Add(currentPago);
 			}
 			return pagosFiltered.ToList();
+		}
+
+		public List<PlazoFijo> obtenerPlazosFijos() {
+			List<PlazoFijo> plazosFijosFiltered = new List<PlazoFijo>();
+			foreach(PlazoFijo currentPlazoFijo in this.plazosFijos) {
+				if (currentPlazoFijo.borrado) continue;
+				plazosFijosFiltered.Add(currentPago);
+			}
+			return plazosFijosFiltered.ToList();
+		}
+
+		public List<TarjetaCredito> obtenerTarjetasCredito() {
+			List<TarjetaCredito> tarjetasCreditoFiltered = new List<TarjetaCredito>();
+			foreach(TarjetaCredito currentTarjetaCredito in this.tarjetasCredito) {
+				if (currentTarjetaCredito.borrado) continue;
+				tarjetasCreditoFiltered.Add(currentTarjetaCredito);
+			}
+			return tarjetasCreditoFiltered.ToList();
 		}
 
 		public string[] toArray() {

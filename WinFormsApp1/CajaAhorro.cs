@@ -10,8 +10,8 @@ namespace WinFormsApp1 {
 		public string cbu { get; set; }
 		public float saldo { get; set; }
 		public bool borrado { get; set; }
-		private List<Usuario> titulares;
-		private List<Movimiento> movimientos;
+		public List<Usuario> titulares;
+		public List<Movimiento> movimientos;
 
 		public CajaAhorro() { }
 

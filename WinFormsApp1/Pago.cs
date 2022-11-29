@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public float monto { get; set; }
 		public bool pagado { get; set; }
 		public bool borrado { get; set; }
-		private Usuario usuario;
+		public Usuario usuario;
 
 		public Pago() { }
 
