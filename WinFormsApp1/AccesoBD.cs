@@ -94,13 +94,13 @@ namespace WinFormsApp1
 
 			try {
 				connection.Open();
-				queryResult = command.ExeciteNonQuery();
+				queryResult = command.ExecuteNonQuery();
 
 				string getId = "SELECT MAX([ID]) FROM [dbo].[Usuario];";
 				command = new SqlCommand(getId, connection);
 				SqlDataReader reader = command.ExecuteReader();
 				reader.Read();
-				idNewUser = render.GetInt32(0);
+				idNewUser = reader.GetInt32(0);
 				reader.Close();
 			} catch (Exception ex) {
 				Console.WriteLine(ex.Message);
