@@ -10,8 +10,8 @@ namespace WinFormsApp1 {
 	public class Banco {
 		private List<Usuario> usuarios;
 		private List<CajaAhorro> cajasAhorro;
-		//private List<PlazoFijo> plazosFijos;
-		//private List<TarjetaCredito> tarjetasCredito;
+		private List<PlazoFijo> plazosFijos;
+		private List<TarjetaCredito> tarjetasCredito;
 		private List<Pago> pagos;
 		private List<Movimiento> movimientos;
 		private Usuario currentUser;
@@ -21,8 +21,8 @@ namespace WinFormsApp1 {
 			//al crear la BD ahora las listas las pobalremos con los datos existentes en la BD
 			this.usuarios = new List<Usuario>();
 			this.cajasAhorro = new List<CajaAhorro>();
-			//this.plazosFijos = new List<PlazoFijo>();
-			//this.tarjetasCredito = new List<TarjetaCredito>();
+			this.plazosFijos = new List<PlazoFijo>();
+			this.tarjetasCredito = new List<TarjetaCredito>();
 			this.pagos = new List<Pago>();
 			this.movimientos = new List<Movimiento>();
 			this.DB = new AccesoBD();
@@ -35,6 +35,9 @@ namespace WinFormsApp1 {
 			cajasAhorro = DB.inicializarCajaAhorro();
 			pagos = DB.inicializarPagos();
 			movimientos = DB.inicializarMovimientos();
+			plazosFijos = DB.inicializarPlazoFijo();
+			tarjetasCredito = DB.inicializarTarjetaCredito();
+
         }
 
 

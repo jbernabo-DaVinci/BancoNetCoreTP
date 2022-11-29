@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using WinFormsApp1.Properties;
 using System.Data; 
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
+using System.Xml;
+using System.Linq.Expressions;
 
 namespace WinFormsApp1
 {
@@ -87,7 +89,7 @@ namespace WinFormsApp1
                         aux = new CajaAhorro(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3));
                         cajaAhorro.Add(aux);
                     }
-
+                    reader.Close();
                 }
                 catch(Exception ex)
                 {
@@ -120,7 +122,7 @@ namespace WinFormsApp1
                         aux = new Movimiento(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetDateTime(3), reader.GetInt32(4));
                         movimiento.Add(aux);
                     }
-
+                    reader.Close();
                 }
                 catch(Exception ex)
                 {
@@ -136,12 +138,101 @@ namespace WinFormsApp1
         public List<Pago> inicializarPagos()
         {
             List<Pago> pago = new List<Pago>();
+
+            string queryString = "SELECT * from dbo.Pago";
+
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    Pago aux;
+
+                    while (reader.Read())
+                    {
+                        aux = new Pago(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3), reader.GetBoolean(4), reader.GetBoolean(5));
+                        pago.Add(aux);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            }return pago;
         }
 
         //<<<<<<<<<<<<<<<<<< PLAZO FIJO >>>>>>>>>>>>>>>>>>>>>
+        public List<PlazoFijo> inicializarPlazoFijo()
+        {
+            List<PlazoFijo> plazoFijo = new List<PlazoFijo>;
 
+            string queryString = "SELECT * from debo.PlazoFijo";
+
+            using(SqlCommand connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    PlazoFijo aux;
+
+                    while (reader.Read())
+                    {
+                        aux = new PlazoFijo(reader.GetInt32(0), reader.GetFloat(1), reader.GetDateTime(2), reader.GetDateTime(3),
+                                        reader.GetFloat(4), reader.GetBoolean(5), reader.GetInt32(6));
+                        pagos.Add(aux);
+                    }
+                    reader.Close();
+                }
+
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+  
+            }
+            return plazoFijo;
+        }
 
         //<<<<<<<<<<<<<<<<<< TARJETA CREDITO >>>>>>>>>>>>>>>>>>>>>
+        public List<TarjetaCredito> inicializarTarjetaCredito()
+        {
+            List<TarjetaCredito> tarjetaCredito = new List<TarjetaCredito>();
 
+            string queryString = "SELECT * from dbo.TarjetaCredito";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    TarjetaCredito aux;
+
+                    while (reader.Read())
+                    {
+                        aux = new TarjetaCredito(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2),
+                                                 reader.GetFloat(3), reader.GetFloat(4), reader.GetInt32(5));
+
+                        tarjetaCredito.Add(aux);
+                    }
+                    reader.Close();
+
+                Catch (Exception ex)
+                {
+                        Console.WriteLine(ex.Message);
+                }
+                
+            }
+            return tarjetaCredito;
+        }
     }
 }
