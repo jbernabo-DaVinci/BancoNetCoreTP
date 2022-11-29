@@ -408,9 +408,9 @@ namespace WinFormsApp1 {
 				if (tarjetaCreditoIndex == -1) return false;
 
 				TarjetaCreditoManager tarjetaCredito = this.tarjetasCredito[tarjetaCreditoIndex];
-				if (tarjetasCredito.consumo != 0) return false;
+				if (tarjetaCredito.consumo != 0) return false;
 
-				tarjetasCredito.borrado = true;
+				tarjetaCredito.borrado = true;
 				return true;
 			} catch (Exception ex) {
 				return false;
@@ -477,11 +477,11 @@ namespace WinFormsApp1 {
 			return this.currentUser.obtenerCajasAhorro();
 		}
 
-		public List<PlazoFijo> obtenerPlazosFijos() {
+		public List<PlazoFijoManager> obtenerPlazosFijos() {
 			return this.currentUser.obtenerPlazosFijos();
 		}
 
-		public List<TarjetaCredito> obtenerTarjetasCredito() {
+		public List<TarjetaCreditoManager> obtenerTarjetasCredito() {
 			return this.currentUser.obtenerTarjetasCredito();
 		}
 
