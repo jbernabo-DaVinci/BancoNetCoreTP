@@ -48,6 +48,10 @@ namespace WinFormsApp1 {
 				}
 
 				int usuarioId = DB.agregarUsuario(dni, name, "", pass, 0, false, false, false);
+				if (usuarioId == -1) {
+					return false;
+				}
+
 				this.usuarios.Add(new Usuario(usuarioId, dni, name, pass));
 				return true;
 
