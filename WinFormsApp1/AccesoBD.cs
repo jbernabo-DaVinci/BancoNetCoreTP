@@ -69,7 +69,7 @@ namespace WinFormsApp1
         //<<<<<<<<<<<<<<<<<< CAJA AHORRO >>>>>>>>>>>>>>>>>>>>>
         public List<CajaAhorro> inicializarAtributos()
         {
-            List<CajaAhorro> usuarios = new List<CajaAhorro>();
+            List<CajaAhorro> cajaAhorro = new List<CajaAhorro>();
 
             String queryString = "SELECT * from dboCajaAhorro.";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -85,21 +85,53 @@ namespace WinFormsApp1
                     while (reader.Read())
                     {
                         aux = new CajaAhorro(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3));
-                        CajaAhorro.Add(aux);
+                    
+                    CajaAhorro.Add(aux);
                     }
 
                 }
-                cathc(Exception ex);
+                catch(Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
-            return CajaAhorro;
+            return cajaAhorro;
         }
 
 
         //<<<<<<<<<<<<<<<<<< MOVIMIENTO >>>>>>>>>>>>>>>>>>>>>
+        public List<Movimiento> inicializarAtributos()
+        {
+            List<Movimiento> movimiento = new List<Movimiento>();
 
+            String queryString = "SELECT * from dbo.Movimiento";
+            SqlConnection connection = new SqlConnection(connectionString);
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    Movimiento aux;
+
+
+                    while (reader.Read())
+                    {
+                        aux = new Movimiento(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetDateTime(3), reader.GetInt32(4));
+                    }
+
+                }
+
+                
+                    
+                catch
+                {
+
+                }
+            }
+
+        }
 
 
         //<<<<<<<<<<<<<<<<<< PAGO >>>>>>>>>>>>>>>>>>>>>
