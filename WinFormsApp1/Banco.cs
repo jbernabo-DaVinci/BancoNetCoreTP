@@ -15,7 +15,7 @@ namespace WinFormsApp1 {
 		private List<Pago> pagos;
 		private List<Movimiento> movimientos;
 		private Usuario currentUser;
-		private AccesoBD DB; //DAL = Data Acces Layer y la varalble DB es la encargada de comunicarse con la Base de Datos
+		private AccesoBD DB; //del profe es la clase DAL = Data Acces Layer y la varalble DB es la encargada de comunicarse con la Base de Datos
 
 		public Banco() { //cuando inicializa el banco, inicializa las listas en vacío pero ahora...
 			//al crear la BD ahora las listas las pobalremos con los datos existentes en la BD

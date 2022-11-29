@@ -81,7 +81,7 @@ namespace WinFormsApp1.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-3GG6OR4\SQLEXPRESS;Initial Catalog=Bank;Integrated Security=True.
+        ///   Busca una cadena traducida similar a Data Source=DESKTOP-3GG6OR4\SQLEXPRESS;Initial Catalog=Banco;Integrated Security=True.
         /// </summary>
         internal static string ConnectionStr {
             get {

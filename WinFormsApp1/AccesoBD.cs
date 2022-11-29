@@ -16,7 +16,8 @@ namespace WinFormsApp1
         public AccesoBD() 
         { 
             //acá cargamos la cadea de conexión desde el archivo de properties
-            connectionString = Properties.Resources.ConnectionStr; 
+            connectionString = Properties.Resources.ConnectionStr; //accedemos en el archivo Properties.Resources.ConnectionStr
+            //aunque podríamos colcoar el connectionString acá a la vista de todos (no aconsejable)
         }
 
         public List<Usuario> inicializarAtributos()
@@ -46,12 +47,15 @@ namespace WinFormsApp1
                    //mientras hayan registros/filas en el DataReader, seguimos leyendo
                    while (reader.Read())
                    {
-                   //acá debe ir un reader.GetInt32 o reader.GetString según coumnas tengamos en la tabla Usuarios
-                   aux = new Usuario(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3);
+                        //acá debe ir un reader.GetInt32 o reader.GetString según coumnas tengamos en la tabla Usuarios
+                        //    id                    dni                 nombre               pass        
+                        aux = new Usuario(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3),
+                                         //        mail        intentosFallidos            bloqueado             borrado
+                                         reader.GetString(4), reader.GetInt32(5), reader.GetBoolean(6), reader.GetBoolean(7));
                    usuarios.Add(aux);
                    }
                    //ahora sí, ya habiendo recorrido todas las filas del resultado de la query, cerramos
-                   reader.Close();
+                   reader.Close(); //usamos reader.Close() xq la tabla vive en memoria de mi pc, al hacer esto, liberamos la memoria.
                 }
                 catch (Exception ex)
                 {
@@ -60,6 +64,43 @@ namespace WinFormsApp1
             }
             return usuarios;
         }
+
+        public List<CajaAhorro> inicializarAtributos()
+        {
+            List<CajaAhorro> usuarios = new List<CajaAhorro>();
+
+            String queryString = "SELECT * from dboCajaAhorro.";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    CajaAhorro aux;
+
+                    while (reader.Read())
+                    {
+                        aux = new CajaAhorro(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBool(3));
+                        CajaAhorro.Add(aux);
+                    }
+
+                }
+                cathc(Exception ex);
+                {
+                    Console.WriteLine(ex Message);
+                }
+            }
+           
+
+
+
+        }
+
+
+
+
 
 
     }
