@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WinFormsApp1.Properties;
-using System.Data; //no sé si es necesaria
-using System.Data.SqlClient; //no sé si es necesaria
+using System.Data; 
+using System.Data.SqlClient; 
 
 namespace WinFormsApp1
 {
@@ -20,6 +20,7 @@ namespace WinFormsApp1
             //aunque podríamos colcoar el connectionString acá a la vista de todos (no aconsejable)
         }
 
+        //<<<<<<<<<<<<<<<<<< USUARIO >>>>>>>>>>>>>>>>>>>>>
         public List<Usuario> inicializarAtributos()
         {
             List<Usuario> usuarios = new List<Usuario>();
@@ -65,6 +66,7 @@ namespace WinFormsApp1
             return usuarios;
         }
 
+        //<<<<<<<<<<<<<<<<<< CAJA AHORRO >>>>>>>>>>>>>>>>>>>>>
         public List<CajaAhorro> inicializarAtributos()
         {
             List<CajaAhorro> usuarios = new List<CajaAhorro>();
@@ -82,26 +84,31 @@ namespace WinFormsApp1
 
                     while (reader.Read())
                     {
-                        aux = new CajaAhorro(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBool(3));
+                        aux = new CajaAhorro(reader.GetInt32(0), reader.GetString(1), reader.GetFloat(2), reader.GetBoolean(3));
                         CajaAhorro.Add(aux);
                     }
 
                 }
                 cathc(Exception ex);
                 {
-                    Console.WriteLine(ex Message);
+                    Console.WriteLine(ex.Message);
                 }
             }
-           
-
-
-
+            return CajaAhorro;
         }
 
 
+        //<<<<<<<<<<<<<<<<<< MOVIMIENTO >>>>>>>>>>>>>>>>>>>>>
 
 
 
+        //<<<<<<<<<<<<<<<<<< PAGO >>>>>>>>>>>>>>>>>>>>>
+
+
+        //<<<<<<<<<<<<<<<<<< PLAZO FIJO >>>>>>>>>>>>>>>>>>>>>
+
+
+        //<<<<<<<<<<<<<<<<<< TARJETA CREDITO >>>>>>>>>>>>>>>>>>>>>
 
     }
 }
