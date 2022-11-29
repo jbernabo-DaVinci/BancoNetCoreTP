@@ -13,7 +13,7 @@ namespace WinFormsApp1 {
 		public float limite { get; set; }
 		public float consumo { get; set; }
 		public bool borrado { get; set; }
-		public int idUsuario { get; set }
+		public int idUsuario { get; set; }
 
 		public Usuario titular;
 
