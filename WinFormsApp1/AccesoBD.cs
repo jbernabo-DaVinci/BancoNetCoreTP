@@ -34,7 +34,7 @@ namespace WinFormsApp1
             using (SqlConnection connection = new SqlConnection(connectionString))
             /*el "connection" está dentro de un "using" xq mientras viva dentro de las {}
             vamos a tener una conecction activa, luego de las llaves, se cerrará sola!
-            no hace falta un .close*/
+            no hace falta un Connection.close*/
             {
                 //Definimos el comando con la consulta de qué quiero ejecutar
                 SqlCommand command = new SqlCommand(queryString, connection);

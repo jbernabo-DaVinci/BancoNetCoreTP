@@ -15,6 +15,7 @@ namespace WinFormsApp1 {
 		public List<Pago> pagos;
 		public List<Movimiento> movimientos;
 		public Usuario currentUser;
+		public AccesoBD DB;
 
 		public Banco() {
 			this.usuarios = new List<Usuario>();

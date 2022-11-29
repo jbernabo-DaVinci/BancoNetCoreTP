@@ -15,6 +15,7 @@ namespace WinFormsApp1 {
 		public bool bloqueado { get; set; }
 		public bool borrado { get; set; }
 		public bool isAdmin { get; set; }
+
 		public List<CajaAhorro> cajasAhorro;
 		public List<PlazoFijo> plazosFijos;
 		public List<TarjetaCredito> tarjetasCredito;

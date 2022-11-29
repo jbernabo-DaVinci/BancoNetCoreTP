@@ -11,7 +11,7 @@ namespace WinFormsApp1 {
 		public float monto { get; set; }
 		public DateTime fecha { get; set; }
 		public CajaAhorro cajaAhorro { get; set; } //Fran: cambiar cajaAhorro por idCajaAhorro
-
+		public int idCajaAhorro { get; set; }
 		public Movimiento() { }
 
 		public Movimiento(string detalle, float monto, CajaAhorro cajaAhorro) {
@@ -29,13 +29,13 @@ namespace WinFormsApp1 {
 			this.cajaAhorro = cajaAhorro;
 		}
 
-        public Movimiento(int id, string detalle, float monto, DateTime fecha, CajaAhorro cajaAhorro)
+        public Movimiento(int id, string detalle, float monto, DateTime fecha, int idCajaAhorro)
         {
             this.id = id;
             this.detalle = detalle;
             this.monto = monto;
             this.fecha = DateTime.Now;
-            this.cajaAhorro = cajaAhorro;
+            this.idCajaAhorro = idCajaAhorro;
         }
 
         public string[] toArray() {
