@@ -220,17 +220,18 @@ namespace WinFormsApp1
                     while (reader.Read())
                     {
                         aux = new TarjetaCredito(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2),
-                                                 reader.GetFloat(3), reader.GetFloat(4), reader.GetInt32(5));
+                                                 reader.GetFloat(3), reader.GetFloat(4), reader.GetBoolean(5), reader.GetInt32(6));
 
                         tarjetaCredito.Add(aux);
                     }
                     reader.Close();
-
-                Catch (Exception ex)
-                {
-                        Console.WriteLine(ex.Message);
                 }
-                
+
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
             }
             return tarjetaCredito;
         }
