@@ -219,7 +219,7 @@ namespace WinFormsApp1
 
                     while (reader.Read())
                     {
-                        aux = new TarjetaCreditoManager(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2),
+                        aux = new TarjetaCreditoManager(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2),
                                                  reader.GetFloat(3), reader.GetFloat(4), reader.GetBoolean(5), reader.GetInt32(6));
 
                         tarjetaCredito.Add(aux);
