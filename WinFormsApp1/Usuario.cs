@@ -108,8 +108,8 @@ namespace WinFormsApp1 {
 		}
 
 		public bool agregarPlazoFijo(PlazoFijoManager plazoFijo) {
-			int Index = this.plazosFijos.FindIndex(currentPlazoFijo => currentPlazoFijo.id == pago.id);
-			if (Index != -1) return false;
+			int plazoFijoIndex = this.plazosFijos.FindIndex(currentPlazoFijo => currentPlazoFijo.id == plazoFijo.id);
+			if (plazoFijoIndex != -1) return false;
 			this.plazosFijos.Add(plazoFijo);
 			return true;
 		}
