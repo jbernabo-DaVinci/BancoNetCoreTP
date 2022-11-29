@@ -68,6 +68,49 @@ namespace WinFormsApp1
             return usuarios;
         }
 
+	public int agregarUsuario(int dni, string nombre, string mail, string pass, int intentosFallidos, bool bloqueado, bool borrado, bool isAdmin) {
+		int queryResult;
+		int idNewUser = -1;
+		string conecctionString = Properties.Resources.ConnectionStr;
+		string query = "INSERT INTO [dbo].[Usuario] ([dni], [nombre], [mail], [pass], [intentosFallidos], [bloqueado], [borrado], [isAdmin]) VALUES (@dni, @nombre, @mail, @pass, @intentosFallidos, @bloqueado, @borrado, @isAdmin);";
+		using(SqlConnection connection = new SqlConnection(conecctionString)) {
+			SqlCommand command = new SqlCommand(query, connection);
+			command.Parameters.Add(new SqlParameter("@dni",SqlDbType.Int));
+			command.Parameters.Add(new SqlParameter("@nombre",SqlDbType.NVarChar));
+			command.Parameters.Add(new SqlParameter("@mail",SqlDbType.NVarChar));
+			command.Parameters.Add(new SqlParameter("@pass",SqlDbType.NVarChar));
+			command.Parameters.Add(new SqlParameter("@intentosFallidos",SqlDbType.Int));
+			command.Parameters.Add(new SqlParameter("@bloqueado",SqlDbType.Bit));
+			command.Parameters.Add(new SqlParameter("@borrado",SqlDbType.Bit));
+			command.Parameters.Add(new SqlParameter("@isAdmin",SqlDbType.Bit));
+			command.Parameters["@dni"].Value = dni;
+			command.Parameters["@nombre"].Value = nombre;
+			command.Parameters["@mail"].Value = mail;
+			command.Parameters["@pass"].Value = pass;
+			command.Parameters["@intentosFallidos"].Value = intentosFallidos;
+			command.Parameters["@bloqueado"].Value = bloqueado;
+			command.Parameters["@borrado"].Value = borrado;
+			command.Parameters["@isAdmin"].Value = isAdmin;
+
+			try {
+				connection.Open();
+				queryResult = command.ExeciteNonQuery();
+
+				string getId = "SELECT MAX([ID]) FROM [dbo].[Usuario];";
+				command = new SqlCommand(getId, connection);
+				SqlDataReader reader = command.ExecuteReader();
+				reader.Read();
+				idNewUser = render.GetInt32(0);
+				reader.Close();
+			} catch (Exception ex) {
+				Console.WriteLine(ex.Message);
+				return -1;
+			}
+
+			return idNewUser;
+		}
+	}
+
         //<<<<<<<<<<<<<<<<<< CAJA AHORRO >>>>>>>>>>>>>>>>>>>>>
         public List<CajaAhorro> inicializarCajaAhorro()
         {

@@ -47,7 +47,7 @@ namespace WinFormsApp1 {
 					return false;
 				}
 
-				int usuarioId = (this.usuarios.Count)+1;
+				int usuarioId = DB.agregarUsuario(dni, name, "", pass, 0, false, false, false);
 				this.usuarios.Add(new Usuario(usuarioId, dni, name, pass));
 				return true;
 
