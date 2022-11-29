@@ -28,7 +28,7 @@ namespace WinFormsApp1 {
 			this.usuario = usuario;
 		}
 
-		public void pagarPago() {
+        public void pagarPago() {
 			this.pagado = true;
 		}
 

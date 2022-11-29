@@ -54,7 +54,7 @@ namespace WinFormsApp1
                         //    id                    dni                 nombre               pass        
                         aux = new Usuario(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3),
                                          //        mail        intentosFallidos            bloqueado             borrado
-                                         reader.GetString(4), reader.GetInt32(5), reader.GetBoolean(6), reader.GetBoolean(7));
+                                         reader.GetString(4), reader.GetInt32(5), reader.GetBoolean(6), reader.GetBoolean(7), reader.GetBoolean(8));
                    usuarios.Add(aux);
                    }
                    //ahora sí, ya habiendo recorrido todas las filas del resultado de la query, cerramos

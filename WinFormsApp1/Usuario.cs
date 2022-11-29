@@ -57,6 +57,7 @@ namespace WinFormsApp1 {
 			this.intentosFallidos = intentosFallidos;
             this.bloqueado = false;
             this.borrado = false;
+
             //this.cajasAhorro = new List<CajaAhorro>();
             //this.plazosFijos = new List<PlazoFijo>();
             //this.tarjetasCredito = new List<TarjetaCredito>();
@@ -104,14 +105,14 @@ namespace WinFormsApp1 {
 		}
 
 		public bool agregarPlazoFijo(PlazoFijo plazoFijo) {
-			int Index = this.plazosFijos.Index(currentPlazoFijo => currentPlazoFijo.id == pago.id);
+			int Index = this.plazosFijos.FindIndex(currentPlazoFijo => currentPlazoFijo.id == pago.id);
 			if (Index != -1) return false;
 			this.plazosFijos.Add(plazoFijo);
 			return true;
 		}
 
 		public bool agregarTarjetaCredito(TarjetaCredito tarjetaCredito) {
-			int Index = this.tarjetasCredito.Index(currentTarjetaCredito => currentTarjetaCredito.id == pago.id);
+			int Index = this.tarjetasCredito.FindIndex(currentTarjetaCredito => currentTarjetaCredito.id == pago.id);
 			if (Index != -1) return false;
 			this.tarjetasCredito.Add(tarjetaCredito);
 			return true;
@@ -146,7 +147,7 @@ namespace WinFormsApp1 {
 			List<PlazoFijo> plazosFijosFiltered = new List<PlazoFijo>();
 			foreach(PlazoFijo currentPlazoFijo in this.plazosFijos) {
 				if (currentPlazoFijo.borrado) continue;
-				plazosFijosFiltered.Add(currentPago);
+				plazosFijosFiltered.Add(currentPlazoFijo);
 			}
 			return plazosFijosFiltered.ToList();
 		}
@@ -154,7 +155,7 @@ namespace WinFormsApp1 {
 		public List<TarjetaCredito> obtenerTarjetasCredito() {
 			List<TarjetaCredito> tarjetasCreditoFiltered = new List<TarjetaCredito>();
 			foreach(TarjetaCredito currentTarjetaCredito in this.tarjetasCredito) {
-				if (currentTarjetaCredito.borrado) continue;
+				if (currentTarjetaCredito.Pago) continue;
 				tarjetasCreditoFiltered.Add(currentTarjetaCredito);
 			}
 			return tarjetasCreditoFiltered.ToList();
