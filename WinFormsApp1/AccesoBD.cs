@@ -71,6 +71,7 @@ namespace WinFormsApp1
 	public int agregarUsuario(int dni, string nombre, string mail, string pass, int intentosFallidos, bool bloqueado, bool borrado, bool isAdmin) {
 		int queryResult;
 		int idNewUser = -1;
+        string connectionString = Properties.Resources.ConnectionStr;
 		string query = "INSERT INTO [dbo].[Usuario] ([dni], [nombre], [mail], [pass], [intentosFallidos], [bloqueado], [borrado], [isAdmin]) VALUES (@dni, @nombre, @mail, @pass, @intentosFallidos, @bloqueado, @borrado, @isAdmin);";
 		using(SqlConnection connection = new SqlConnection(connectionString)) {
 			SqlCommand command = new SqlCommand(query, connection);
@@ -95,7 +96,7 @@ namespace WinFormsApp1
 				connection.Open();
 				queryResult = command.ExecuteNonQuery();
 
-				string getId = "SELECT MAX([ID]) FROM [dbo].[Usuario];";
+				string getId = "SELECT MAX([id]) FROM [dbo].[Usuario];";
 				command = new SqlCommand(getId, connection);
 				SqlDataReader reader = command.ExecuteReader();
 				reader.Read();
