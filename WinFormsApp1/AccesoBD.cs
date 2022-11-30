@@ -28,9 +28,9 @@ namespace WinFormsApp1
             List<Usuario> usuarios = new List<Usuario>();
 
             //Definimos el string con la consulta que queremos ralizar
-            string queryString = "SELECT * from dbo.Usuarios";
+            string queryString = "SELECT * from dbo.Usuario";
 
-            //ya pegándole a la BD, podemos crear el 1er objeto que es e "connection"
+            //ya pegándole a la BD, podemos crear el 1er objeto que es el "connection"
             using (SqlConnection connection = new SqlConnection(connectionString))
             /*el "connection" está dentro de un "using" xq mientras viva dentro de las {}
             vamos a tener una conecction activa, luego de las llaves, se cerrará sola!
