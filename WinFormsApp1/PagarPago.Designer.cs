@@ -41,7 +41,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.CajaAhorro = new System.Windows.Forms.TabControl();
+            this.CajasDeAhorroPage = new System.Windows.Forms.TabPage();
+            this.TarjetasCréditoPage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.CajaAhorro.SuspendLayout();
+            this.CajasDeAhorroPage.SuspendLayout();
+            this.TarjetasCréditoPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView2
@@ -52,14 +63,15 @@
             this.Column2,
             this.Column3});
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dataGridView2.Location = new System.Drawing.Point(362, 193);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 2);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(595, 218);
+            this.dataGridView2.Size = new System.Drawing.Size(686, 184);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellClickSelectCajaAhorro);
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Column1
             // 
@@ -87,7 +99,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(855, 429);
+            this.button3.Location = new System.Drawing.Point(829, 429);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 38);
@@ -169,7 +181,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(362, 429);
+            this.button1.Location = new System.Drawing.Point(249, 429);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 38);
@@ -178,12 +190,80 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.onClickBack);
             // 
+            // CajaAhorro
+            // 
+            this.CajaAhorro.Controls.Add(this.CajasDeAhorroPage);
+            this.CajaAhorro.Controls.Add(this.TarjetasCréditoPage);
+            this.CajaAhorro.Location = new System.Drawing.Point(245, 187);
+            this.CajaAhorro.Name = "CajaAhorro";
+            this.CajaAhorro.SelectedIndex = 0;
+            this.CajaAhorro.Size = new System.Drawing.Size(690, 210);
+            this.CajaAhorro.TabIndex = 49;
+            // 
+            // CajasDeAhorroPage
+            // 
+            this.CajasDeAhorroPage.Controls.Add(this.dataGridView2);
+            this.CajasDeAhorroPage.Location = new System.Drawing.Point(4, 24);
+            this.CajasDeAhorroPage.Name = "CajasDeAhorroPage";
+            this.CajasDeAhorroPage.Padding = new System.Windows.Forms.Padding(3);
+            this.CajasDeAhorroPage.Size = new System.Drawing.Size(682, 182);
+            this.CajasDeAhorroPage.TabIndex = 0;
+            this.CajasDeAhorroPage.Text = "CajasAhorro";
+            this.CajasDeAhorroPage.UseVisualStyleBackColor = true;
+            // 
+            // TarjetasCréditoPage
+            // 
+            this.TarjetasCréditoPage.Controls.Add(this.dataGridView1);
+            this.TarjetasCréditoPage.Location = new System.Drawing.Point(4, 24);
+            this.TarjetasCréditoPage.Name = "TarjetasCréditoPage";
+            this.TarjetasCréditoPage.Padding = new System.Windows.Forms.Padding(3);
+            this.TarjetasCréditoPage.Size = new System.Drawing.Size(682, 182);
+            this.TarjetasCréditoPage.TabIndex = 1;
+            this.TarjetasCréditoPage.Text = "TarjetasCrédito";
+            this.TarjetasCréditoPage.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dataGridView1.Location = new System.Drawing.Point(0, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(682, 182);
+            this.dataGridView1.TabIndex = 32;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 120;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nro";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Saldo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
             // PagarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(1388, 671);
+            this.Controls.Add(this.CajaAhorro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -192,12 +272,15 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PagarPago";
             this.Text = "Pagar Pagos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.CajaAhorro.ResumeLayout(false);
+            this.CajasDeAhorroPage.ResumeLayout(false);
+            this.TarjetasCréditoPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +300,12 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private Button button1;
+        private TabControl CajaAhorro;
+        private TabPage CajasDeAhorroPage;
+        private TabPage TarjetasCréditoPage;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

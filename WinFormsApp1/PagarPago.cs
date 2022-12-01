@@ -67,5 +67,10 @@ namespace WinFormsApp1 {
 		}
 
 		public delegate void TransfDelegado();
+
+		private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }
