@@ -46,11 +46,48 @@ namespace WinFormsApp1
                     usr.Property(u => u.borrado).HasColumnType("bit");
                     usr.Property(u => u.borrado).IsRequired(true);
                 });
-            //Ignoro, no agrego UsuarioManager a la base de datos
+
+            modelBuilder.Entity<CajaAhorro>()
+                .ToTable("CajaAhorro")
+                .HasKey(c => c.id_caja);
+
+            modelBuilder.Entity<CajaAhorro>(
+                caj =>
+                {
+                    caj.Property(c => c.cbu).HasColumnType("varchar(50)");
+                    caj.Property(c => c.cbu).IsRequired(true);
+                    caj.Property(c => c.saldo).HasColumnType("float");
+                    caj.Property(c => c.saldo).IsRequired(true);
+                    caj.Property(c => c.borrado).HasColumnType("bit");
+                    caj.Property(c => c.borrado).IsRequired(true);
+                });
+
+            modelBuilder.Entity<Movimiento>()
+                .ToTable("Movimiento")
+                .HasKey(m => m.id_movimiento);
+
+            modelBuilder.Entity<Movimiento>(
+                mov =>
+                {
+                    mov.Property(m => m.detalle).HasColumnType("int");
+                    mov.Property(m => m.detalle).IsRequired(true);
+                    mov.Property(m => m.monto).HasColumnType("float");
+                    mov.Property(m => m.monto).IsRequired(true);
+                    mov.Property(m => m.fecha).HasColumnType("date");
+                    mov.Property(m => m.fecha).IsRequired(true);
+                    mov.Property(m => m.idCajaAhorro).HasColumnType("int");
+                    mov.Property(m => m.idCajaAhorro).IsRequired(true);
+                });
+
+            
+
+
+
+            //Ignore: no agregaremos estas clases a la base de datos
             modelBuilder.Ignore<AccesoBD>();
             modelBuilder.Ignore<Banco>();
             modelBuilder.Ignore<MyContext>();
-           //modelBuilder.Ignore<Program>(); no me deja Program
+           //modelBuilder.Ignore<Program>(); //Chicos, no me deja hacerlo con Program xq es de tipo estático
             
         }
 
