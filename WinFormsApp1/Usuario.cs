@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1 {
 	public class Usuario {
-		public int id { get; set; }
+		public int id { get; set; } //tenemos el campo "id" que necesita EF
 		public int dni { get; set; }
 		public string nombre { get; set; }
 		public string pass { get; set; }
@@ -21,7 +21,7 @@ namespace WinFormsApp1 {
 		public List<TarjetaCreditoManager> tarjetasCredito;
 		public List<Pago> pagos;
 
-		public Usuario() { }
+		public Usuario() { } //este constructor vacío lo necesitamos por usar EF para hacer el Load() de usuario
 
 		public Usuario(int id, int dni, string nombre, string pass) {
 			this.id = id;
